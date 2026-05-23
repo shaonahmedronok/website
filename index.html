@@ -3,150 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shaon Ahmed Ronok — writer, independent researcher, systems thinker. Philosophy of information, effective altruism, technology ethics.">
-<meta property="og:title" content="Shaon Ahmed Ronok">
+<meta name="description" content="Shaon — writer, independent researcher, systems thinker. Philosophy of information, effective altruism, technology ethics.">
+<meta property="og:title" content="Shaon">
 <meta property="og:description" content="Writer and independent researcher. Information systems, technology ethics, philosophy of science.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shaon.neocities.org">
 <meta property="og:image" content="https://shaon.neocities.org/images/1772381919541.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shaon Ahmed Ronok">
+<meta name="twitter:title" content="Shaon">
 <meta name="twitter:image" content="https://shaon.neocities.org/images/1772381919541.png">
-<title>Shaon Ahmed Ronok</title>
+<title>Shaon</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fef9f0;--bg2:#fce8f1;--surf:#fef9fb;--surf2:#fff0f6;--tx:#1a000d;--tx2:#000000;--mu:#000000;--mu2:#b05075;--bd:#f5c0d8;--bd2:#f090b8;--ac:#c2185b;--ac2:#880e4f;--ac3:#e91e8c;--gd:#c2185b;--gd2:#880e4f;--hv:#fce4ec;--fd:'Playfair Display',Georgia,serif;--fb:'Instrument Sans',system-ui,sans-serif;--fm:'JetBrains Mono',monospace;--sh0:0 1px 6px rgba(194,24,91,.05);--sh1:0 4px 20px rgba(194,24,91,.09);--sh2:0 12px 56px rgba(194,24,91,.14);--r:12px}
+:root{
+--bg:#242424;--surf:#3c3836;--surf2:#504945;
+--tx:#ebdbb2;--tx2:#d5c4a1;--mu:#d5c4a1;--mu2:#665c54;
+--bd:#504945;--bd2:#665c54;
+--yellow:#fabd2f;--orange:#fe8019;--green:#b8bb26;
+--cyan:#8ec07c;--blue:#7daea3;--magenta:#e089a1;--red:#fb4934;
+--ac:var(--yellow);--ac2:var(--orange);--ac3:var(--green);
+--ac4:var(--blue);--ac5:var(--cyan);--ac6:var(--magenta);--ac7:var(--red);
+--gd:var(--yellow);--gd2:var(--orange);--hv:#3c3836;
+--fd:'JetBrains Mono',monospace;--fb:'JetBrains Mono',monospace;--fm:'JetBrains Mono',monospace;
+--bg2:#242424;
+--sh0:0 1px 6px rgba(250,189,47,.07);--sh1:0 4px 20px rgba(250,189,47,.12);--sh2:0 12px 56px rgba(250,189,47,.18);--r:4px}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s;cursor:none}
-::selection{background:rgba(181,21,42,.15);color:var(--ac)}
+html{scroll-behavior:smooth;font-size:17.5px;overflow-x:hidden;width:100%}
+body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+::selection{background:rgba(250,189,47,.25);color:#242424}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-#cur{position:fixed;width:44px;height:44px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease,opacity .2s ease;opacity:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23e75480' d='M50 12c6 12 18 18 30 18-12 6-18 18-18 30-6-12-18-18-30-18 12-6 18-18 18-30z'/><path fill='%23ffb7c5' d='M50 28c4 8 12 12 20 12-8 4-12 12-12 20-4-8-12-12-20-12 8-4 12-12 12-20z'/></svg>") center/contain no-repeat}
-#ring{position:fixed;width:44px;height:44px;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);border:1px solid rgba(231,84,128,.35);border-radius:50%;transition:transform .25s ease,opacity .25s ease;opacity:0}
-[data-theme=dark] #cur{mix-blend-mode:screen}
-#prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:linear-gradient(90deg,var(--ac),var(--gd));width:0;transition:width .1s linear}
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s}
-#nav.sc{background:rgba(247,240,232,.9);backdrop-filter:blur(20px) saturate(1.4);box-shadow:0 1px 0 var(--bd)}
-[data-theme=dark] #nav.sc{background:rgba(18,8,8,.9)}
-.ni{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:.9rem 2rem;transition:padding .3s}
+img{display:block;max-width:100%;height:auto}
+
+#prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:linear-gradient(90deg,var(--yellow),var(--green));width:0;transition:width .1s linear;will-change:width}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%}
+#nav.sc{background:rgba(36,36,36,.95);backdrop-filter:blur(20px) saturate(1.2);box-shadow:0 1px 0 var(--bd)}
+
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:.9rem 2rem;transition:padding .3s;width:100%}
 #nav.sc .ni{padding:.7rem 2rem}
 .nlogo{font-family:var(--fd);font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:var(--ac)}
 .nlinks{display:flex;gap:.15rem;list-style:none}
 .nlinks a{font-size:.8rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--mu);padding:.42rem .75rem;border-radius:6px;transition:color .2s,background .2s}
 .nlinks a:hover,.nlinks a.act{color:var(--ac);background:var(--hv)}
 .nright{display:flex;align-items:center;gap:.4rem}
-.nbtn{background:none;border:none;cursor:none;color:var(--mu);padding:.42rem;border-radius:6px;display:flex;transition:color .2s,background .2s}
-.nbtn:hover{color:var(--ac);background:var(--hv)}
-
-.ham{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:.4rem;cursor:none}
+.ham{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:.4rem}
 .ham span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:all .3s}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .rv.vi{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
-.w{max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
-.wsm{max-width:840px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+
+.w{width:100%;max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.wsm{width:100%;max-width:840px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+
 #hero{display:flex;flex-direction:column;justify-content:center;padding:5rem 0 3rem;position:relative;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(181,21,42,.08),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(200,149,42,.07),transparent 60%);pointer-events:none}
-[data-theme=dark] #hero::before{background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(232,64,96,.13),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(232,176,74,.09),transparent 60%)}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(250,189,47,.07),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(254,128,25,.05),transparent 60%);pointer-events:none}
+
 .hg{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center}
 .hn{font-family:var(--fd);font-size:clamp(3rem,7vw,6.2rem);font-weight:900;line-height:.95;letter-spacing:-.035em;margin-bottom:1.4rem}
 .hn .l1{display:block;color:var(--tx)}
 .hn .l2{display:block;color:transparent;-webkit-text-stroke:2px var(--ac);font-style:italic;font-weight:700}
-[data-theme=dark] .hn .l2{-webkit-text-stroke-color:var(--ac2)}
+
 .hb{font-size:1.06rem;line-height:1.75;color:var(--mu);max-width:540px;margin-bottom:1.6rem}
 .hb strong{color:var(--tx);font-weight:600}
 .htags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.8rem}
-.htag{font-family:var(--fm);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .7rem;border-radius:20px;border:1px solid var(--bd2);color:var(--mu);background:var(--surf);transition:all .2s}
-.htag:hover{border-color:var(--ac);color:var(--ac);background:var(--hv)}
+.htag{font-family:var(--fm);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .7rem;border-radius:4px;border:1px solid var(--cyan);color:var(--cyan);background:var(--surf);transition:all .2s}
+.htag:hover{border-color:var(--green);color:var(--green);background:var(--hv)}
+
 .hacts{display:flex;gap:.7rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.42rem;font-family:var(--fb);font-size:.84rem;font-weight:600;letter-spacing:.02em;padding:.68rem 1.45rem;border-radius:8px;border:none;cursor:none;transition:all .25s cubic-bezier(.22,1,.36,1)}
-.bp{background:var(--ac);color:#fff;box-shadow:0 4px 18px rgba(181,21,42,.28)}
-.bp:hover{background:var(--ac2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(181,21,42,.38)}
-[data-theme=dark] .bp:hover{background:var(--ac3)}
+.btn{display:inline-flex;align-items:center;gap:.42rem;font-family:var(--fb);font-size:.84rem;font-weight:600;letter-spacing:.02em;padding:.68rem 1.45rem;border-radius:8px;border:none;transition:all .25s cubic-bezier(.22,1,.36,1)}
+.bp{background:var(--green);color:#242424;box-shadow:0 4px 18px rgba(184,187,38,.28)}
+.bp:hover{background:#8ec07c;transform:translateY(-2px);box-shadow:0 8px 28px rgba(184,187,38,.42)}
 .bg{background:transparent;color:var(--mu);border:1.5px solid var(--bd2)}
 .bg:hover{border-color:var(--ac);color:var(--ac);background:var(--hv);transform:translateY(-2px)}
+
 .hpw{position:relative;display:flex;flex-direction:column;align-items:center}
-.hpbg{position:absolute;width:260px;height:260px;background:radial-gradient(circle,rgba(181,21,42,.12),transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4s ease-in-out infinite;pointer-events:none}
+.hpbg{position:absolute;width:260px;height:260px;background:radial-gradient(circle,rgba(250,189,47,.12),transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4s ease-in-out infinite;pointer-events:none;will-change:transform,opacity}
 @keyframes pglow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.14);opacity:.9}}
-[data-theme=dark] .hpbg{background:radial-gradient(circle,rgba(232,64,96,.18),transparent 70%)}
-.hp{width:228px;height:228px;border-radius:50%;object-fit:cover;border:4px solid var(--surf);box-shadow:0 0 0 1px var(--bd2),var(--sh2);position:relative;z-index:1;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s}
-.hp:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 0 0 1px var(--ac),0 20px 56px rgba(181,21,42,.2)}
+
+.hp{width:228px;height:228px;border-radius:50%;object-fit:cover;border:4px solid var(--surf);box-shadow:0 0 0 1px var(--bd2),var(--sh2);position:relative;z-index:1;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s;will-change:transform}
+.hp:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 0 0 1px var(--ac),0 20px 56px rgba(250,189,47,.2)}
 .ss{display:flex;gap:.55rem;margin-top:.9rem;justify-content:center}
 .sb{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--bd);background:var(--surf);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:all .25s cubic-bezier(.22,1,.36,1)}
 .sb img{width:20px;height:20px;object-fit:contain;transition:transform .25s}
-.sb:hover{border-color:var(--ac);background:var(--hv);transform:translateY(-3px);box-shadow:0 6px 16px rgba(181,21,42,.18)}
+.sb:hover{border-color:var(--ac);background:var(--hv);transform:translateY(-3px);box-shadow:0 6px 16px rgba(250,189,47,.18)}
 .sb:hover img{transform:scale(1.2)}
+
 .sh{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.45rem;opacity:.35;animation:bh 2.5s ease-in-out infinite}
 @keyframes bh{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 .sh span{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mu)}
+
 #strip{background:var(--surf);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:3.5rem 0}
 .stg{display:grid;grid-template-columns:repeat(4,1fr)}
 .st{padding:1.2rem 2rem;border-right:1px solid var(--bd)}
 .st:last-child{border-right:none}
 .stn{font-family:var(--fd);font-size:2.5rem;font-weight:900;letter-spacing:-.04em;color:var(--ac);line-height:1;margin-bottom:.3rem}
-[data-theme=dark] .stn{color:var(--ac2)}
-.stl{font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.stl{font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+
 hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd2) 40%,var(--bd2) 60%,transparent);margin:0}
 section{padding:6rem 0;position:relative;z-index:1}
-.sl{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--gd);margin-bottom:.6rem;opacity:.85;display:flex;align-items:center;gap:.55rem}
-.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--gd);opacity:.5}
+.sl{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;opacity:.85;display:flex;align-items:center;gap:.55rem}
+.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--blue);opacity:.5}
 .stitle{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:.9rem}
-.stitle em{font-style:italic;color:var(--ac)}
-[data-theme=dark] .stitle em{color:var(--ac2)}
+.stitle em{font-style:italic;color:var(--orange)}
 .ssub{font-size:.97rem;color:var(--mu);line-height:1.8;max-width:500px;margin-bottom:3rem}
+
 #about{background:var(--bg)}
 .abg{display:grid;grid-template-columns:1fr 380px;gap:4.5rem;align-items:start}
 .abody{font-family:var(--fd);font-size:1.08rem;line-height:2;color:var(--tx2)}
 .abody p{margin-bottom:1.4rem}
 .abody p:first-child::first-letter{float:left;font-size:4.2rem;line-height:.82;padding:.05em .18em 0 0;color:var(--ac);font-weight:900;font-family:var(--fd)}
-[data-theme=dark] .abody p:first-child::first-letter{color:var(--ac2)}
-.abody em{font-style:italic;color:var(--ac)}
-[data-theme=dark] .abody em{color:var(--ac2)}
+.abody em{font-style:italic;color:var(--cyan)}
 .abody strong{font-weight:700;color:var(--tx)}
+
 .aside-cards{display:flex;flex-direction:column;gap:1rem;padding-top:1rem}
 .asc{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.3rem 1.5rem}
 .ascl{font-family:var(--fm);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gd);margin-bottom:.5rem}
 .asct{font-size:.9rem;line-height:1.7;color:var(--mu)}
 .lang-row{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.35rem}
 .lang-tag{font-family:var(--fm);font-size:.66rem;padding:.2rem .58rem;border-radius:4px;background:var(--hv);border:1px solid var(--bd2);color:var(--ac)}
+
+/* honest card */
+.asc.honest{border-color:rgba(142,192,124,.25);background:rgba(142,192,124,.04)}
+.asc.honest .ascl{color:var(--cyan)}
+
 #research{background:var(--bg2)}
 .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .ic{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
 .ic::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ac),var(--gd));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .ic:hover::before{transform:scaleX(1)}
-.ic:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(181,21,42,.2)}
+.ic:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(250,189,47,.2)}
 .ici{font-size:1.8rem;margin-bottom:1rem;line-height:1}
 .ict{font-family:var(--fd);font-size:1.12rem;font-weight:700;margin-bottom:.5rem}
-.icd{font-size:.85rem;color:var(--mu);line-height:1.75}
+.icd{font-size:.85rem;color:var(--tx2);line-height:1.85}
+
 #writing{background:var(--bg)}
 .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem}
-.ec{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;cursor:none;transition:all .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;position:relative}
-.ec:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(181,21,42,.22)}
+.ec{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;transition:all .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;position:relative}
+.ec:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(250,189,47,.22)}
 .ectag{font-family:var(--fm);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem}
 .ect{font-family:var(--fd);font-size:1.12rem;font-weight:700;line-height:1.3;margin-bottom:.7rem;transition:color .2s}
 .ec:hover .ect{color:var(--ac)}
-[data-theme=dark] .ec:hover .ect{color:var(--ac2)}
 .ecx{font-size:.84rem;color:var(--mu);line-height:1.75;flex:1;margin-bottom:1.2rem}
 .ecf{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
 .ecd{font-family:var(--fm);font-size:.66rem;color:var(--mu2);opacity:.7}
 .ecr{font-size:.76rem;font-weight:600;color:var(--ac);display:flex;align-items:center;gap:.28rem;transition:gap .2s}
-[data-theme=dark] .ecr{color:var(--ac2)}
 .ec:hover .ecr{gap:.5rem}
 .ec.ft{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.1rem}
 .ec.ft .ect{font-size:1.45rem}
 .ec.ft .ecx{font-size:.9rem}
-.ftlbl{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:rgba(181,21,42,.1);color:var(--ac);display:inline-block;margin-bottom:.7rem;border:1px solid rgba(181,21,42,.18)}
-[data-theme=dark] .ftlbl{background:rgba(232,64,96,.12);color:var(--ac2);border-color:rgba(232,64,96,.18)}
-#modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(12,5,3,.65);backdrop-filter:blur(14px);align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.ftlbl{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:rgba(250,189,47,.1);color:var(--ac);display:inline-block;margin-bottom:.7rem;border:1px solid rgba(250,189,47,.18)}
+
+#modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(36,36,36,.85);backdrop-filter:blur(14px);align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
 #modal.op{display:flex}
 .mb{background:var(--surf);border-radius:16px;border:1.5px solid var(--bd);max-width:700px;width:100%;padding:3rem;margin:auto;box-shadow:var(--sh2);position:relative;animation:min .35s cubic-bezier(.22,1,.36,1)}
 @keyframes min{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
-.mc{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;cursor:none;color:var(--mu);font-size:1.5rem;padding:.4rem;border-radius:6px;transition:color .2s,background .2s;line-height:1}
+.mc{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;color:var(--mu);font-size:1.5rem;padding:.4rem;border-radius:6px;transition:color .2s,background .2s;line-height:1}
 .mc:hover{color:var(--ac);background:var(--hv)}
 .mtag{font-family:var(--fm);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem}
 .mtitle{font-family:var(--fd);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;letter-spacing:-.025em;line-height:1.2;margin-bottom:.45rem}
@@ -154,106 +169,86 @@ section{padding:6rem 0;position:relative;z-index:1}
 .mbody{font-family:var(--fd);font-size:1.13rem;line-height:1.9;color:var(--tx2)}
 .mbody p{margin-bottom:1.2rem}
 .mbody p:first-child::first-letter{float:left;font-size:4rem;line-height:.82;padding:.05em .18em 0 0;color:var(--ac);font-weight:900;font-family:var(--fd)}
-[data-theme=dark] .mbody p:first-child::first-letter{color:var(--ac2)}
 .mbody em{font-style:italic;color:var(--ac)}
-[data-theme=dark] .mbody em{color:var(--ac2)}
+
 #projects{background:var(--bg2)}
 .pb{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem}
 .pc{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gd),var(--ac));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .pc:hover::after{transform:scaleX(1)}
-.pc:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:rgba(181,21,42,.22)}
+.pc:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:rgba(250,189,47,.22)}
 .pw{grid-column:span 4}.pt{grid-column:span 2}.pm{grid-column:span 3}.ps{grid-column:span 2}
 .pstat{font-family:var(--fm);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:.23rem .58rem;border-radius:4px;display:inline-block;margin-bottom:.9rem;align-self:flex-start}
-.sa{background:rgba(181,21,42,.1);color:var(--ac);border:1px solid rgba(181,21,42,.18)}
-[data-theme=dark] .sa{background:rgba(232,64,96,.12);color:var(--ac2)}
-.so{background:rgba(30,130,60,.08);color:#1a7a30;border:1px solid rgba(30,130,60,.18)}
-[data-theme=dark] .so{color:#5dba70}
+.sa{background:rgba(250,189,47,.1);color:var(--ac);border:1px solid rgba(250,189,47,.18)}
+.so{background:rgba(184,187,38,.08);color:var(--green);border:1px solid rgba(184,187,38,.2)}
 .pct{font-family:var(--fd);font-size:1.18rem;font-weight:700;margin-bottom:.55rem}
-.pcd{font-size:.85rem;color:var(--mu);line-height:1.75;flex:1;margin-bottom:.9rem}
+.pcd{font-size:.85rem;color:var(--tx2);line-height:1.85;flex:1;margin-bottom:.9rem}
 .ptags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.9rem}
 .ptag{font-family:var(--fm);font-size:.63rem;letter-spacing:.06em;padding:.18rem .5rem;border-radius:4px;background:var(--hv);color:var(--mu);border:1px solid var(--bd)}
-[data-theme=dark] .ptag{background:var(--bg2)}
 .plink{font-family:var(--fm);font-size:.72rem;color:var(--ac);opacity:.8;transition:opacity .2s}
-[data-theme=dark] .plink{color:var(--ac2)}
 .plink:hover{opacity:1}
+
 #now{background:var(--bg2)}
 .ng{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .nc{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.45rem;transition:transform .3s,box-shadow .3s}
 .nc:hover{transform:translateY(-3px);box-shadow:var(--sh1)}
 .ncl{font-family:var(--fm);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem;opacity:.85}
 .nct{font-family:var(--fd);font-size:1.05rem;font-weight:700;margin-bottom:.45rem}
-.ncs{font-size:.84rem;color:var(--mu);line-height:1.75}
+.ncs{font-size:.84rem;color:var(--tx2);line-height:1.85}
 .nca{font-family:var(--fm);font-size:.7rem;color:var(--mu2);margin-top:.3rem}
 .nq{grid-column:1/-1;background:var(--surf);border:1.5px solid var(--bd);border-left:4px solid var(--ac);border-radius:0 var(--r) var(--r) 0;padding:1.65rem 1.9rem}
-[data-theme=dark] .nq{border-left-color:var(--ac2)}
 .nq p{font-family:var(--fd);font-size:1.18rem;font-weight:400;font-style:italic;line-height:1.8;color:var(--tx2)}
 .nq em{color:var(--ac);font-style:normal;font-weight:700}
-[data-theme=dark] .nq em{color:var(--ac2)}
 .nupdated{font-family:var(--fm);font-size:.65rem;color:var(--mu2);opacity:.6;margin-top:1.5rem;text-align:right}
+
 #books{background:var(--bg)}
 .bg2{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:.85rem}
-.bi{display:flex;flex-direction:column;padding:.95rem 1.1rem;background:var(--surf);border:1.5px solid var(--bd);border-left:3px solid var(--ac);border-radius:0 var(--r) var(--r) 0;transition:transform .25s,box-shadow .25s,border-left-color .25s;cursor:none}
-[data-theme=dark] .bi{border-left-color:var(--ac2)}
+.bi{display:flex;flex-direction:column;padding:.95rem 1.1rem;background:var(--surf);border:1.5px solid var(--bd);border-left:3px solid var(--ac);border-radius:0 var(--r) var(--r) 0;transition:transform .25s,box-shadow .25s,border-left-color .25s}
 .bi:hover{transform:translateY(-2px) translateX(3px);box-shadow:var(--sh1);border-left-color:var(--gd)}
 .bit{font-size:.9rem;font-weight:600;line-height:1.4}
 .bia{font-family:var(--fm);font-size:.68rem;color:var(--mu);margin-top:.28rem;opacity:.7}
+
 #gal{background:var(--bg2)}
 .gc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .gi{position:relative;overflow:hidden;border-radius:var(--r);border:1.5px solid var(--bd);aspect-ratio:4/5}
-.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform}
 .gi:hover img{transform:scale(1.06)}
-.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,8,8,.82),transparent 60%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(36,36,36,.82),transparent 60%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem}
 .gi:hover .gov{opacity:1}
-.gvt{font-family:var(--fd);font-size:.95rem;font-weight:700;color:#fff}
-.gvm{font-family:var(--fm);font-size:.66rem;color:rgba(255,255,255,.7);margin-top:.2rem}
-#dots{background:var(--bg);padding:5.5rem 0}
-.dl{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.dterm{background:#100608;border-radius:var(--r);border:1.5px solid var(--bd);overflow:hidden;box-shadow:var(--sh2)}
-[data-theme=dark] .dterm{background:#0a0404}
-.dth{background:rgba(255,255,255,.05);padding:.72rem 1rem;display:flex;align-items:center;gap:.48rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.dd{width:10px;height:10px;border-radius:50%}
-.dd:nth-child(1){background:#ff5f57}.dd:nth-child(2){background:#febc2e}.dd:nth-child(3){background:#28c840}
-.dfn{font-family:var(--fm);font-size:.7rem;color:rgba(255,255,255,.35);margin-left:auto}
-.dtb{padding:1.45rem;font-family:var(--fm);font-size:.8rem;line-height:2.1;color:#f0dce6}
-.tc{color:#8a6070;font-style:italic}.tk{color:#f06292}.tv{color:#f8bbd0}.td{color:rgba(240,220,230,.28)}
-#contact{background:var(--tx);padding:6rem 0;color:var(--bg)}
-[data-theme=dark] #contact{background:#0a0504}
+.gvt{font-family:var(--fd);font-size:.95rem;font-weight:700;color:#fbf1c7}
+.gvm{font-family:var(--fm);font-size:.66rem;color:rgba(251,241,199,.7);margin-top:.2rem}
+
+#contact{background:#242424;padding:6rem 0;color:var(--tx)}
 .ci{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .ctl{font-family:var(--fm);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem;opacity:.85}
-.ctt{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:1.2rem;color:var(--bg)}
-[data-theme=dark] .ctt{color:#f2e8e0}
-.cts{font-size:.93rem;line-height:1.8;color:rgba(247,240,232,.55);margin-bottom:1.4rem}
-.cv-dl{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fm);font-size:.8rem;font-weight:600;padding:.58rem 1.2rem;border-radius:8px;background:var(--ac);color:#fff;margin-bottom:1.2rem;transition:all .2s}
-.cv-dl:hover{background:var(--ac2);transform:translateY(-2px)}
-[data-theme=dark] .cv-dl{background:var(--ac2)}
-.cem{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fm);font-size:.88rem;color:var(--gd);border-bottom:1px solid rgba(200,149,42,.3);padding-bottom:.15rem;transition:border-color .2s}
-.cem:hover{border-color:var(--gd)}
+.ctt{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:1.2rem;color:var(--yellow)}
+.cts{font-size:.93rem;line-height:1.8;color:var(--mu);margin-bottom:1.4rem}
 .clinks{display:flex;flex-direction:column;gap:.9rem;padding-top:3rem}
-.cl{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.15rem;background:rgba(247,240,232,.04);border:1px solid rgba(247,240,232,.09);border-radius:10px;transition:all .2s;color:var(--bg)}
-[data-theme=dark] .cl{color:#f2e8e0}
-.cl:hover{background:rgba(247,240,232,.09);border-color:rgba(200,149,42,.28);transform:translateX(4px)}
+.cl{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.15rem;background:rgba(250,189,47,.04);border:1px solid rgba(250,189,47,.09);border-radius:10px;transition:all .2s;color:var(--tx)}
+.cl:hover{background:rgba(251,241,199,.09);border-color:rgba(250,189,47,.28);transform:translateX(4px)}
 .cl img{width:21px;height:21px;object-fit:contain;filter:brightness(0) invert(1);opacity:.7}
-.clp{font-size:.72rem;color:rgba(247,240,232,.38);font-family:var(--fm);letter-spacing:.08em;text-transform:uppercase}
+.clp{font-size:.72rem;color:rgba(251,241,199,.38);font-family:var(--fm);letter-spacing:.08em;text-transform:uppercase}
 .clh{font-size:.88rem;font-weight:500;margin-top:.1rem}
-#contact,#contact *{color:#ffffff}
-footer{background:var(--tx);border-top:1px solid rgba(247,240,232,.07);padding:1.9rem 0}
-[data-theme=dark] footer{background:#0a0504}
-.fi{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1160px;margin:0 auto;padding:0 2rem}
-.fc{font-family:var(--fm);font-size:.7rem;color:#ffffff}
-.fq{font-family:var(--fd);font-size:.88rem;font-style:italic;color:#ffffff}
-footer,footer *{color:#ffffff}
-#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:#fff;border:none;cursor:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(181,21,42,.32);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
-[data-theme=dark] #st{background:var(--ac2)}
+#contact a{color:var(--yellow)}
+
+footer{background:#1d2021;border-top:1px solid var(--bd);padding:2.2rem 0}
+.fi{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fhand{font-family:var(--fm);font-size:.72rem;color:var(--mu2)}
+.fhand span{color:var(--cyan)}
+.fnote{font-family:var(--fd);font-size:.78rem;font-style:italic;color:var(--mu2);max-width:420px;line-height:1.6;opacity:.75}
+
+#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:#fbf1c7;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(250,189,47,.32);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
 #st.vi{opacity:1;transform:none}
-#st:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(181,21,42,.42)}
+#st:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(250,189,47,.42)}
+
 @media(max-width:900px){
-  body{cursor:auto}
-  #cur,#ring{display:none}
-  .hg{grid-template-columns:1fr}
-  .hpw{flex-direction:row;justify-content:flex-start;gap:1.5rem;align-items:center;margin-top:1.5rem}
-  .hp{width:100px;height:100px}
-  .hpbg{display:none}
+  html,body{font-size:16px;width:100%;overflow-x:hidden}
+  .hg{grid-template-columns:1fr;gap:3rem;text-align:center}
+  .hpw{justify-content:center;order:-1;margin-top:0}
+  .hp{width:180px;height:180px}
+  .hb{margin:0 auto 1.6rem}
+  .hacts,.htags{justify-content:center}
+  .ni{padding:.7rem 1.5rem}
   .abg{grid-template-columns:1fr}
   .aside-cards{flex-direction:row;flex-wrap:wrap}
   .asc{flex:1;min-width:220px}
@@ -265,34 +260,34 @@ footer,footer *{color:#ffffff}
   .pw{grid-column:span 2}
   .ng{grid-template-columns:1fr 1fr}
   .gc{grid-template-columns:1fr 1fr}
-  .dl{grid-template-columns:1fr}
   .ci{grid-template-columns:1fr}
   .stg{grid-template-columns:1fr 1fr}
   .st{border-right:none;border-bottom:1px solid var(--bd)}
   .nlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surf);border-bottom:1px solid var(--bd);flex-direction:column;padding:1rem;gap:.2rem}
   .nlinks.op{display:flex}
   .ham{display:flex}
+  .fi{flex-direction:column;text-align:center}
 }
-@media(max-width:560px){.ig,.wg,.ng,.gc{grid-template-columns:1fr}.pb,.pw,.pt,.pm,.ps{grid-column:span 1!important}.aside-cards{flex-direction:column}}
+@media(max-width:560px){
+  .ig,.wg,.ng,.gc{grid-template-columns:1fr}
+  .pb,.pw,.pt,.pm,.ps{grid-column:span 1!important}
+  .aside-cards{flex-direction:column}
+  .stg{grid-template-columns:1fr}
+  .hn{font-size:3.5rem}
+  .w,.wsm{padding:0 1.2rem}
+}
 </style>
 </head>
 <body>
-<div id="cur"></div>
-<div id="ring"></div>
 <div id="prog"></div>
 
 <div id="nav">
 <div class="ni">
-  <a class="nlogo" href="https://shaon.neocities.org">SAR</a>
+  <a class="nlogo" href="https://shaon.neocities.org">@shaonsays</a>
   <ul class="nlinks" id="nl">
-    <li><a href="#about">About</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#now">Now</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://shaon.neocities.org">Home</a></li>
   </ul>
   <div class="nright">
-    
     <button class="ham" onclick="document.getElementById('nl').classList.toggle('op')"><span></span><span></span><span></span></button>
   </div>
 </div>
@@ -303,25 +298,21 @@ footer,footer *{color:#ffffff}
 <div class="w">
 <div class="hg">
   <div>
-    <h1 class="hn rv d1"><span class="l1">Shaon</span><span class="l2">Ahmed Ronok</span></h1>
-    <p class="hb rv d2">I write about <strong>information, attention, and what technology does to societies that can't push back.</strong> Self-taught on Linux. Thinking seriously about what systems — digital and social — actually do to the people inside them.</p>
+    <h1 class="hn rv d1"><span class="l1">Shaon</span><span class="l2"></span></h1>
+    <p class="hb rv d2" style="max-width:100%">Social Science student <strong>learning to conduct empirical work through R, quantitative methods, and reproducible analysis.</strong> Running NixOS because I want to understand what my systems actually do. Writing to find out what I actually think.</p>
     <div class="htags rv d3">
-      <span class="htag">Philosophy of Information</span>
-      <span class="htag">Effective Altruism</span>
-      <span class="htag">Technology Ethics</span>
-      <span class="htag">Linux Systems</span>
+      <span class="htag">Social Science</span>
+      <span class="htag">Quantitative Methods</span>
+      <span class="htag">R Programming</span>
+      <span class="htag">NixOS / Linux</span>
       <span class="htag">Photography</span>
-      <span class="htag">Assembly Theory</span>
+      <span class="htag">Philosophy of Science</span>
     </div>
     <div class="hacts rv d4">
       <button class="btn bp" onclick="document.getElementById('writing').scrollIntoView({behavior:'smooth'})">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
         Read My Writing
       </button>
-      <a href="cv.pdf" target="_blank" class="btn bg">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        Download CV
-      </a>
       <a href="#contact" class="btn bg">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
         Get in Touch
@@ -330,11 +321,11 @@ footer,footer *{color:#ffffff}
   </div>
   <div class="hpw rv d2">
     <div class="hpbg"></div>
-    <img src="images/1772381919541.png" alt="Shaon Ahmed Ronok" class="hp">
+    <img src="images/mine.png" alt="Shaon Ahmed Ronok" class="hp" width="228" height="228" decoding="async">
     <div class="ss">
-      <a href="https://github.com/shaonahmedronok1" class="sb" title="GitHub" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub"></a>
-      <a href="https://www.linkedin.com/in/shaonahmedronok" class="sb" title="LinkedIn" target="_blank"><img src="/icons/LI-In-Bug.png" alt="LinkedIn"></a>
-      <a href="https://www.youtube.com/@shaonbtw" class="sb" title="YouTube" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube"></a>
+      <a href="https://github.com/shaonahmedronok1" class="sb" title="GitHub" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub" width="20" height="20" loading="lazy" decoding="async"></a>
+      <a href="https://www.linkedin.com/in/shaonahmedronok" class="sb" title="LinkedIn" target="_blank"><img src="/icons/LI-In-Bug.png" alt="LinkedIn" width="20" height="20" loading="lazy" decoding="async"></a>
+      <a href="https://www.youtube.com/@shaonsays" class="sb" title="YouTube" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube" width="20" height="20" loading="lazy" decoding="async"></a>
     </div>
   </div>
 </div>
@@ -348,7 +339,7 @@ footer,footer *{color:#ffffff}
 <div class="stg">
   <div class="st rv"><div class="stn">8+</div><div class="stl">Books Read</div></div>
   <div class="st rv d1"><div class="stn">5</div><div class="stl">Essays Written</div></div>
-  <div class="st rv d2"><div class="stn">4</div><div class="stl">Active Repos</div></div>
+  <div class="st rv d2"><div class="stn">8</div><div class="stl">Active Repos</div></div>
   <div class="st rv d3"><div class="stn">&#8734;</div><div class="stl">Questions Worth Asking</div></div>
 </div>
 </div>
@@ -363,11 +354,11 @@ footer,footer *{color:#ffffff}
       <p class="sl rv">Background</p>
       <h2 class="stitle rv d1">Who I <em>Actually</em> Am</h2>
       <div class="abody rv d2">
-        <p>I am self-taught across every discipline that matters to me. Access to information became technically unlimited at precisely the moment that social and political pressure to ignore most of it intensified. This is an interesting place to develop an interest in information as a subject — not as a convenience, but as a force with specific architecture and specific consequences.</p>
-        <p>I run NixOS and Arch Linux not for aesthetic reasons but because I want to understand what my systems are <em>actually doing</em> — every process visible, every dependency explicit, nothing hidden behind a reassuring interface. This turned out to be a disposition that generalised: check the mechanism, not the label. Remove the assumption before building on it.</p>
+        <p>I am self-taught across every discipline that matters to me. Access to information became technically unlimited at precisely the moment that social and political pressure to ignore most of it intensified. This is an interesting place to develop an interest in information as a subject, not as a convenience, but as a force with specific architecture and specific consequences.</p>
+        <p>I run NixOS not for aesthetic reasons but because I want to understand what my systems are <em>actually doing.</em> Every process visible, every dependency explicit, nothing hidden behind a reassuring interface. This turned out to be a disposition that generalised: check the mechanism, not the label. Remove the assumption before building on it.</p>
         <p>The reading came from that same place: Floridi on information as a physical phenomenon, Sara Walker on life as causal structure rather than chemistry, Deutsch on explanatory knowledge as the only kind that compounds. These are not casual reads. They represent an attempt to build a coherent picture of what information is, what it does to systems that process it, and why the <em>architecture</em> of how it flows matters more than its nominal content.</p>
-        <p>The writing followed from the reading — five essays as an attempt to think clearly in public, to find out what I actually believe when forced to defend it. The photography is a related practice: attention to what disappears without being recorded. Both are disciplines in the same thing: noticing before deciding how to classify what you've noticed.</p>
-        <p>What I want to study formally sits at the intersection of these threads — information systems, their ethical architecture, and their social consequences. I want to work in an institution where this is a research problem with methods behind it. I am seeking that opportunity.</p>
+        <p>The writing followed from the reading: five essays as an attempt to think clearly in public, to find out what I actually believe when forced to defend it. The photography is a related practice: attention to what disappears without being recorded. Both are disciplines in the same thing: noticing before deciding how to classify what you've noticed.</p>
+        <p>What I want to study formally sits at the intersection of these threads: information systems, their ethical architecture, and their social consequences. I want to work in an institution where this is a research problem with methods behind it. I am seeking that opportunity.</p>
       </div>
     </div>
     <div class="aside-cards rv d3">
@@ -380,7 +371,7 @@ footer,footer *{color:#ffffff}
       </div>
       <div class="asc">
         <div class="ascl">Formation</div>
-        <div class="asct">Self-directed. No institution, no cohort. Linux, philosophy, and a reading list I built from citations rather than syllabi.</div>
+        <div class="asct">BSS Social Science. Self-directed beyond the syllabus — NixOS, R, and a reading list built from citations rather than requirements.</div>
       </div>
       <div class="asc">
         <div class="ascl">Core Question</div>
@@ -392,7 +383,11 @@ footer,footer *{color:#ffffff}
       </div>
       <div class="asc">
         <div class="ascl">Goal</div>
-        <div class="asct">Postgraduate study in information systems or philosophy of science. Europe or North America.</div>
+        <div class="asct">Fully funded master's in Social Science or Development Studies. Europe priority — Erasmus Mundus, DAAD, Chevening. 2028 intake.</div>
+      </div>
+      <div class="asc honest">
+        <div class="ascl">Honest About</div>
+        <div class="asct">Still a student. Still making mistakes in R. Some essays on this site I'd already argue differently today. That's the point — writing to find out, not to declare.</div>
       </div>
     </div>
   </div>
@@ -405,14 +400,37 @@ footer,footer *{color:#ffffff}
 <div class="w">
   <p class="sl rv">Intellectual Interests</p>
   <h2 class="stitle rv d1">What I Think <em>About</em></h2>
-  <p class="ssub rv d2">My thinking sits at the edges of multiple disciplines. Drawn to questions that don't fit neatly into a single department.</p>
   <div class="ig">
-    <div class="ic rv"><div class="ici">&#129422;</div><h3 class="ict">Philosophy of Information</h3><p class="icd">Following Sara Walker, Lee Cronin, and Luciano Floridi in asking what information actually is — physically, mathematically, and causally. If life is substrate-independent information processing, the implications are radical.</p></div>
-    <div class="ic rv d1"><div class="ici">&#9878;&#65039;</div><h3 class="ict">Effective Altruism</h3><p class="icd">The rigorous application of evidence and reason to the question of doing the most good. Interested in global health prioritisation, long-termism, and why emotional salience is a poor guide to moral action.</p></div>
-    <div class="ic rv d2"><div class="ici">&#129516;</div><h3 class="ict">Assembly Theory</h3><p class="icd">Building on Walker and Cronin's framework — how do we measure the complexity of objects, and what does a high assembly index reveal about the causal history of a thing? Life as information that determines its own instantiation.</p></div>
-    <div class="ic rv d1"><div class="ici">&#127760;</div><h3 class="ict">Technology Ethics</h3><p class="icd">The architecture of digital systems is not neutral. Interested in attention economics, AI governance, and what a genuinely human-centred technology would look like at scale.</p></div>
-    <div class="ic rv d2"><div class="ici">&#128214;</div><h3 class="ict">History of Ideas</h3><p class="icd">Ideas have genealogies, contexts, and consequences. Reading Harari and Deutsch as thought experiments about civilisational direction and human possibility — with serious critical engagement.</p></div>
-    <div class="ic rv d3"><div class="ici">&#9889;</div><h3 class="ict">Systems Thinking</h3><p class="icd">From Linux configuration to social systems — understanding how interacting parts produce emergent behaviour. Minimalism as methodology: remove everything without a demonstrable function.</p></div>
+    <div class="ic rv">
+      <div class="ici">📊</div>
+      <h3 class="ict">Quantitative Political Science</h3>
+      <p class="icd">Political questions have empirical answers. Who votes, why systems fail, how institutions reproduce power — these are measurable. Learning R to stop treating data as decoration and start treating it as evidence.</p>
+    </div>
+    <div class="ic rv d1">
+      <div class="ici">🌍</div>
+      <h3 class="ict">Development &amp; Inequality</h3>
+      <p class="icd">Why do some societies stay poor while adjacent ones don't? Not interested in the comfortable answers. Interested in the structural ones — institutions, information asymmetry, the specific mechanisms by which extraction is sustained.</p>
+    </div>
+    <div class="ic rv d2">
+      <div class="ici">⚙️</div>
+      <h3 class="ict">Information Architecture</h3>
+      <p class="icd">What an information environment lets you think is more important than what it contains. High-constraint systems don't just censor — they shape which questions become thinkable. This is a political problem with a technical structure.</p>
+    </div>
+    <div class="ic rv d1">
+      <div class="ici">🐧</div>
+      <h3 class="ict">Linux &amp; Reproducible Systems</h3>
+      <p class="icd">Running NixOS because I want to understand what my machine is actually doing — every dependency explicit, every state reproducible. The same instinct applies elsewhere: understand the system before trusting it.</p>
+    </div>
+    <div class="ic rv d2">
+      <div class="ici">📷</div>
+      <h3 class="ict">Photography</h3>
+      <p class="icd">Attention discipline before classification. The practice of noticing something before deciding what it means — which is harder than it sounds and more useful than it looks.</p>
+    </div>
+    <div class="ic rv d3">
+      <div class="ici">📚</div>
+      <h3 class="ict">Philosophy of Science</h3>
+      <p class="icd">How do we know what we claim to know? Interested in what separates an explanation from a story — Deutsch on knowledge that compounds, Floridi on information as a physical phenomenon, not a metaphor.</p>
+    </div>
   </div>
 </div>
 </section>
@@ -423,12 +441,12 @@ footer,footer *{color:#ffffff}
 <div class="w">
   <p class="sl rv">Essays</p>
   <h2 class="stitle rv d1">Writing That <em>Argues</em></h2>
-  <p class="ssub rv d2">Five essays. Each one is an attempt to think clearly about something that actually matters — evidence first, conclusion second.</p>
+  <p class="ssub rv d2">Five essays, each an attempt to think clearly about something that actually matters by prioritizing evidence over conclusion.</p>
   <div class="wg rv d2">
-    <div class="ec ft" onclick="openModal('phil1')" style="cursor:none">
+    <div class="ec ft" onclick="openModal('phil1')">
       <div>
         <span class="ftlbl">Latest &middot; Featured</span>
-        <p class="ectag">Philosophy of Science</p>
+        <p class="ectag" style="color:var(--cyan)">Philosophy of Science</p>
         <h3 class="ect">What Is Life, Informationally? Notes on Sara Walker's Framework</h3>
         <p class="ecx">The standard biochemical answer to "what is life?" dissolves under pressure. Walker's framework offers something sharper: life as causal structure, not chemistry. If information can determine its own future instantiation, the implications are radical.</p>
       </div>
@@ -439,39 +457,39 @@ footer,footer *{color:#ffffff}
     </div>
   </div>
   <div class="wg rv d3">
-    <div class="ec" onclick="openModal('ea1')" style="cursor:none">
-      <p class="ectag">Effective Altruism</p>
+    <div class="ec" onclick="openModal('ea1')">
+      <p class="ectag" style="color:var(--green)">Effective Altruism</p>
       <h3 class="ect">On Doing the Most Good: Why Evidence Must Precede Empathy</h3>
       <p class="ecx">When we encounter visible suffering, the impulse to give is immediate. The problem is that this intuition is catastrophically miscalibrated for a world where the highest-impact interventions are invisible by default.</p>
       <div class="ecf"><span class="ecd">Feb 2026 &middot; 6 min</span><span class="ecr">Read &#8594;</span></div>
     </div>
-    <div class="ec" onclick="openModal('tech1')" style="cursor:none">
-      <p class="ectag">Technology &amp; Attention</p>
+    <div class="ec" onclick="openModal('tech1')">
+      <p class="ectag" style="color:var(--blue)">Technology &amp; Attention</p>
       <h3 class="ect">Against Notification Culture: The Case for Structured Silence</h3>
       <p class="ecx">Every notification is a claim on your attention you didn't consent to. The problem is not productivity — it's agency. Constant interruption changes what you're capable of wanting.</p>
       <div class="ecf"><span class="ecd">Dec 2025 &middot; 5 min</span><span class="ecr">Read &#8594;</span></div>
     </div>
-    <div class="ec" onclick="openModal('phil2')" style="cursor:none">
-      <p class="ectag">Philosophy of History</p>
+    <div class="ec" onclick="openModal('phil2')">
+      <p class="ectag" style="color:var(--orange)">Philosophy of History</p>
       <h3 class="ect">Harari's Three Books: What They Get Right, What They Flatten</h3>
       <p class="ecx">Sapiens, Homo Deus, 21 Lessons form a coherent project. The intellectual architecture is more interesting than the specific claims — but the claims matter too.</p>
       <div class="ecf"><span class="ecd">Nov 2025 &middot; 8 min</span><span class="ecr">Read &#8594;</span></div>
     </div>
   </div>
   <div class="wg rv d4" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:0">
-    <div class="ec" onclick="openModal('misc1')" style="cursor:none">
-      <p class="ectag">Epistemology</p>
+    <div class="ec" onclick="openModal('misc1')">
+      <p class="ectag" style="color:var(--magenta)">Epistemology</p>
       <h3 class="ect">Minimalism as Methodology, Not Aesthetic</h3>
       <p class="ecx">The more interesting version starts not with objects but with decisions. The burden of proof lies with the addition, not the subtraction.</p>
       <div class="ecf"><span class="ecd">Oct 2025 &middot; 4 min</span><span class="ecr">Read &#8594;</span></div>
     </div>
-    <div class="ec" style="cursor:none;opacity:.55;pointer-events:none">
+    <div class="ec" style="opacity:.55;pointer-events:none">
       <p class="ectag">In Progress</p>
       <h3 class="ect">Assembly Theory and the Origin of Complexity</h3>
       <p class="ecx">Following Lee Cronin and Sara Walker's assembly theory — how do we measure the complexity of objects, and what does a high assembly index actually tell us about the history of a thing?</p>
       <div class="ecf"><span class="ecd">Coming soon</span><span class="ecr" style="opacity:.4">Draft</span></div>
     </div>
-    <div class="ec" style="cursor:none;opacity:.3;pointer-events:none;border-style:dashed">
+    <div class="ec" style="opacity:.3;pointer-events:none;border-style:dashed">
       <p class="ectag">Planned</p>
       <h3 class="ect">The Attention Economy as an Epistemic Problem</h3>
       <p class="ecx">Not just what we pay attention to — but what sustained distraction does to the kinds of questions we become capable of asking.</p>
@@ -493,35 +511,30 @@ footer,footer *{color:#ffffff}
 </div>
 <hr class="dv">
 
-<!-- PROJECTS -->
 <section id="projects">
 <div class="w">
   <p class="sl rv">Work</p>
   <h2 class="stitle rv d1">Things I've <em>Built</em></h2>
   <p class="ssub rv d2">Small, deliberate, documented. The practice of understanding a system by building it yourself.</p>
   <div class="pb">
-    <div class="pc pw rv">
-      <span class="pstat" style="background:rgba(180,120,20,.08);color:#a07010;border:1px solid rgba(180,120,20,.2)">Active Research</span>
-      <h3 class="pct">Assembly Index Dataset</h3>
-      <p class="pcd">A structured dataset exploring assembly theory in practice — building on the work of Sara Walker and Lee Cronin. Mapping how object complexity can be quantified, and what a high assembly index actually reveals about the causal history of a thing. Methodology grounded in Floridi's philosophy of information.</p>
-      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Research</span><span class="ptag">Data</span><span class="ptag">Assembly Theory</span><span class="ptag">Philosophy of Science</span></div>
-      <a href="https://github.com/shaonahmedronok1/assembly-index-dataset" class="plink" target="_blank">github.com/shaonahmedronok1/assembly-index-dataset &#8594;</a>
-    </div>
-    <div class="pc pt rv d1">
-      <span class="pstat sa">Active</span>
-      <h3 class="pct">NixOS &amp; Arch Dotfiles</h3>
+    <div class="pc ps rv">
+      <span class="pstat" style="background:rgba(180,120,20,.08);color:#a07010;border:1px solid rgba(180,120,20,.2)">Active</span>
+      <h3 class="pct">NixOS Dotfiles</h3>
       <p class="pcd">Complete system configuration for reproducible Linux environments. Every setting has a reason. Nothing is default without examination. The README documents not just the what but the why.</p>
-      <div class="ptags"><span class="ptag">Shell</span><span class="ptag">NixOS</span><span class="ptag">Arch Linux</span><span class="ptag">Ghostty</span><span class="ptag">Yazi</span></div>
-      <a href="https://github.com/shaonahmedronok1/dotfiles" class="plink" target="_blank">github.com/shaonahmedronok1/dotfiles &#8594;</a>
+      <div class="ptags"><span class="ptag">NixOS</span><span class="ptag">Nix</span><span class="ptag">Niri</span><span class="ptag">RUST</span><span class="ptag">Neovim</span></div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <a href="https://github.com/shaonahmedronok1/nixos-config" class="plink" target="_blank">github.com/shaonahmedronok1/nixos-config &#8594;</a>
+        <a href="https://github.com/shaonahmedronok1/dotfiles" class="plink" target="_blank">github.com/shaonahmedronok1/dotfiles &#8594;</a>
+      </div>
     </div>
-    <div class="pc pm rv d2">
+    <div class="pc ps rv d2">
       <span class="pstat so">Active</span>
       <h3 class="pct">Typst Foundry</h3>
       <p class="pcd">Five professional Typst document templates. Academic papers, formal letters, invoices, research reports, slides. Serious typesetting without LaTeX's friction or Word's opacity.</p>
       <div class="ptags"><span class="ptag">Typst</span><span class="ptag">Typography</span><span class="ptag">Academic</span></div>
       <a href="https://github.com/shaonahmedronok1/typst-foundry" class="plink" target="_blank">github.com/shaonahmedronok1/typst-foundry &#8594;</a>
     </div>
-    <div class="pc pm rv d3">
+    <div class="pc ps rv d3">
       <span class="pstat sa">Active</span>
       <h3 class="pct">This Website</h3>
       <p class="pcd">Hand-coded. No frameworks, no build tools, no dependencies. A deliberate exercise in understanding what the browser actually does — and in keeping the thing I use to present myself fully under my own control.</p>
@@ -538,7 +551,6 @@ footer,footer *{color:#ffffff}
 <div class="w">
   <p class="sl rv">Reading Log</p>
   <h2 class="stitle rv d1">Books I've <em>Read</em></h2>
-  <p class="ssub rv d2">Philosophy of science, information theory, technology ethics, intellectual history. Each one selected because it intersects with the actual research questions I'm working on.</p>
   <div class="bg2">
     <div class="bi rv"><span class="bit">Life As No One Knows It: The Physics of Life's Emergence</span><span class="bia">Sara Imari Walker &middot; 2024</span></div>
     <div class="bi rv d1"><span class="bit">Nexus: A Brief History of Information Networks</span><span class="bia">Yuval Noah Harari &middot; 2024</span></div>
@@ -561,25 +573,25 @@ footer,footer *{color:#ffffff}
   <p class="ssub rv d2">A live snapshot. Updated when something changes.</p>
   <div class="ng">
     <div class="nc rv">
-      <p class="ncl">&#128214; Reading</p>
+      <p class="ncl" style="color:var(--blue)">&#128214; Reading</p>
       <p class="nct">The Beginning of Infinity</p>
       <p class="ncs">David Deutsch's argument that explanatory knowledge is the only resource that compounds without limit. Working through what this means for how we evaluate progress in constrained environments.</p>
       <p class="nca">Deutsch &middot; 2011</p>
     </div>
     <div class="nc rv d1">
-      <p class="ncl">&#128295; Building</p>
+      <p class="ncl" style="color:var(--green)">&#128295; Building</p>
       <p class="nct">Typst Foundry &amp; Assembly Index Dataset</p>
       <p class="ncs">Finished a professional document template system in Typst. Separately, beginning structured data collection for the Assembly Index Dataset — mapping object complexity across biological, chemical, and technological categories.</p>
       <p class="nca">Ongoing &middot; Mar 2026</p>
     </div>
     <div class="nc rv d2">
-      <p class="ncl">&#128172; Thinking About</p>
+      <p class="ncl" style="color:var(--magenta)">&#128172; Thinking About</p>
       <p class="nct">Why Constraint Produces Specific Epistemics</p>
       <p class="ncs">High-constraint information environments don't just delete ideas — they build structures that make certain thoughts harder to form in the first place. Working on the difference between censorship as deletion versus censorship as architecture.</p>
       <p class="nca">Research question &middot; ongoing</p>
     </div>
     <div class="nq rv d3">
-      <p>"The architecture of an information environment determines not just what people know — but what they are <em>capable of wanting to know</em>. This is the more serious problem."</p>
+      <p>"Broadening <em>Beyond Boundaries</em>."</p>
     </div>
   </div>
   <p class="nupdated rv">Last updated: March 2026</p>
@@ -591,50 +603,19 @@ footer,footer *{color:#ffffff}
 <section id="gal">
 <div class="w">
   <p class="sl rv">Visual Work</p>
-  <h2 class="stitle rv d1">Photography as <em>Attention</em></h2>
-  <p class="ssub rv d2">A practice in noticing before classifying. Light, texture, and what stays visible when everything else falls away.</p>
+  <h2 class="stitle rv d1">My <em>Stills</em></h2>
   <div class="gc">
-    <div class="gi rv"><img src="images/shaon2.jpg" alt="Self-portrait 2025"><div class="gov"><p class="gvt">Self-portrait, 2025</p><p class="gvm">What a face looks like when it's not performing for anyone.</p></div></div>
-    <div class="gi rv d1"><img src="images/1772381919541.png" alt="Texture study 2023"><div class="gov"><p class="gvt">Texture Study, 2023</p><p class="gvm">Surfaces that record time without commenting on it.</p></div></div>
-    <div class="gi rv d2"><img src="images/pppp1.jpg" alt="Light study 2025"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
-    <div class="gi rv d2"><img src="images/me_03.jpg" alt="Light study 2025"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
-    <div class="gi rv d2"><img src="images/me_04.jpg" alt="Light study 2025"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
-    <div class="gi rv d2"><img src="images/shaon1.jpg" alt="Light study 2025"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
+    <div class="gi rv"><img src="images/shaon2.jpg" alt="Self-portrait 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Self-portrait, 2025</p><p class="gvm">What a face looks like when it's not performing for anyone.</p></div></div>
+    <div class="gi rv d1"><img src="images/IMG_20260427_110907_397 (1).jpg" alt="Texture study 2023" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Texture Study, 2023</p><p class="gvm">Surfaces that record time without commenting on it.</p></div></div>
+    <div class="gi rv d2"><img src="images/pppp1.jpg" alt="Light study 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
+    <div class="gi rv d2"><img src="images/ano12.jpg" alt="Light study 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
+    <div class="gi rv d2"><img src="images/me_03.jpg" alt="Light study 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
+    <div class="gi rv d2"><img src="images/me_04.jpg" alt="Light study 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
+    <div class="gi rv d2"><img src="images/shaon1.jpg" alt="Light study 2025" loading="lazy" decoding="async"><div class="gov"><p class="gvt">Light Study, 2025</p><p class="gvm">Available light at the exact moment before it changes.</p></div></div>
   </div>
 </div>
 </section>
 <hr class="dv">
-
-<!-- DOTFILES -->
-<section id="dots">
-<div class="w">
-<div class="dl">
-  <div>
-    <p class="sl rv">Linux Configuration</p>
-    <h2 class="stitle rv d1">Systems That <em>Think</em></h2>
-    <p style="font-size:.95rem;color:var(--mu);line-height:1.85;margin-bottom:1.65rem" class="rv d2">I run NixOS and Arch Linux because I want to understand what my computer is actually doing — not just operate it through graphical abstraction. Every config setting has a reason. Nothing is default without examination. Reproducible, version-controlled, documented. This is the same discipline I apply to everything else: understand the system, remove what doesn't earn its place, document what remains.</p>
-    <div class="rv d3"><a href="https://github.com/shaonahmedronok1/dotfiles" class="btn bp" target="_blank">View Dotfiles on GitHub &#8594;</a></div>
-  </div>
-  <div class="dterm rv d2">
-    <div class="dth"><div class="dd"></div><div class="dd"></div><div class="dd"></div><span class="dfn">~/.config/ghostty/config</span></div>
-    <div class="dtb">
-<span class="tc"># Terminal &#8212; Ghostty</span><br>
-<span class="tc"># GPU-accelerated. No opacity. No noise.</span><br><br>
-<span class="tk">font-family</span> = JetBrainsMono Nerd Font<br>
-<span class="tk">font-size</span> = 14<br>
-<span class="tk">background-opacity</span> = 1.0<br>
-<span class="tk">window-padding-x</span> = 12<br>
-<span class="tk">window-padding-y</span> = 10<br>
-<span class="tk">cursor-style</span> = block<br>
-<span class="tk">cursor-style-blink</span> = false<br><br>
-<span class="tc"># Shell</span><br>
-<span class="tk">shell-integration</span> = bash<br><br>
-<span class="td"># full config &#8594; github</span>
-    </div>
-  </div>
-</div>
-</div>
-</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -643,29 +624,23 @@ footer,footer *{color:#ffffff}
   <div>
     <p class="ctl rv">Get In Touch</p>
     <h2 class="ctt rv d1">Let's Talk.</h2>
-    <p class="cts rv d2">Whether you're a researcher, a programme officer, or someone who disagrees with something I've written — I'd like to hear from you. I respond seriously to serious messages.</p>
-    <a href="cv.pdf" target="_blank" class="cv-dl rv d2">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      Download CV / Resume
-    </a><br>
-    <a href="mailto:shaonahmedronok@gmail.com" class="cem rv d3">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-      shaonahmedronok@gmail.com
-    </a>
+    <p class="cts rv d2">Whether you're a researcher, a programme officer, or someone who disagrees with something I've written, I'd like to hear from you. I respond seriously to serious messages.</p>
   </div>
   <div class="clinks rv d2">
-    <a href="https://github.com/shaonahmedronok1" class="cl" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub"><div><p class="clp">GitHub</p><p class="clh">shaonahmedronok1</p></div></a>
-    <a href="https://www.linkedin.com/in/shaonahmedronok" class="cl" target="_blank"><img src="/icons/LI-In-Bug.png" alt="LinkedIn"><div><p class="clp">LinkedIn</p><p class="clh">shaonahmedronok</p></div></a>
-    <a href="https://www.youtube.com/@shaonbtw" class="cl" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube"><div><p class="clp">YouTube</p><p class="clh">@shaonbtw</p></div></a>
+    <a href="https://github.com/shaonahmedronok1" class="cl" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub" width="21" height="21" loading="lazy" decoding="async"><div><p class="clp">GitHub</p><p class="clh">shaonahmedronok1</p></div></a>
+   
+    <a href="https://www.youtube.com/@shaonsays" class="cl" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube" width="21" height="21" loading="lazy" decoding="async"><div><p class="clp">YouTube</p><p class="clh">@shaonsays</p></div></a>
   </div>
 </div>
 </div>
 </section>
 
 <footer>
-<div class="fi">
-  <p class="fc">&#169; 2026 Shaon Ahmed Ronok &middot; Hand-coded, no frameworks</p>
-  <p class="fq">"The burden of proof lies with the addition."</p>
+<div class="w">
+  <div class="fi">
+    <span class="fhand">Built by hand &mdash; <span>HTML, CSS, zero frameworks</span> &mdash; hosted on Neocities</span>
+    <span class="fnote">This site is a working document. Things change. If something here is wrong or you think I've missed something, I genuinely want to know.</span>
+  </div>
 </div>
 </footer>
 
@@ -686,16 +661,75 @@ function openModal(id){const e=essays[id];document.getElementById('mtag').textCo
 function closeModal(){document.getElementById('modal').classList.remove('op');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40);document.getElementById('st').classList.toggle('vi',window.scrollY>500);const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;document.getElementById('prog').style.width=p+'%'});
-const sections=['about','research','writing','projects','now','books','contact'];
-window.addEventListener('scroll',()=>{let current='';sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-120)current=id;});document.querySelectorAll('.nlinks a').forEach(a=>{a.classList.toggle('act',a.getAttribute('href')==='#'+current);});});
-const cur=document.getElementById('cur'),ring=document.getElementById('ring');
-if(cur){let mx=0,my=0,rx=0,ry=0,lastTime=performance.now(),cursorVisible=false;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(!cursorVisible){cursorVisible=true;cur.style.opacity='1';if(ring)ring.style.opacity='.4'}});function tick(now){const delta=now-lastTime;lastTime=now;const factor=1-Math.exp(-0.018*delta);cur.style.left=mx+'px';cur.style.top=my+'px';rx+=(mx-rx)*factor;ry+=(my-ry)*factor;if(ring){ring.style.left=rx+'px';ring.style.top=ry+'px'}requestAnimationFrame(tick)}requestAnimationFrame(tick);document.querySelectorAll('a,button,.ec,.ic,.pc,.nc,.sb,.htag,.bi').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(1.12)';if(ring){ring.style.transform='translate(-50%,-50%) scale(1.18)';ring.style.opacity='.3'}});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';if(ring){ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.opacity='.4'}});});}
-document.addEventListener('click',e=>{const nl=document.getElementById('nl');const ham=document.querySelector('.ham');if(nl&&nl.classList.contains('op')&&!nl.contains(e.target)&&e.target!==ham&&!ham.contains(e.target)){nl.classList.remove('op')}});
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vi');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-document.querySelectorAll('#hero .rv').forEach((el,i)=>setTimeout(()=>el.classList.add('vi'),80+i*110));
+/* SINGLE rAF-THROTTLED PASSIVE SCROLL HANDLER — fixes all scroll lag */
+const nav = document.getElementById('nav');
+const st = document.getElementById('st');
+const prog = document.getElementById('prog');
+const sections = ['about','research','writing','projects','now','books','contact'];
+const navLinks = document.querySelectorAll('.nlinks a');
+
+let isTicking = false;
+
+window.addEventListener('scroll', () => {
+  if (!isTicking) {
+    window.requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+
+      // 1. Toggle Nav and Scroll-to-Top visibility
+      if (nav) nav.classList.toggle('sc', scrollY > 40);
+      if (st) st.classList.toggle('vi', scrollY > 500);
+
+      // 2. Update Progress Bar
+      if (prog) {
+        const p = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        prog.style.width = p + '%';
+      }
+
+      // 3. Active Nav Link Highlighting
+      let current = '';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && scrollY >= el.offsetTop - 120) {
+          current = id;
+        }
+      });
+
+      navLinks.forEach(a => {
+        a.classList.toggle('act', a.getAttribute('href') === '#' + current);
+      });
+
+      isTicking = false;
+    });
+    isTicking = true;
+  }
+}, { passive: true });
+
+/* MENU CLICK OUTSIDE HANDLER */
+document.addEventListener('click', e => {
+  const nl = document.getElementById('nl');
+  const ham = document.querySelector('.ham');
+  
+  if (nl && nl.classList.contains('op') && !nl.contains(e.target) && e.target !== ham && (!ham || !ham.contains(e.target))) {
+    nl.classList.remove('op');
+  }
+});
+
+/* INTERSECTION OBSERVER FOR REVEAL ANIMATIONS */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vi');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* INITIAL HERO STAGGER ANIMATION */
+document.querySelectorAll('#hero .rv').forEach((el, i) => {
+  setTimeout(() => el.classList.add('vi'), 80 + i * 110);
+});
 </script>
 </body>
 </html>
