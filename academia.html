@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academia — A curated reference archive of external systems and repositories.">
+<title>Academia | Shaon</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* EXACT ROOT AND SCALING VARIABLES FROM YOUR INDEX.HTML */
+:root{
+--bg:#242424;--surf:#3c3836;--surf2:#504945;
+--tx:#ebdbb2;--tx2:#d5c4a1;--mu:#d5c4a1;--mu2:#665c54;
+--bd:#504945;--bd2:#665c54;
+--yellow:#fabd2f;--orange:#fe8019;--green:#b8bb26;
+--cyan:#8ec07c;--blue:#7daea3;--magenta:#e089a1;--red:#fb4934;
+--ac:var(--yellow);--ac2:var(--orange);--ac3:var(--green);
+--ac4:var(--blue);--ac5:var(--cyan);--ac6:var(--magenta);--ac7:var(--red);
+--gd:var(--yellow);--gd2:var(--orange);--hv:#3c3836;
+--fd:'JetBrains Mono',monospace;--fb:'JetBrains Mono',monospace;--fm:'JetBrains Mono',monospace;
+--bg2:#242424;
+--sh0:0 1px 6px rgba(250,189,47,.07);--sh1:0 4px 20px rgba(250,189,47,.12);--sh2:0 12px 56px rgba(250,189,47,.18);--r:4px}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;font-size:17.5px;overflow-x:hidden;width:100%;}
+body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased;}
+::selection{background:rgba(250,189,47,.25);color:#242424}
+a{color:inherit;text-decoration:none}
+
+/* EXACT NAV BAR FROM INDEX.HTML */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;}
+#nav.sc{background:rgba(36,36,36,.95);backdrop-filter:blur(20px) saturate(1.2);box-shadow:0 1px 0 var(--bd)}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:.9rem 2rem;transition:padding .3s;width:100%;}
+#nav.sc .ni{padding:.7rem 2rem}
+.nlogo{font-family:var(--fd);font-size:1.1rem;font-weight:900;letter-spacing:-.02em;color:var(--magenta)}
+.nlinks{display:flex;gap:.15rem;list-style:none}
+.nlinks a{font-size:.8rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--mu);padding:.42rem .75rem;border-radius:6px;transition:color .2s,background .2s}
+.nlinks a:hover,.nlinks a.act{color:var(--ac);background:var(--hv)}
+
+.ham{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:.4rem}
+.ham span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:all .3s}
+
+/* EXACT ANIMATIONS AND SCALING CLASSES */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.vi{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* EXACT WIDTH CONTAINERS */
+.w{width:100%;max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+
+/* HERO SIZING */
+#hero{display:flex;flex-direction:column;justify-content:center;padding:7rem 0 3rem;position:relative;overflow:hidden}
+.hn{font-family:var(--fd);font-size:clamp(2.5rem,5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem}
+.hn .l1{display:block;color:var(--tx)}
+.hb{font-size:1rem;line-height:1.6;color:var(--mu);max-width:700px;margin-bottom:1.6rem}
+.hb strong{color:var(--tx);font-weight:600}
+
+/* SECTION SIZING */
+hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd2) 40%,var(--bd2) 60%,transparent);margin:0}
+section{padding:2.5rem 0;position:relative;z-index:1}
+.sl{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;opacity:.85;display:flex;align-items:center;gap:.55rem}
+.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--blue);opacity:.5}
+.stitle{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:1.8rem}
+
+/* NEW LIST STYLES FOR SEPARATE TEXT AND VISIBLE URLS */
+.alist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 0;
+}
+.alist li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  position: relative;
+}
+.atext {
+  font-family: var(--fd);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #7daea3;
+}
+.alink {
+  font-family: var(--fm);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #e089a1;
+  transition: color 0.2s;
+  word-break: break-all; /* Prevents long URLs from overflowing */
+}
+.alink:hover {
+  color: var(--ac);
+}
+.alist li::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  color: var(--cyan);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateX(-10px);
+  font-family: var(--fd);
+}
+.alist li:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0;margin-top:3rem;}
+.fc{font-family:var(--fm);font-size:.7rem;color:var(--mu)}
+
+@media(max-width:900px){
+  html, body { font-size: 16px; width: 100%; overflow-x: hidden; }
+  .ni{padding: .7rem 1.5rem;}
+  .nlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surf);border-bottom:1px solid var(--bd);flex-direction:column;padding:1rem;gap:.2rem}
+  .nlinks.op{display:flex}
+  .ham{display:flex}
+}
+
+@media(max-width:560px){
+  .hn{font-size: 2.8rem;}
+  .w{padding: 0 1.2rem;}
+  .alist li::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav">
+  <div class="ni">
+    <a class="nlogo" href="index.html">@shaonsays</a>
+    <ul class="nlinks" id="nl">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="academia.html" class="act">Academia</a></li>
+    </ul>
+    <div class="nright">
+      <button class="ham" onclick="document.getElementById('nl').classList.toggle('op')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+<section>
+  <div class="w">
+    <p class="sl rv">Systems</p>
+    <h2 class="stitle rv d1">Manuals & Ecosystems</h2>
+    <ul class="alist rv d2">
+      <li><span class="atext">Typst Examples Book</span> <a href="https://sitandr.github.io/typst-examples-book/book/" target="_blank" class="alink">https://sitandr.github.io/typst-examples-book/book/</a></li>
+      <li><span class="atext">Based Academy</span> <a href="https://www.based.academy/" target="_blank" class="alink">https://www.based.academy/</a></li>
+      <li><span class="atext">Full Time Nix</span> <a href="https://fulltimenix.com/" target="_blank" class="alink">https://fulltimenix.com/</a></li>
+    </ul>
+  </div>
+</section>
+<hr class="dv">
+
+<section>
+  <div class="w">
+    <p class="sl rv">Infrastructure</p>
+    <h2 class="stitle rv d1">Typst Templates & Repositories</h2>
+    <ul class="alist rv d2">
+      <li><span class="atext">LaPreprint Typst Template</span> <a href="https://github.com/LaPreprint/typst" target="_blank" class="alink">https://github.com/LaPreprint/typst</a></li>
+      <li><span class="atext">Bubble Document Layout</span> <a href="https://github.com/hzkonor/bubble-template" target="_blank" class="alink">https://github.com/hzkonor/bubble-template</a></li>
+      <li><span class="atext">Bare Bones CV</span> <a href="https://github.com/caffeinatedgaze/bare-bones-cv" target="_blank" class="alink">https://github.com/caffeinatedgaze/bare-bones-cv</a></li>
+      <li><span class="atext">Imprecv System</span> <a href="https://github.com/jskherman/imprecv" target="_blank" class="alink">https://github.com/jskherman/imprecv</a></li>
+      <li><span class="atext">Chicv Engine</span> <a href="https://github.com/skyzh/chicv" target="_blank" class="alink">https://github.com/skyzh/chicv</a></li>
+      <li><span class="atext">NNJR Formatting Framework</span> <a href="https://github.com/tzx/NNJR" target="_blank" class="alink">https://github.com/tzx/NNJR</a></li>
+      <li><span class="atext">Alta Typst Profiles</span> <a href="https://github.com/GeorgeHoneywood/alta-typst" target="_blank" class="alink">https://github.com/GeorgeHoneywood/alta-typst</a></li>
+      <li><span class="atext">Attractive Typst Resume</span> <a href="https://github.com/Harkunwar/attractive-typst-resume" target="_blank" class="alink">https://github.com/Harkunwar/attractive-typst-resume</a></li>
+      <li><span class="atext">Billryan Typst Variant</span> <a href="https://github.com/gvariable/billryan-typst" target="_blank" class="alink">https://github.com/gvariable/billryan-typst</a></li>
+      <li><span class="atext">Brilliant CV Architecture</span> <a href="https://github.com/yunanwg/brilliant-CV" target="_blank" class="alink">https://github.com/yunanwg/brilliant-CV</a></li>
+      <li><span class="atext">Modern Resume Layout</span> <a href="https://github.com/peterpf/modern-typst-resume" target="_blank" class="alink">https://github.com/peterpf/modern-typst-resume</a></li>
+      <li><span class="atext">CV Miku Blueprint</span> <a href="https://github.com/ice-kylin/typst-cv-miku" target="_blank" class="alink">https://github.com/ice-kylin/typst-cv-miku</a></li>
+      <li><span class="atext">Typst Poster Engine</span> <a href="https://github.com/pncnmnp/typst-poster" target="_blank" class="alink">https://github.com/pncnmnp/typst-poster</a></li>
+      <li><span class="atext">IEEE Transactions System</span> <a href="https://github.com/p4perf4ce/typst-ieee-trans-template" target="_blank" class="alink">https://github.com/p4perf4ce/typst-ieee-trans-template</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <p class="fc">Compiled resource index. All entities point directly to their respective external environments.</p>
+  </div>
+</footer>
+
+<script>
+// Scroll tracking for nav blur effect and animation triggers
+const nav = document.getElementById('nav');
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+  if(!ticking) {
+    requestAnimationFrame(() => {
+      nav.classList.toggle('sc', window.scrollY > 40);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, {passive: true});
+
+// Mobile menu toggle logic
+document.addEventListener('click', e => {
+  const nl = document.getElementById('nl');
+  const ham = document.querySelector('.ham');
+  if(nl && nl.classList.contains('op') && !nl.contains(e.target) && e.target !== ham && !ham.contains(e.target)){
+    nl.classList.remove('op');
+  }
+});
+
+// Original IntersectionObserver for element reveal animations
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('vi');
+      io.unobserve(e.target);
+    }
+  })
+}, {threshold: .08, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+document.querySelectorAll('#hero .rv').forEach((el, i) => setTimeout(() => el.classList.add('vi'), 80 + i * 110));
+</script>
+</body>
+</html>
