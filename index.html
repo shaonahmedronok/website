@@ -74,7 +74,7 @@ img{display:block;max-width:100%;height:auto;}
 .w{width:100%;max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 .wsm{width:100%;max-width:840px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 
-#hero{display:flex;flex-direction:column;justify-content:center;padding:5rem 0 3rem;position:relative;overflow:hidden}
+#hero{display:flex;flex-direction:column;justify-content:center;padding:5rem 0 0rem;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(250,189,47,.07),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(254,128,25,.05),transparent 60%);pointer-events:none}
 [data-theme=dark] #hero::before{background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(251,73,52,.13),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(250,189,47,.09),transparent 60%)}
 
@@ -132,7 +132,7 @@ section{padding:2.5rem 0;position:relative;z-index:1}
 [data-theme=dark] .stitle em{color:var(--ac2)}
 .ssub{font-size:.97rem;color:var(--mu);line-height:1.8;max-width:500px;margin-bottom:3rem}
 
-#about{background:var(--bg)}
+#about{background:var(--bg); padding-top: 1rem;}
 .abg{max-width:100%}
 .abody{font-family:var(--fd);font-size:1.08rem;line-height:2;color:var(--tx2)}
 .abody p{margin-bottom:1.4rem}
@@ -159,25 +159,7 @@ section{padding:2.5rem 0;position:relative;z-index:1}
 .ict{font-family:var(--fd);font-size:1.12rem;font-weight:700;margin-bottom:.5rem}
 .icd{font-size:.85rem;color:var(--tx2);line-height:1.85}
 
-#writing{background:var(--bg)}
-.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem}
-.ec{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;transition:all .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;position:relative}
-.ec:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(250,189,47,.22)}
-.ectag{font-family:var(--fm);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem}
-.ect{font-family:var(--fd);font-size:1.12rem;font-weight:700;line-height:1.3;margin-bottom:.7rem;transition:color .2s}
-.ec:hover .ect{color:var(--ac)}
-[data-theme=dark] .ec:hover .ect{color:var(--ac2)}
-.ecx{font-size:.84rem;color:var(--mu);line-height:1.75;flex:1;margin-bottom:1.2rem}
-.ecf{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-.ecd{font-family:var(--fm);font-size:.66rem;color:var(--mu2);opacity:.7}
-.ecr{font-size:.76rem;font-weight:600;color:var(--ac);display:flex;align-items:center;gap:.28rem;transition:gap .2s}
-[data-theme=dark] .ecr{color:var(--ac2)}
-.ec:hover .ecr{gap:.5rem}
-.ec.ft{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.1rem}
-.ec.ft .ect{font-size:1.45rem}
-.ec.ft .ecx{font-size:.9rem}
-.ftlbl{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:rgba(250,189,47,.1);color:var(--ac);display:inline-block;margin-bottom:.7rem;border:1px solid rgba(250,189,47,.18)}
-[data-theme=dark] .ftlbl{background:rgba(251,73,52,.12);color:var(--ac2);border-color:rgba(251,73,52,.18)}
+
 
 #modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(36,36,36,.85);backdrop-filter:blur(14px);align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
 #modal.op{display:flex}
@@ -216,20 +198,7 @@ section{padding:2.5rem 0;position:relative;z-index:1}
 [data-theme=dark] .plink{color:var(--ac2)}
 .plink:hover{opacity:1}
 
-#now{background:var(--bg2)}
-.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.nc{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.45rem;transition:transform .3s,box-shadow .3s}
-.nc:hover{transform:translateY(-3px);box-shadow:var(--sh1)}
-.ncl{font-family:var(--fm);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem;opacity:.85}
-.nct{font-family:var(--fd);font-size:1.05rem;font-weight:700;margin-bottom:.45rem}
-.ncs{font-size:.84rem;color:var(--tx2);line-height:1.85}
-.nca{font-family:var(--fm);font-size:.7rem;color:var(--mu2);margin-top:.3rem}
-.nq{grid-column:1/-1;background:var(--surf);border:1.5px solid var(--bd);border-left:4px solid var(--ac);border-radius:0 var(--r) var(--r) 0;padding:1.65rem 1.9rem}
-[data-theme=dark] .nq{border-left-color:var(--ac2)}
-.nq p{font-family:var(--fd);font-size:1.18rem;font-weight:400;font-style:italic;line-height:1.8;color:var(--tx2)}
-.nq em{color:var(--ac);font-style:normal;font-weight:700}
-[data-theme=dark] .nq em{color:var(--ac2)}
-.nupdated{font-family:var(--fm);font-size:.65rem;color:var(--mu2);opacity:.6;margin-top:1.5rem;text-align:right}
+
 
 #books{background:var(--bg)}
 .bg2{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:.85rem}
@@ -249,25 +218,16 @@ section{padding:2.5rem 0;position:relative;z-index:1}
 .gvt{font-family:var(--fd);font-size:.95rem;font-weight:700;color:#fbf1c7}
 .gvm{font-family:var(--fm);font-size:.66rem;color:rgba(251,241,199,.7);margin-top:.2rem}
 
-#dots{background:var(--bg);padding:5.5rem 0}
-.dl{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.dterm{background:#242424;border-radius:var(--r);border:1.5px solid var(--bd);overflow:hidden;box-shadow:var(--sh2)}
-[data-theme=dark] .dterm{background:#242424}
-.dth{background:rgba(251,241,199,.05);padding:.72rem 1rem;display:flex;align-items:center;gap:.48rem;border-bottom:1px solid rgba(251,241,199,.07)}
-.dd{width:10px;height:10px;border-radius:50%}
-.dd:nth-child(1){background:#fb4934}.dd:nth-child(2){background:#fabd2f}.dd:nth-child(3){background:#b8bb26}
-.dfn{font-family:var(--fm);font-size:.7rem;color:rgba(251,241,199,.35);margin-left:auto}
-.dtb{padding:1.45rem;font-family:var(--fm);font-size:.8rem;line-height:2.1;color:#ebdbb2}
-.tc{color:#665c54;font-style:italic}.tk{color:#b8bb26}.tv{color:#ebdbb2}.td{color:#7daea3;font-style:italic}
 
-#contact{background:#242424;padding:6rem 0;color:var(--tx)}
+
+#contact{background:#242424;padding:3rem 0;color:var(--tx)}
 [data-theme=dark] #contact{background:#242424}
 .ci{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .ctl{font-family:var(--fm);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gd);margin-bottom:.7rem;opacity:.85}
 .ctt{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:1.2rem;color:var(--yellow)}
 [data-theme=dark] .ctt{color:#ebdbb2}
 .cts{font-size:.93rem;line-height:1.8;color:var(--mu);margin-bottom:1.4rem}
-.clinks{display:flex;flex-direction:column;gap:.9rem;padding-top:3rem}
+.clinks{display:flex;flex-direction:column;gap:.9rem;padding-top:1.5rem}
 .cl{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.15rem;background:rgba(250,189,47,.04);border:1px solid rgba(250,189,47,.09);border-radius:10px;transition:all .2s;color:var(--tx)}
 [data-theme=dark] .cl{color:#ebdbb2}
 .cl:hover{background:rgba(251,241,199,.09);border-color:rgba(250,189,47,.28);transform:translateX(4px)}
@@ -400,10 +360,10 @@ The inquiry I'm pursuing occupies the confluence of political science, informati
 
 
 
-<!-- BOOKS -->
+<!-- Creations -->
 <section id="books">
 <div class="w">
-  <p class="sl rv">Reading Log</p>
+  <p class="sl rv">Creations</p>
   <h2 class="stitle rv d1">Things taht I've <em>Built</em></h2>
   <div class="bg2">
     
@@ -477,13 +437,7 @@ The inquiry I'm pursuing occupies the confluence of political science, informati
 </button>
 
 <script>
-const essays={
-ea1:{tag:'Effective Altruism',title:'On Doing the Most Good: Why Evidence Must Precede Empathy',meta:'February 2026 · 6 min read',body:'<p>When we encounter a child begging at a traffic light, the impulse to give is immediate and visceral. This is not a character flaw — it is the correct functioning of a moral intuition shaped over hundreds of thousands of years of small-group living, where the suffering we could see was the suffering we could address. The problem is that this intuition is catastrophically miscalibrated for a world of eight billion people, global supply chains, and tractable systemic interventions that none of us will ever see in person.</p><p>Effective altruism, in its most stripped-back form, is simply the claim that if we care about outcomes, we ought to care about <em>which</em> outcomes — and that some choices do far more good than others. This seems obvious when stated plainly. Yet it conflicts with how most charitable giving actually works: emotionally led, geographically proximate, narratively compelling. We give to the story we can follow, not to the intervention with the strongest evidence base.</p><p>Peter Singer\'s famous shallow pond thought experiment makes the intuition pump explicit: if you could save a drowning child at the cost of ruining your expensive shoes, virtually everyone agrees you should do it. Singer then asks why geography should change this calculus. The child dying of a preventable disease in a country you will never visit is no less real, no less preventable, no less valuable. Our intuition of distance as a moral modifier is an artefact — not a principle.</p><p>GiveWell estimates that the most cost-effective health interventions save a life for somewhere between $3,000 and $5,000. The average donation to a Western charity with high emotional salience may do a hundred times less good per dollar. This is not a minor inefficiency. It is the difference between saving one life and saving a hundred, for the same expenditure.</p><p>None of this is an argument against compassion. It is an argument for directing compassion toward where it can do the most work. Empathy is the fuel; evidence is the steering. A car with fuel but no steering is not more virtuous than one that is carefully directed — it is merely more dangerous.</p>'},
-phil1:{tag:'Philosophy of Science',title:"What Is Life, Informationally? Notes on Sara Walker\'s Framework",meta:'January 2026 · 7 min read',body:'<p>The standard answer to "what is life?" is biochemical. Life is carbon-based, it metabolises, reproduces, evolves. This answer is practically useful — it gives biologists a working category — but it begins to dissolve under pressure. Viruses reproduce but do not metabolise. Prions evolve but contain no DNA. The edge cases accumulate until the definition starts to feel less like a description of a natural kind and more like a committee decision.</p><p>Sara Walker\'s recent work offers a different starting point. In her framework, life is not primarily a matter of chemistry — it is a matter of <em>causal structure</em>. Specifically, life is what happens when information gains the capacity to determine its own future instantiation. What makes life distinctive is the reversal: information begins to constrain and direct physical processes. The sequence of a genome does not merely describe the organism — it causes the organism.</p><p>If life is substrate-independent in this sense — if what matters is the logical structure of the causal relationships rather than the specific materials — then the question of what else might count as alive becomes genuinely open. Not in the science-fiction sense, but in the more demanding philosophical sense of asking what we are actually tracking when we draw the line between living and non-living.</p><p>Walker\'s framework connects naturally to work in assembly theory, which she has developed with Lee Cronin. High assembly index objects are unlikely to arise by random physical processes and suggest the action of selection or design. Life, on this view, is matter with a high and <em>self-sustaining</em> assembly index.</p><p>What I find most clarifying about this framework is that it re-centres the question. Rather than asking "does this thing have DNA?", it asks "does this thing instantiate the causal structure characteristic of life?" This is harder to answer, but it is asking the right question — and one of the more serious recent attempts to turn biology\'s deepest puzzle into something tractable.</p>'},
-tech1:{tag:'Technology & Attention',title:'Against Notification Culture: The Case for Structured Silence',meta:'December 2025 · 5 min read',body:'<p>Every notification is a small claim on your attention that you did not consent to. Your phone vibrates; a number appears on an icon; a banner slides across your screen. Each of these events is the product of a deliberate engineering decision by a team that is not, on balance, optimising for your flourishing. They are optimising for engagement — a metric that is, in the relevant literature, essentially a proxy for how much of your time and attention they can capture.</p><p>This is not a conspiracy. It is the predictable result of a business model in which attention is the product being sold to advertisers. The software is doing exactly what it was designed to do. The question is whether you want to be the raw material in that process.</p><p>The case against this is sometimes framed in terms of productivity. This framing is correct but insufficient. It treats the problem as an efficiency issue, when the deeper problem is one of agency. Constant interruption does not merely slow you down; it changes what you are capable of wanting. If you can never be bored, you never generate the internal motivation to do the difficult, unrewarding, non-immediately-gratifying work that is actually interesting.</p><p>My approach has been to treat silence as a default rather than a reward. Notifications are off by default on every device I own. Communication happens asynchronously, on my schedule. This is the recognition that deep work and reactive responsiveness are genuinely incompatible — and that one of them is more worth having.</p><p>The political dimension is underappreciated. The architecture of feeds and recommendation engines is not optimised to show you what is true or important — it is optimised to show you what is <em>engaging</em>, which systematically favours the emotionally provocative and the divisive. Opting out of this architecture is not apolitical. It is one of the more consequential decisions available to an individual in the current information environment.</p>'},
-phil2:{tag:'Philosophy of History',title:"Harari\'s Three Books: What They Get Right, What They Flatten",meta:'November 2025 · 8 min read',body:'<p>Yuval Noah Harari is, in the pejorative sense that historians sometimes use the word, a populariser. The ability to render the last 70,000 years of human development into a narrative that a general reader can follow, be energised by, and use to think about the present, is not nothing. Sapiens sold fifteen million copies because it does something real.</p><p>The three books — Sapiens, Homo Deus, 21 Lessons — form a coherent project. Sapiens is retrospective: how did Homo sapiens come to dominate the planet? The answer centres on cognitive revolution, specifically on the capacity for shared fictional belief. Money, nations, corporations, human rights — all are, in Harari\'s telling, stories we agree to tell. Homo Deus extrapolates forward toward a kind of dataism — a civilisation optimised for information processing in which human consciousness may not be the most important node.</p><p>What these books get right is the value of the grand perspective. Most thinking about current events operates at a timescale of weeks or years; Harari forces a timescale of millennia, which is clarifying. The observation that the Agricultural Revolution was, from the perspective of individual human wellbeing, probably a step backward is genuinely surprising to most readers.</p><p>What they flatten is the texture of historical causation. Grand narrative history tends to select evidence for the story being told and to move at a speed that papers over genuine controversy. Specialists in almost every area Harari covers have raised objections — not pedantry, but corrections to a record that Harari\'s readers will take as authoritative.</p><p>The books are best read as extended <em>thought experiments</em> rather than as history. Used that way — as a prompt to think, not as a source of facts — they are genuinely valuable. The intellectual architecture is more interesting than the specific claims.</p>'},
-misc1:{tag:'Epistemology',title:'Minimalism as Methodology, Not Aesthetic',meta:'October 2025 · 4 min read',body:'<p>There is a version of minimalism that is an interior design philosophy: white walls, a capsule wardrobe, a conspicuous absence of objects. I am not interested in that version. Partly because it has been captured by a consumer aesthetic that uses the language of reduction to sell premium goods. But mostly because it mistakes the downstream effects of a disposition for the disposition itself.</p><p>The more interesting version starts not with objects but with decisions. Every decision costs cognitive resources. Every option held open — every possession that represents a possible action, every commitment that might require future attention — is a small ongoing tax on the capacity to think clearly. Minimalism, properly understood, is a systematic effort to reduce this tax by eliminating the unnecessary at the source.</p><p>This applies to communication as much as to objects. Vague language forces the reader to do interpretive work that precise language would eliminate. I prefer to write one clear sentence than three approximate ones — not as an aesthetic preference, but because clarity is a form of respect for the reader\'s time and cognitive resources.</p><p>It applies to tools and environments. I use Linux partly because it requires and rewards understanding what your system is actually doing. The command line is verbose about its processes in a way that graphical interfaces are not. This is sometimes less convenient; it is often more honest. I prefer the honest version.</p><p>The methodological claim is simply this: if something does not serve a clear function, removing it is usually an improvement. The burden of proof lies with the <em>addition</em>, not the subtraction.</p>'}
-};
+
 
 function openModal(id){const e=essays[id];document.getElementById('mtag').textContent=e.tag;document.getElementById('mtitle').textContent=e.title;document.getElementById('mmeta').textContent=e.meta;document.getElementById('mbody').innerHTML=e.body;document.getElementById('modal').classList.add('op');document.body.style.overflow='hidden'}
 function closeModal(){document.getElementById('modal').classList.remove('op');document.body.style.overflow=''}
