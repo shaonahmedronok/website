@@ -67,19 +67,18 @@ img{display:block;max-width:100%;height:auto;}
 
 .ham{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:.4rem}
 .ham span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:all .3s}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.rv.vi{opacity:1;transform:none}
+
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-.w{width:100%;max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
-.wsm{width:100%;max-width:840px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
+.wsm{width:100%;max-width:1100px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
 
 #hero{display:flex;flex-direction:column;justify-content:center;padding:5rem 0 0rem;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(250,189,47,.07),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(254,128,25,.05),transparent 60%);pointer-events:none}
 [data-theme=dark] #hero::before{background:radial-gradient(ellipse 80% 70% at 65% 40%,rgba(251,73,52,.13),transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(250,189,47,.09),transparent 60%)}
 
 .hg{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center}
-.hn{font-family:var(--fd);font-size:clamp(3rem,7vw,6.2rem);font-weight:900;line-height:.95;letter-spacing:-.035em;margin-bottom:1.4rem}
+.hn{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:.95;letter-spacing:-.035em;margin-bottom:1.4rem}
 .hn .l1{display:block;color:var(--tx)}
 .hn .l2{display:block;color:transparent;-webkit-text-stroke:2px var(--ac);font-style:italic;font-weight:700}
 [data-theme=dark] .hn .l2{-webkit-text-stroke-color:var(--ac2)}
@@ -286,8 +285,11 @@ footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0}
 <div class="ni">
   <a class="nlogo" href="https://shaon.neocities.org">@shaonsays</a>
   <ul class="nlinks" id="nl">
-    <li><a href="https://shaon.neocities.org">Home</a></li>
-    <li><a href="https://shaon.neocities.org/academia.html">Academia</a></li>
+    <li><a href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    
   </ul>
   <div class="nright">
     <button class="ham" onclick="document.getElementById('nl').classList.toggle('op')"><span></span><span></span><span></span></button>
@@ -300,17 +302,13 @@ footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0}
 <div class="w">
 <div class="hg">
   <div>
-    <h1 class="hn rv d1"><span class="l1">Shaon</span><span class="l2"></span></h1>
+    <h1 class="hn rv d1"><span class="l1">Shaon Ahmed Ronok</span><span class="l2"></span></h1>
     <p class="hb rv d2" style="max-width: 100%;">   
     
-   <strong style="color: #7daea3;">Altruist | Musically Anhedonic | Bibliognost</strong>
+   <strong style="color: #7daea3;">Altruist | Musically Anhedonic | Playin' with LaTeX, R, Typst & Nix/NixOS</strong>
       
    
     <div class="htags rv d3">
-      <span class="htag">Social Science</span>
-      <span class="htag">R</span>
-      <span class="htag">Typst</span>
-      <span class="htag">NixOS</span>
     </div>
     </div>
   
@@ -318,7 +316,7 @@ footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0}
     <div class="hpbg"></div>
     <img src="images/mine2.jpg" alt="Shaon Ahmed Ronok" class="hp">
     <div class="ss">
-      <a href="https://github.com/shaonahmedronok1" class="sb" title="GitHub" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub"></a>
+      <a href="https://github.com/shaonahmedronok" class="sb" title="GitHub" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub"></a>
       
       <a href="https://www.youtube.com/@shaonsays" class="sb" title="YouTube" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube"></a>
     </div>
@@ -354,83 +352,6 @@ The inquiry I'm pursuing occupies the confluence of political science, informati
 
 
 
-
-
-
-
-
-
-<!-- Creations -->
-<section id="books">
-<div class="w">
-  <p class="sl rv">Creations</p>
-  <h2 class="stitle rv d1">Things taht I've <em>Built</em></h2>
-  <div class="bg2">
-    
-    <div class="bi rv"><span class="bit">My soely Academia based NixOS setup 
-    <br>
-    <a href="https://github.com/shaonahmedronok1/nixos-config" class="plink" target="_blank">View source on GitHub &#8594;</a> </div>
-    
-    
-    <div class="bi rv"><span class="bit">Typst Templates 
-    <br>
-    <a href="https://github.com/shaonahmedronok1/typst-foundry" class="plink" target="_blank">View source on GitHub &#8594;</a> </div>
-    
-    
-    <div class="bi rv"><span class="bit">This website 
-    <br>
-    <a href="https://github.com/shaonahmedronok1/website" class="plink" target="_blank">View source on GitHub &#8594;</a> </div>
-    
-  </div>
-</div>
-</section>
-<hr class="dv">
-
-
-
-
-
-
-<!-- BOOKS -->
-<section id="books">
-<div class="w">
-  <p class="sl rv">Reading Log</p>
-  <h2 class="stitle rv d1">Books I've <em>Read</em></h2>
-  <div class="bg2">
-    <div class="bi rv"><span class="bit">Life As No One Knows It: The Physics of Life's Emergence</span><span class="bia">Sara Imari Walker &middot; 2024</span></div>
-    <div class="bi rv d1"><span class="bit">Nexus: A Brief History of Information Networks</span><span class="bia">Yuval Noah Harari &middot; 2024</span></div>
-    <div class="bi rv d2"><span class="bit">Homo Deus: A Brief History of Tomorrow</span><span class="bia">Yuval Noah Harari &middot; 2015</span></div>
-    <div class="bi rv"><span class="bit">Sapiens: A Brief History of Humankind</span><span class="bia">Yuval Noah Harari &middot; 2011</span></div>
-    <div class="bi rv d1"><span class="bit">21 Lessons for the 21st Century</span><span class="bia">Yuval Noah Harari &middot; 2018</span></div>
-    <div class="bi rv d2"><span class="bit">Information: A Very Short Introduction</span><span class="bia">Luciano Floridi &middot; 2010</span></div>
-    <div class="bi rv"><span class="bit">The Beginning of Infinity <span style="opacity:.5;font-size:.8em">(reading)</span></span><span class="bia">David Deutsch &middot; 2011</span></div>
-    <div class="bi rv d1"><span class="bit">The Family Tree Guide to DNA Testing and Genetic Genealogy</span><span class="bia">Blaine T. Bettinger &middot; 2016</span></div>
-  </div>
-</div>
-</section>
-<hr class="dv">
-
-
-
-
-
-<!-- CONTACT -->
-<section id="contact">
-<div class="w">
-<div class="ci">
-  <div>
-    <p class="ctl rv">Get In Touch</p>
-    <h2 class="ctt rv d1">Digital Footprints.</h2>
-    <p class="cts rv d2">Connect with me in the cosmic continuum.</p>
-  </div>
-  <div class="clinks rv d2">
-    <a href="https://github.com/shaonahmedronok1" class="cl" target="_blank"><img src="/icons/GitHub_Invertocat_Black.svg" alt="GitHub"><div><p class="clp">GitHub</p><p class="clh">shaonahmedronok1</p></div></a>
-    
-    <a href="https://www.youtube.com/@shaonsays" class="cl" target="_blank"><img src="/icons/yt_icon_red_digital.png" alt="YouTube"><div><p class="clp">YouTube</p><p class="clh">@shaonsays</p></div></a>
-  </div>
-</div>
-</div>
-</section>
 
 <button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
