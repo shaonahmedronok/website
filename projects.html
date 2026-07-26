@@ -10,99 +10,102 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#242424;--surf:#3c3836;--surf2:#504945;
---tx:#ebdbb2;--tx2:#d5c4a1;--mu:#d5c4a1;--mu2:#665c54;
---bd:#504945;--bd2:#665c54;
---yellow:#fabd2f;--orange:#fe8019;--green:#b8bb26;
---cyan:#8ec07c;--blue:#7daea3;--magenta:#e089a1;--red:#fb4934;
---ac:var(--yellow);--ac2:var(--orange);--ac3:var(--green);
---ac4:var(--blue);--ac5:var(--cyan);--ac6:var(--magenta);--ac7:var(--red);
---gd:var(--yellow);--gd2:var(--orange);--hv:#3c3836;
---fd:'JetBrains Mono',monospace;--fb:'JetBrains Mono',monospace;--fm:'JetBrains Mono',monospace;
---bg2:#242424;
---sh0:0 1px 6px rgba(250,189,47,.07);--sh1:0 4px 20px rgba(250,189,47,.12);--sh2:0 12px 56px rgba(250,189,47,.18);--r:4px}
+:root {
+  /* Sole Background Palette */
+  --bg: #242424;
+  --surf: #242424;
+
+  /* Universal Static Text & Line Colors */
+  --tx: #fbf1c7;
+  --bd: #fbf1c7;
+
+  /* Universal Interactive Accent Colors */
+  --ac: #7daea3;
+
+  /* Typography */
+  --fd: 'JetBrains Mono', monospace;
+  --fb: 'JetBrains Mono', monospace;
+  --fm: 'JetBrains Mono', monospace;
+
+  /* Physics & Shadows */
+  --sh-card: 0 4px 20px rgba(125, 174, 163, 0.15);
+  --sh-glow: 0 8px 24px rgba(125, 174, 163, 0.25);
+  --r: 6px;
+}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:17.5px;overflow-x:hidden;width:100%}
+body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
 
-html{scroll-behavior:smooth;font-size:17.5px;overflow-x:hidden;width:100%;}
-body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased;}
-::selection{background:rgba(250,189,47,.25);color:#242424}
+::selection{background:rgba(125, 174, 163, 0.3);color:var(--bg)}
 a{color:inherit;text-decoration:none}
 
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;}
-#nav.sc{background:rgba(36,36,36,.95);backdrop-filter:blur(20px) saturate(1.2);box-shadow:0 1px 0 var(--bd)}
-.ni{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:.9rem 2rem;transition:padding .3s;width:100%;}
-#nav.sc .ni{padding:.7rem 2rem}
-.nlogo{font-family:var(--fd);font-size:1.1rem;font-weight:900;letter-spacing:-.02em;color:var(--magenta)}
-.nlinks{display:flex;gap:.15rem;list-style:none}
-.nlinks a{font-size:.8rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--mu);padding:.42rem .75rem;border-radius:6px;transition:color .2s,background .2s}
-.nlinks a:hover,.nlinks a.act{color:var(--ac);background:var(--hv)}
-
-.ham{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:.4rem}
-.ham span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:all .3s}
+#prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(36,36,36,.97);backdrop-filter:blur(20px) saturate(1.2)}
+#nav.sc{box-shadow:0 1px 0 var(--bd)}
+.ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
+.nlogo{font-family:var(--fd);font-size:1.4rem;font-weight:900;letter-spacing:-.02em;color:var(--tx)}
+.nlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem;list-style:none}
+.nlinks a{font-size:.75rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--tx);padding:.32rem .65rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4, 0, 0.2, 1)}
+.nlinks a:hover{color:var(--ac);background:transparent}
+.nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
 
 .w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
+section{padding:2.5rem 0;position:relative;z-index:1}
 
-hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd2) 40%,var(--bd2) 60%,transparent);margin:0}
-section{padding:1.2rem 0;position:relative;z-index:1}
-.sl{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;opacity:.85;display:flex;align-items:center;gap:.55rem}
-.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--blue);opacity:.5}
-.stitle{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:1.8rem}
+#projects-page{padding-top:7.5rem;min-height:75vh}
 
-.pgrid{display:flex;flex-direction:column;gap:1.2rem}
-.pc{background:var(--surf);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.65rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}
-.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gd),var(--ac));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.pc:hover::after{transform:scaleX(1)}
-.pc:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:rgba(250,189,47,.22)}
+.sl{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
+.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--ac);opacity:.5}
+.stitle{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.8rem;color:var(--tx)}
 
-.pstat{font-family:var(--fm);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:.23rem .58rem;border-radius:4px;display:inline-block;margin-bottom:.9rem;align-self:flex-start}
-.sa{background:rgba(250,189,47,.1);color:var(--yellow);border:1px solid rgba(250,189,47,.18)}
-.so{background:rgba(184,187,38,.08);color:var(--green);border:1px solid rgba(184,187,38,.2)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:1.8rem}
+.pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
+.pc:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--sh-card)}
 
-.pct{font-family:var(--fd);font-size:1.1rem;font-weight:700;margin-bottom:.55rem;color:var(--tx)}
-.pcd{font-size:.85rem;color:var(--tx2);line-height:1.85;flex:1;margin-bottom:.9rem}
-.ptags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.9rem}
-.ptag{font-family:var(--fm);font-size:.63rem;letter-spacing:.06em;padding:.18rem .5rem;border-radius:4px;background:var(--hv);color:var(--mu);border:1px solid var(--bd)}
-.plink{font-family:var(--fm);font-size:.72rem;color:var(--yellow);opacity:.8;transition:opacity .2s}
-.plink:hover{opacity:1}
+.pstat{display:inline-block;font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .5rem;border-radius:var(--r);border:1px solid var(--ac);color:var(--ac);margin-bottom:.8rem;width:fit-content}
+.pct{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--tx);margin-bottom:.5rem}
+.pcd{font-size:.9rem;color:var(--tx);line-height:1.6;margin-bottom:1.2rem}
+.ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.ptag{font-family:var(--fm);font-size:.7rem;color:var(--tx);border:1px solid var(--bd);padding:.15rem .45rem;border-radius:var(--r);opacity:.85}
+.plink{font-family:var(--fm);font-size:.85rem;font-weight:700;color:var(--ac);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto;transition:gap .2s}
+.pc:hover .plink{gap:.5rem}
 
-footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0;margin-top:3rem}
-.fc{font-family:var(--fm);font-size:.7rem;color:var(--mu)}
+footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
+.fc{font-family:var(--fm);font-size:.7rem;color:var(--tx)}
+
+#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
+#st.vi{opacity:1;transform:none}
+#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(125, 174, 163, 0.4)}
 
 @media(max-width:900px){
   html,body{font-size:16px;width:100%;overflow-x:hidden}
-  .ni{padding:.7rem 1.5rem}
-  .nlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surf);border-bottom:1px solid var(--bd);flex-direction:column;padding:1rem;gap:.2rem}
-  .nlinks.op{display:flex}
-  .ham{display:flex}
 }
-
 @media(max-width:560px){
   .w{padding:0 1.2rem}
+  .nlogo{font-size:1.1rem}
+  .nlinks a{font-size:.68rem;padding:.28rem .5rem}
+  .pgrid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<div id="prog"></div>
+
 <div id="nav">
   <div class="ni">
-    <a class="nlogo" href="index.html">@shaonsays</a>
-    <ul class="nlinks" id="nl">
+    <a class="nlogo" href="index.html">Shaon Ahmed Ronok</a>
+    <ul class="nlinks">
       <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="act">Projects</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="connect.html">Connect</a></li>
     </ul>
-    <div class="nright">
-      <button class="ham" onclick="document.getElementById('nl').classList.toggle('op')"><span></span><span></span><span></span></button>
-    </div>
   </div>
 </div>
 
-<br><br><br><br>
-
-<section>
+<section id="projects-page">
   <div class="w">
     <p class="sl">What I've built</p>
     <h2 class="stitle">Projects</h2>
@@ -146,34 +149,32 @@ footer{background:#242424;border-top:1px solid var(--bd);padding:1.9rem 0;margin
 
     </div>
   </div>
-</section>
+</section> 
 
-<footer>
-  <div class="w">
-    <p class="fc">All projects are open source unless stated otherwise.</p>
-  </div>
-</footer>
+
+
+<button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <script>
 const nav = document.getElementById('nav');
+const _st = document.getElementById('st');
+const _prog = document.getElementById('prog');
 let ticking = false;
 window.addEventListener('scroll', () => {
   if(!ticking){
     requestAnimationFrame(() => {
-      nav.classList.toggle('sc', window.scrollY > 40);
+      const sy = window.scrollY;
+      const sh = document.body.scrollHeight - window.innerHeight;
+      nav.classList.toggle('sc', sy > 40);
+      _st.classList.toggle('vi', sy > 100);
+      _prog.style.width = (sy / (sh || 1) * 100) + '%';
       ticking = false;
     });
     ticking = true;
   }
 }, {passive: true});
-
-document.addEventListener('click', e => {
-  const nl = document.getElementById('nl');
-  const ham = document.querySelector('.ham');
-  if(nl && nl.classList.contains('op') && !nl.contains(e.target) && e.target !== ham && !ham.contains(e.target)){
-    nl.classList.remove('op');
-  }
-});
 </script>
 </body>
 </html>
