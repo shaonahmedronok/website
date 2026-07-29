@@ -17,14 +17,21 @@
 <style>
 @font-face {
   font-family: 'STIX Two Text';
-  src: url('/fonts/STIX2Text-Regular.woff2') format('woff2');
+  src: url('fonts/STIX2Text-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'STIX Two Text';
-  src: url('/fonts/STIX2Text-Bold.woff2') format('woff2');
+  src: url('fonts/STIX2Text-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('fonts/STIX2Text-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -46,7 +53,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
-body{font-family:var(--fb);font-weight:400;background:var(--bg);color:var(--tx-main);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);font-weight:600;background:var(--bg);color:var(--tx-main);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
 
 ::selection{background:rgba(0,128,128,0.18);color:var(--tx-main)}
 a{color:inherit;text-decoration:none}
@@ -61,7 +68,7 @@ img{display:block;max-width:100%;height:auto}
 .nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx-head)}
 
 .nlinks{display:flex;flex-wrap:nowrap;justify-content:center;gap:.1rem;list-style:none}
-.nlinks a{font-size:0.75rem;font-weight:400;letter-spacing:.02em;text-transform:uppercase;color:var(--tx-main);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.nlinks a{font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--tx-main);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
 .nlinks a:hover{color:var(--ac);background:transparent}
 .nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
 
@@ -94,10 +101,10 @@ section{padding:2.5rem 0;position:relative;z-index:1}
 .info-row:last-child{border-bottom:none}
 .info-row:hover{border-color:var(--ac)}
 .info-label{font-family:var(--fm);font-size:0.9rem;color:var(--ac);min-width:85px;font-weight:700}
-.info-val{font-family:var(--fm);font-size:0.9rem;color:var(--tx-head);font-weight:400}
+.info-val{font-family:var(--fm);font-size:0.9rem;color:var(--tx-head);font-weight:600}
 
 footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
-.fc{font-family:var(--fm);font-size:0.8rem;font-weight:400;color:var(--tx-muted)}
+.fc{font-family:var(--fm);font-size:0.8rem;font-weight:600;color:var(--tx-muted)}
 
 #st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
 #st.vi{opacity:1;transform:none}
@@ -137,12 +144,12 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
 <div class="w">
   <div class="hg">
     <div>
-      <p style="font-family:var(--fm);font-size:0.75rem;font-weight:400;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:0.5rem;opacity:.9;">Languages & Tools</p>
+      <p style="font-family:var(--fm);font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:0.5rem;opacity:.9;">Languages & Tools</p>
       <div class="techstack">
-        <img src="/icons/Rlogo.png" height="48" alt="R">
+        <img src="icons/Rlogo.png" height="48" alt="R">
         <img src="https://cdn.simpleicons.org/latex/008080" height="48" alt="LaTeX">
         <img src="https://cdn.simpleicons.org/typst/239DA8" height="48" alt="Typst">
-        <img src="/icons/Nix_Snowflake_Logo.svg.webp" height="48" alt="NixOS">
+        <img src="icons/Nix_Snowflake_Logo.svg.webp" height="48" alt="NixOS">
       </div>
     </div>
     <div class="hpw">
