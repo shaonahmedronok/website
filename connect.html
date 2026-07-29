@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Projects — Shaon Ahmed Ronok">
-<title>Projects | Shaon</title>
+<meta name="description" content="Contact — Shaon Ahmed Ronok">
+<title>Connect | Shaon</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
 @font-face {
@@ -24,9 +24,9 @@
 :root {
   --bg: #F8F5F0;
   --surf: #F8F5F0;
-  --bd: #D5CFC8;
   --tx: #2D1E22;
   --tx-muted: #6B5458;
+  --bd: #D5CFC8;
   --ac: #008080;
   --fd: 'STIX Two Text', serif;
   --fb: 'STIX Two Text', serif;
@@ -41,6 +41,7 @@ body{font-family:var(--fb);font-weight:400;background:var(--bg);color:var(--tx);
 
 ::selection{background:rgba(0,128,128,0.18);color:var(--tx)}
 a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
 
 #prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
 #nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(248,245,240,.97);backdrop-filter:blur(20px) saturate(1.2)}
@@ -55,23 +56,17 @@ a{color:inherit;text-decoration:none}
 .w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
 section{padding:2.5rem 0;position:relative;z-index:1}
 
-#projects-page{padding-top:7.5rem;min-height:75vh}
-
 .sl{font-family:var(--fm);font-size:0.75rem;font-weight:400;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
 .sl::after{content:'';flex:0 0 22px;height:1px;background:var(--ac);opacity:.5}
 .stitle{font-family:var(--fd);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.8rem;color:var(--tx)}
 
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:1.8rem}
-.pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
-.pc:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--sh-card)}
-
-.pstat{display:inline-block;font-family:var(--fm);font-size:0.75rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .5rem;border-radius:var(--r);border:1px solid var(--ac);color:var(--ac);margin-bottom:.8rem;width:fit-content}
-.pct{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin-bottom:.5rem}
-.pcd{font-family:var(--fb);font-size:0.95rem;font-weight:400;color:var(--tx);line-height:1.6;margin-bottom:1.2rem}
-.ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
-.ptag{font-family:var(--fm);font-size:0.75rem;font-weight:400;color:var(--tx-muted);border:1px solid var(--bd);padding:.15rem .45rem;border-radius:var(--r)}
-.plink{font-family:var(--fm);font-size:0.9rem;font-weight:700;color:var(--ac);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto;transition:gap .2s}
-.pc:hover .plink{gap:.5rem}
+#contact-page{padding-top:7.5rem;min-height:75vh}
+.clinks{display:flex;flex-direction:column;gap:.9rem;max-width:620px}
+.cl{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.15rem;background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);transition:all .2s ease;color:var(--tx)}
+.cl:hover{border-color:var(--ac);transform:translateX(4px);box-shadow:var(--sh-card)}
+.cl img{width:21px;height:21px;object-fit:contain}
+.clp{font-size:0.8rem;font-weight:400;color:var(--ac);font-family:var(--fm);letter-spacing:.04em;text-transform:uppercase}
+.clh{font-size:0.95rem;font-weight:400;margin-top:.1rem;color:var(--tx)}
 
 footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
 .fc{font-family:var(--fm);font-size:0.8rem;font-weight:400;color:var(--tx-muted)}
@@ -87,7 +82,6 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
   .w{padding:0 1.2rem}
   .nlogo{font-size:1.2rem}
   .nlinks a{font-size:0.7rem;padding:.24rem .35rem}
-  .pgrid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -100,55 +94,38 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
     <a class="nlogo" href="index.html">Shaon Ahmed Ronok</a>
     <ul class="nlinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html" class="act">Projects</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li><a href="connect.html">Connect</a></li>
+      <li><a href="connect.html" class="act">Connect</a></li>
     </ul>
   </div>
 </div>
 
-<section id="projects-page">
+<section id="contact-page">
   <div class="w">
-    <p class="sl">What I've built</p>
-    <h2 class="stitle">Projects</h2>
-    <div class="pgrid">
-
-      <div class="pc">
-        <span class="pstat">Active</span>
-        <p class="pct">compendium</p>
-        <p class="pcd">My LaTeX note on Education systems across various countries.</p>
-        <div class="ptags">
-          <span class="ptag">TeX</span>
-          <span class="ptag">LaTeX</span>
-          <span class="ptag">Academic</span>
-        </div>
-        <a href="https://github.com/shaonahmedronok/compendium" target="_blank" class="plink">View on GitHub →</a>
-      </div>
-
-      <div class="pc">
-        <span class="pstat">Active</span>
-        <p class="pct">nixos-config</p>
-        <p class="pcd">My solely Academia based NixOS setup.</p>
-        <div class="ptags">
-          <span class="ptag">Nix</span>
-          <span class="ptag">NixOS</span>
-          <span class="ptag">MIT License</span>
-        </div>
-        <a href="https://github.com/shaonahmedronok/nixos-config" target="_blank" class="plink">View on GitHub →</a>
-      </div>
-
-      <div class="pc">
-        <span class="pstat">Shipped</span>
-        <p class="pct">website</p>
-        <p class="pcd">Hand-coded personal site. Raw HTML, CSS, vanilla JS — no frameworks, no build tools, no abstractions.</p>
-        <div class="ptags">
-          <span class="ptag">HTML</span>
-          <span class="ptag">CSS</span>
-          <span class="ptag">Neocities</span>
-        </div>
-        <a href="https://github.com/shaonahmedronok/website" target="_blank" class="plink">View on GitHub →</a>
-      </div>
-
+    <p class="sl">Get in touch</p>
+    <h2 class="stitle">Digital Footprints</h2>
+    <div class="clinks">
+      <a href="https://github.com/shaonahmedronok" class="cl" target="_blank">
+        <img src="/icons/GitHub_Invertocat_Black.png" alt="GitHub">
+        <div><p class="clp">GitHub</p><p class="clh">shaonahmedronok</p></div>
+      </a>
+      <a href="https://discord.com/users/1526192711911211128" class="cl" target="_blank">
+        <img src="/icons/Discord-Symbol-Blurple.png" alt="Discord">
+        <div><p class="clp">Discord</p><p class="clh">pupilusr</p></div>
+      </a>
+      <a href="https://linkedin.com/shaonahmedronok" class="cl" target="_blank">
+        <img src="/icons/LI-In-Bug.png" alt="LinkedIn">
+        <div><p class="clp">LinkedIn</p><p class="clh">shaonahmedronok</p></div>
+      </a>
+      <a href="https://facebook.com/shaonahmedronok" class="cl" target="_blank">
+        <img src="/icons/Facebook_Logo_Primary.png" alt="Facebook">
+        <div><p class="clp">Facebook</p><p class="clh">shaonahmedronok</p></div>
+      </a>
+      <a href="https://www.youtube.com/@shaonahmedronok" class="cl" target="_blank">
+        <img src="/icons/yt_icon_red_digital.png" alt="YouTube">
+        <div><p class="clp">YouTube</p><p class="clh">shaonahmedronok</p></div>
+      </a>
     </div>
   </div>
 </section>

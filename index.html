@@ -14,57 +14,54 @@
 <meta name="twitter:image" content="https://shaon.neocities.org/images/1772381919541.png">
 <title>Shaon</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('/fonts/STIX2Text-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('/fonts/STIX2Text-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
-  /* Sole Background Palette */
-  --bg: #242424;
-  --surf: #242424;
-  --bd: #fbf1c7;
-  --bd-hover: #7daea3;
-
-  /* Universal Static Text & Line Color */
-  --tx-main: #fbf1c7;
-  --tx-head: #fbf1c7;
-  --tx-muted: #fbf1c7;
-
-  /* Universal Interactive Accent Color */
-  --ac: #7daea3;
-  --link: #7daea3;
-
-  /* Typography */
-  --fd: 'JetBrains Mono', monospace;
-  --fb: 'JetBrains Mono', monospace;
-  --fm: 'JetBrains Mono', monospace;
-
-  /* Shadows & Physics */
-  --sh-card: 0 4px 20px rgba(125, 174, 163, 0.15);
-  --sh-glow: 0 8px 24px rgba(125, 174, 163, 0.25);
+  --bg: #F8F5F0;
+  --surf: #F8F5F0;
+  --bd: #D5CFC8;
+  --tx-main: #2D1E22;
+  --tx-head: #2D1E22;
+  --tx-muted: #6B5458;
+  --ac: #008080;
+  --fd: 'STIX Two Text', serif;
+  --fb: 'STIX Two Text', serif;
+  --fm: 'STIX Two Text', serif;
+  --sh-card: 0 4px 20px rgba(0, 128, 128, 0.10);
+  --sh-glow: 0 8px 24px rgba(0, 128, 128, 0.18);
   --r: 6px;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:17.5px;overflow-x:hidden;width:100%}
-body{font-family:var(--fb);background:var(--bg);color:var(--tx-main);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
+body{font-family:var(--fb);font-weight:400;background:var(--bg);color:var(--tx-main);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
 
-/* Selection State */
-::selection{background:var(--ac);color:var(--bg)}
+::selection{background:rgba(0,128,128,0.18);color:var(--tx-main)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 
-/* Top Progress Bar */
 #prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
 
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(36,36,36,.97);backdrop-filter:blur(20px) saturate(1.2)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(248,245,240,.97);backdrop-filter:blur(20px) saturate(1.2)}
 #nav.sc{box-shadow:0 1px 0 var(--bd)}
 
 .ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
-.nlogo{font-family:var(--fd);font-size:1.4rem;font-weight:900;letter-spacing:-.02em;color:var(--tx-head)}
+.nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx-head)}
 
-.nlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem;list-style:none}
-.nlinks a{font-size:.75rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--tx-main);padding:.32rem .65rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4, 0, 0.2, 1)}
+.nlinks{display:flex;flex-wrap:nowrap;justify-content:center;gap:.1rem;list-style:none}
+.nlinks a{font-size:0.75rem;font-weight:400;letter-spacing:.02em;text-transform:uppercase;color:var(--tx-main);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
 .nlinks a:hover{color:var(--ac);background:transparent}
 .nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
 
@@ -74,67 +71,49 @@ img{display:block;max-width:100%;height:auto}
 .hg{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center}
 
 .techstack{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:0;align-items:center}
-.techstack img{width:44px;height:44px;object-fit:contain;transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1)}
-.techstack img:hover{transform:scale(1.2) rotate(-5deg);filter:drop-shadow(0 4px 12px rgba(125, 174, 163, 0.4))}
+.techstack img{width:44px;height:44px;object-fit:contain;transition:transform .3s cubic-bezier(0.34,1.56,0.64,1)}
+.techstack img:hover{transform:scale(1.2) rotate(-5deg);filter:drop-shadow(0 4px 12px rgba(0,128,128,0.25))}
 
 .hpw{position:relative;display:flex;flex-direction:column;align-items:center}
 
-/* Monochromatic Accent Aura */
-.hpbg{position:absolute;width:280px;height:280px;background:radial-gradient(circle, rgba(125, 174, 163, 0.15), transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 5s ease-in-out infinite;pointer-events:none}
+.hpbg{position:absolute;width:280px;height:280px;background:radial-gradient(circle,rgba(0,128,128,0.10),transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 5s ease-in-out infinite;pointer-events:none}
 @keyframes pglow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
 
 .hp{width:228px;height:228px;border-radius:50%;object-fit:cover;border:4px solid var(--ac);position:relative;z-index:1;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s}
-.hp:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 20px 56px rgba(125,174,163,.3);border-color:var(--ac)}
+.hp:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 20px 56px rgba(0,128,128,0.18);border-color:var(--ac)}
 
 hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd) 40%,var(--bd) 60%,transparent);margin:0}
 section{padding:2.5rem 0;position:relative;z-index:1}
 
-.stitle{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:.9rem;color:var(--tx-head)}
-.stitle em{font-style:italic;color:var(--ac)}
+.stitle{font-family:var(--fd);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:.9rem;color:var(--tx-head)}
 
 #about{background:var(--bg);padding-top:2.3rem}
 
-/* Clean Cards & Data Blocks */
 .info-table{display:flex;flex-direction:column;gap:0;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;background:var(--bg)}
 .info-row{display:flex;align-items:center;gap:1rem;padding:.85rem 1.3rem;background:var(--bg);border-bottom:1px solid var(--bd);transition:border-color 0.2s}
 .info-row:last-child{border-bottom:none}
 .info-row:hover{border-color:var(--ac)}
-.info-label{font-family:var(--fm);font-size:.8rem;color:var(--ac);min-width:85px;font-weight:900 !important}
-.info-val{font-family:var(--fm);font-size:.8rem;color:var(--tx-head);font-weight:900 !important}
-
-#contact{background:var(--bg);padding:3rem 0;color:var(--tx-main)}
-.ci{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.ctl{font-family:var(--fm);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:.7rem;opacity:.9}
-.ctt{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:1.2rem;color:var(--tx-head)}
-.cts{font-size:.93rem;line-height:1.8;color:var(--tx-main);margin-bottom:1.4rem}
-.clinks{display:flex;flex-direction:column;gap:.9rem;padding-top:1.5rem}
-
-.cl{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.15rem;background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);transition:all .2s;color:var(--tx-main)}
-.cl:hover{background:var(--bg);border-color:var(--ac);transform:translateX(6px);box-shadow:var(--sh-card)}
-.cl img{width:21px;height:21px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
-.clp{font-size:.72rem;color:var(--ac);font-family:var(--fm);letter-spacing:.08em;text-transform:uppercase}
-.clh{font-size:.88rem;font-weight:500;margin-top:.1rem;color:var(--tx-head)}
+.info-label{font-family:var(--fm);font-size:0.9rem;color:var(--ac);min-width:85px;font-weight:700}
+.info-val{font-family:var(--fm);font-size:0.9rem;color:var(--tx-head);font-weight:400}
 
 footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
-.fc{font-family:var(--fm);font-size:.7rem;color:var(--tx-main)}
+.fc{font-family:var(--fm);font-size:0.8rem;font-weight:400;color:var(--tx-muted)}
 
 #st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
 #st.vi{opacity:1;transform:none}
-#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(125, 174, 163, 0.4)}
+#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,128,128,0.28)}
 
 @media(max-width:900px){
-  html,body{font-size:16px;width:100%;overflow-x:hidden}
+  html,body{font-size:17px;width:100%;overflow-x:hidden}
   .hg{grid-template-columns:1fr;gap:2rem;text-align:center}
   .hpw{order:-1}
   .hp{width:180px;height:180px}
   .techstack{justify-content:center}
-  .ci{grid-template-columns:1fr}
 }
-
 @media(max-width:560px){
   .w{padding:0 1.2rem}
-  .nlogo{font-size:1.1rem}
-  .nlinks a{font-size:.68rem;padding:.28rem .5rem}
+  .nlogo{font-size:1.2rem}
+  .nlinks a{font-size:0.7rem;padding:.24rem .35rem}
 }
 </style>
 </head>
@@ -157,9 +136,8 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
 <section id="hero">
 <div class="w">
   <div class="hg">
-
     <div>
-      <p style="font-family:var(--fm);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:0.5rem;opacity:.9;">Languages & Tools</p>
+      <p style="font-family:var(--fm);font-size:0.75rem;font-weight:400;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:0.5rem;opacity:.9;">Languages & Tools</p>
       <div class="techstack">
         <img src="/icons/Rlogo.png" height="48" alt="R">
         <img src="https://cdn.simpleicons.org/latex/008080" height="48" alt="LaTeX">
@@ -167,40 +145,38 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
         <img src="/icons/Nix_Snowflake_Logo.svg.webp" height="48" alt="NixOS">
       </div>
     </div>
-
     <div class="hpw">
       <div class="hpbg"></div>
       <img src="images/mine2.jpg" alt="Shaon Ahmed Ronok" class="hp">
     </div>
-
   </div>
 </div>
 </section>
 
 <section id="about">
 <div class="w">
-  
   <div class="info-table">
     <div class="info-row">
       <span class="info-label">Undergrad:</span>
       <span class="info-val">Social Science (BSS)</span>
     </div>
-
     <div class="info-row">
       <span class="info-label">Traits:</span>
       <span class="info-val">Altruist · Musically Anhedonic</span>
     </div>
-
     <div class="info-row">
       <span class="info-label">Workflow:</span>
       <span class="info-val">R · LaTeX · Typst · Nix/NixOS</span>
     </div>
   </div>
-
 </div>
 </section>
 
-
+<footer>
+  <div class="w">
+    <p class="fc">© 2026 Shaon Ahmed Ronok</p>
+  </div>
+</footer>
 
 <button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
