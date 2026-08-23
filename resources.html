@@ -29,23 +29,18 @@
   font-display: swap;
 }
 :root {
-  --bg: #F8F5F0;
-  --surf: #F8F5F0;
-  --hv: #F8F5F0;
-  --bg2: #F8F5F0;
-  --tx: #000000;
-  --tx2: #000000;
-  --mu: #6B5458;
-  --mu2: #6B5458;
+  --bg: #FFFFFF;
+  --surf: #FFFFFF;
   --bd: #D5CFC8;
-  --bd2: #D5CFC8;
+  --tx: #000000;
+  --tx-muted: #6B5458;
   --ac: #008080;
   --fd: 'STIX Two Text', serif;
   --fb: 'STIX Two Text', serif;
   --fm: 'STIX Two Text', serif;
-  --sh1: 0 4px 20px rgba(0, 128, 128, 0.10);
-  --sh2: 0 12px 56px rgba(0, 128, 128, 0.15);
-  --r: 4px;
+  --r: 6px;
+  --sh-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --sh-glow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
@@ -54,24 +49,40 @@ body{font-family:var(--fb);font-weight:600;background:var(--bg);color:var(--tx);
 a{color:inherit;text-decoration:none}
 
 #prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(248,245,240,.97);backdrop-filter:blur(20px) saturate(1.2)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(255, 255, 255, 1);backdrop-filter:blur(20px) saturate(1.2)}
 #nav.sc{box-shadow:0 1px 0 var(--bd)}
 .ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
 .nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx)}
 .nlinks{display:flex;flex-wrap:nowrap;justify-content:center;gap:.1rem;list-style:none}
-.nlinks a{font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--tx);padding:.28rem .42rem;border-radius:6px;transition:color .2s,background .2s}
+.nlinks a{font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--tx);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
 .nlinks a:hover{color:var(--ac);background:transparent}
-.nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700}
+.nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
 
 .w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
-#resources-wrapper{padding-top:7.5rem;min-height:75vh}
 section{padding:2.5rem 0;position:relative;z-index:1}
-hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd2) 40%,var(--bd2) 60%,transparent);margin:0;opacity:.5}
+#resources-wrapper > section:first-of-type{padding-top:0}
 
-.sl{font-family:var(--fm);font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
+#projects-page{padding-top:7.5rem;min-height:75vh}
+#resources-wrapper{padding-top:7.5rem;min-height:75vh}
+
+hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd) 40%,var(--bd) 60%,transparent);margin:0;opacity:.5}
+
+.sl{font-family:var(--fm);font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-top:0;margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
 .sl::after{content:'';flex:0 0 22px;height:1px;background:var(--ac);opacity:.5}
 .stitle{font-family:var(--fd);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.8rem;color:var(--tx)}
 .shd{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin:2.5rem 0 1rem}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:1.8rem}
+.pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
+.pc:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--sh-card)}
+
+.pstat{display:inline-block;font-family:var(--fm);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .5rem;border-radius:var(--r);border:1px solid var(--ac);color:var(--ac);margin-bottom:.8rem;width:fit-content}
+.pct{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin-bottom:.5rem}
+.pcd{font-family:var(--fb);font-size:0.95rem;font-weight:600;color:var(--tx);line-height:1.6;margin-bottom:1.2rem}
+.ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.ptag{font-family:var(--fm);font-size:0.75rem;font-weight:600;color:var(--tx-muted);border:1px solid var(--bd);padding:.15rem .45rem;border-radius:var(--r)}
+.plink{font-family:var(--fm);font-size:0.9rem;font-weight:700;color:var(--ac);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto;transition:gap .2s}
+.pc:hover .plink{gap:.5rem}
 
 .alist{list-style:none;display:flex;flex-direction:column;gap:1.2rem;padding-left:0}
 .alist li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0.6rem;position:relative}
@@ -82,10 +93,11 @@ hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--
 .alist li:hover::before{opacity:1;transform:translateX(0)}
 
 footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
-.fc{font-family:var(--fm);font-size:0.8rem;font-weight:600;color:var(--mu)}
-#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,128,128,0.20);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
+.fc{font-family:var(--fm);font-size:0.8rem;font-weight:600;color:var(--tx-muted)}
+
+#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
 #st.vi{opacity:1;transform:none}
-#st:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,128,128,0.28)}
+#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,128,128,0.28)}
 
 @media(max-width:900px){
   html,body{font-size:17px;width:100%;overflow-x:hidden}
@@ -94,6 +106,7 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
   .w{padding:0 1.2rem}
   .nlogo{font-size:1.2rem}
   .nlinks a{font-size:0.7rem;padding:.24rem .35rem}
+  .pgrid{grid-template-columns:1fr}
   .alist li::before{display:none}
 }
 </style>
@@ -108,6 +121,7 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
     <ul class="nlinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="resources.html" class="act">Resources</a></li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
@@ -116,19 +130,26 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
 
 <main id="resources-wrapper">
 
-  <section>
+ 
+  
+<section>
     <div class="w">
       <p class="sl">Typesetting systems</p>
       <h2 class="stitle">LaTeX</h2>
       <ul class="alist">
-        <li><span class="atext">The TeXbook</span> <a href="https://www.ctan.org/pkg/texbook" target="_blank" class="alink">https://www.ctan.org/pkg/texbook</a></li>
-        <li><span class="atext">LaTeX Project Official Docs</span> <a href="https://www.latex-project.org/help/documentation" target="_blank" class="alink">https://www.latex-project.org/help/documentation</a></li>
-        <li><span class="atext">CTAN Package Documentation</span> <a href="https://ctan.org" target="_blank" class="alink">https://ctan.org</a></li>
-        <li><span class="atext">The Not So Short Introduction to LaTeX (lshort)</span> <a href="https://ctan.org/pkg/lshort-english" target="_blank" class="alink">https://ctan.org/pkg/lshort-english</a></li>
-        <li><span class="atext">Overleaf Tutorials</span> <a href="https://www.overleaf.com/learn" target="_blank" class="alink">https://www.overleaf.com/learn</a></li>
-        <li><span class="atext">TUGboat - TeX Users Group Journal</span> <a href="https://tug.org/TUGboat" target="_blank" class="alink">https://tug.org/TUGboat</a></li>
-        <li><span class="atext">LaTeX Companion</span> <a href="https://www.informit.com/store/the-latex-companion-9780201362992" target="_blank" class="alink">https://www.informit.com/store/the-latex-companion-9780201362992</a></li>
-        <li><span class="atext">Ahh! Cool ig...</span> <a href="https://castel.dev" target="_blank" class="alink">https://castel.dev</a></li>
+        <li><span class="atext">The TeXbook</span> <a href="https://www.ctan.org/pkg/texbook" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.ctan.org/pkg/texbook</span></a></li>
+        <li><span class="atext">LaTeX Project Official Docs</span> <a href="https://www.latex-project.org/help/documentation" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.latex-project.org/help/documentation</span></a></li>
+        <li><span class="atext">CTAN Package Documentation</span> <a href="https://ctan.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://ctan.org</span></a></li>
+        <li><span class="atext">The Not So Short Introduction to LaTeX (lshort)</span> <a href="https://ctan.org/pkg/lshort-english" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://ctan.org/pkg/lshort-english</span></a></li>
+        <li><span class="atext">Overleaf Tutorials</span> <a href="https://www.overleaf.com/learn" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.overleaf.com/learn</span></a></li>
+        <li><span class="atext">TUGboat - TeX Users Group Journal</span> <a href="https://tug.org/TUGboat" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://tug.org/TUGboat</span></a></li>
+        <li><span class="atext">LaTeX Companion</span> <a href="https://www.informit.com/store/the-latex-companion-9780201362992" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.informit.com/store/the-latex-companion-9780201362992</span></a></li>
+        <li><span class="atext">Ahh! Cool ig...</span> <a href="https://castel.dev" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://castel.dev</span></a></li>
+        
+        
+        <li><span class="atext">QnA</span> <a href="https://www.reddit.com/r/LaTeX/search/?q=latex+learning+for+absolute+noob" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/LaTeX/search/?q=latex+learning+for+absolute+noob</span></a></li>
+        
+        
       </ul>
     </div>
   </section>
@@ -139,16 +160,19 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
       <p class="sl">Programming Languages</p>
       <h2 class="stitle">R</h2>
       <ul class="alist">
-        <li><span class="atext">R Project Official Docs</span> <a href="https://www.r-project.org" target="_blank" class="alink">https://www.r-project.org</a></li>
-        <li><span class="atext">CRAN Task Views</span> <a href="https://cran.r-project.org/web/views" target="_blank" class="alink">https://cran.r-project.org/web/views</a></li>
-        <li><span class="atext">Comprehensive R Archive Network (CRAN)</span> <a href="https://cran.r-project.org" target="_blank" class="alink">https://cran.r-project.org</a></li>
-        <li><span class="atext">R for Data Science</span> <a href="https://r4ds.had.co.nz" target="_blank" class="alink">https://r4ds.had.co.nz</a></li>
-        <li><span class="atext">Advanced R</span> <a href="https://adv-r.hadley.nz" target="_blank" class="alink">https://adv-r.hadley.nz</a></li>
-        <li><span class="atext">ggplot2: Elegant Graphics for Data Analysis</span> <a href="https://ggplot2-book.org" target="_blank" class="alink">https://ggplot2-book.org</a></li>
-        <li><span class="atext">Quantitative Social Science</span> <a href="https://www.princeton.edu/~kosukei/qss.html" target="_blank" class="alink">https://www.princeton.edu/~kosukei/qss.html</a></li>
-        <li><span class="atext">Statistical Rethinking</span> <a href="https://github.com/rmcelreath/rethinking" target="_blank" class="alink">https://github.com/rmcelreath/rethinking</a></li>
-        <li><span class="atext">RStudio Cheat Sheets</span> <a href="https://rstudio.com/resources/cheatsheets" target="_blank" class="alink">https://rstudio.com/resources/cheatsheets</a></li>
-        <li><span class="atext">R -w3school</span> <a href="https://www.w3schools.com/r/default.asp" target="_blank" class="alink">https://www.w3schools.com/r/default.asp</a></li>
+        <li><span class="atext">R Project Official Docs</span> <a href="https://www.r-project.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.r-project.org</span></a></li>
+        <li><span class="atext">CRAN Task Views</span> <a href="https://cran.r-project.org/web/views" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://cran.r-project.org/web/views</span></a></li>
+        <li><span class="atext">Comprehensive R Archive Network (CRAN)</span> <a href="https://cran.r-project.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://cran.r-project.org</span></a></li>
+        <li><span class="atext">R for Data Science</span> <a href="https://r4ds.had.co.nz" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://r4ds.had.co.nz</span></a></li>
+        <li><span class="atext">Advanced R</span> <a href="https://adv-r.hadley.nz" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://adv-r.hadley.nz</span></a></li>
+        <li><span class="atext">ggplot2: Elegant Graphics for Data Analysis</span> <a href="https://ggplot2-book.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://ggplot2-book.org</span></a></li>
+        <li><span class="atext">Quantitative Social Science</span> <a href="https://www.princeton.edu/~kosukei/qss.html" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.princeton.edu/~kosukei/qss.html</span></a></li>
+        <li><span class="atext">Statistical Rethinking</span> <a href="https://github.com/rmcelreath/rethinking" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/rmcelreath/rethinking</span></a></li>
+        <li><span class="atext">RStudio Cheat Sheets</span> <a href="https://rstudio.com/resources/cheatsheets" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://rstudio.com/resources/cheatsheets</span></a></li>
+        <li><span class="atext">R -w3school</span> <a href="https://www.w3schools.com/r/default.asp" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.w3schools.com/r/default.asp</span></a></li>
+        <li><span class="atext">Statistics</span> <a href="https://www.reddit.com/r/statistics" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/statistics</span></a></li>
+        <li><span class="atext">Rstats</span> <a href="https://www.reddit.com/r/rstats" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/rstats</span></a></li>
+        <li><span class="atext">RStudio</span> <a href="https://www.reddit.com/r/RStudio" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/RStudio</span></a></li>
       </ul>
     </div>
   </section>
@@ -159,30 +183,30 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
       <p class="sl">Typesetting systems</p>
       <h2 class="stitle">Typst</h2>
       <ul class="alist">
-        <li><span class="atext">Typst Official Documentation</span> <a href="https://typst.app/docs" target="_blank" class="alink">https://typst.app/docs</a></li>
-        <li><span class="atext">Typst GitHub Repository</span> <a href="https://github.com/typst/typst" target="_blank" class="alink">https://github.com/typst/typst</a></li>
-        <li><span class="atext">Typst Community Gallery</span> <a href="https://typst.app/universe" target="_blank" class="alink">https://typst.app/universe</a></li>
-        <li><span class="atext">Typst by Example</span> <a href="https://typst.app/docs/examples" target="_blank" class="alink">https://typst.app/docs/examples</a></li>
-        <li><span class="atext">Typst Community Showcase</span> <a href="https://typst.app/community" target="_blank" class="alink">https://typst.app/community</a></li>
-        <li><span class="atext">Typst for LaTeX Users</span> <a href="https://typst.app/docs/guides/guide-for-latex-users" target="_blank" class="alink">https://typst.app/docs/guides/guide-for-latex-users</a></li>
-        <li><span class="atext">Typst Web Editor</span> <a href="https://typst.app/app" target="_blank" class="alink">https://typst.app/app</a></li>
+        <li><span class="atext">Typst Official Documentation</span> <a href="https://typst.app/docs" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/docs</span></a></li>
+        <li><span class="atext">Typst GitHub Repository</span> <a href="https://github.com/typst/typst" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/typst/typst</span></a></li>
+        <li><span class="atext">Typst Community Gallery</span> <a href="https://typst.app/universe" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/universe</span></a></li>
+        <li><span class="atext">Typst by Example</span> <a href="https://typst.app/docs/examples" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/docs/examples</span></a></li>
+        <li><span class="atext">Typst Community Showcase</span> <a href="https://typst.app/community" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/community</span></a></li>
+        <li><span class="atext">Typst for LaTeX Users</span> <a href="https://typst.app/docs/guides/guide-for-latex-users" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/docs/guides/guide-for-latex-users</span></a></li>
+        <li><span class="atext">Typst Web Editor</span> <a href="https://typst.app/app" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://typst.app/app</span></a></li>
       </ul>
       <h3 class="shd">Typst Templates</h3>
       <ul class="alist">
-        <li><span class="atext">LaPreprint Typst Template</span> <a href="https://github.com/LaPreprint/typst" target="_blank" class="alink">https://github.com/LaPreprint/typst</a></li>
-        <li><span class="atext">Bubble Document Layout</span> <a href="https://github.com/hzkonor/bubble-template" target="_blank" class="alink">https://github.com/hzkonor/bubble-template</a></li>
-        <li><span class="atext">Bare Bones CV</span> <a href="https://github.com/caffeinatedgaze/bare-bones-cv" target="_blank" class="alink">https://github.com/caffeinatedgaze/bare-bones-cv</a></li>
-        <li><span class="atext">Imprecv System</span> <a href="https://github.com/jskherman/imprecv" target="_blank" class="alink">https://github.com/jskherman/imprecv</a></li>
-        <li><span class="atext">Chicv Engine</span> <a href="https://github.com/skyzh/chicv" target="_blank" class="alink">https://github.com/skyzh/chicv</a></li>
-        <li><span class="atext">NNJR Formatting Framework</span> <a href="https://github.com/tzx/NNJR" target="_blank" class="alink">https://github.com/tzx/NNJR</a></li>
-        <li><span class="atext">Alta Typst Profiles</span> <a href="https://github.com/GeorgeHoneywood/alta-typst" target="_blank" class="alink">https://github.com/GeorgeHoneywood/alta-typst</a></li>
-        <li><span class="atext">Attractive Typst Resume</span> <a href="https://github.com/Harkunwar/attractive-typst-resume" target="_blank" class="alink">https://github.com/Harkunwar/attractive-typst-resume</a></li>
-        <li><span class="atext">Billryan Typst Variant</span> <a href="https://github.com/gvariable/billryan-typst" target="_blank" class="alink">https://github.com/gvariable/billryan-typst</a></li>
-        <li><span class="atext">Brilliant CV Architecture</span> <a href="https://github.com/yunanwg/brilliant-CV" target="_blank" class="alink">https://github.com/yunanwg/brilliant-CV</a></li>
-        <li><span class="atext">Modern Resume Layout</span> <a href="https://github.com/peterpf/modern-typst-resume" target="_blank" class="alink">https://github.com/peterpf/modern-typst-resume</a></li>
-        <li><span class="atext">CV Miku Blueprint</span> <a href="https://github.com/ice-kylin/typst-cv-miku" target="_blank" class="alink">https://github.com/ice-kylin/typst-cv-miku</a></li>
-        <li><span class="atext">Typst Poster Engine</span> <a href="https://github.com/pncnmnp/typst-poster" target="_blank" class="alink">https://github.com/pncnmnp/typst-poster</a></li>
-        <li><span class="atext">IEEE Transactions System</span> <a href="https://github.com/p4perf4ce/typst-ieee-trans-template" target="_blank" class="alink">https://github.com/p4perf4ce/typst-ieee-trans-template</a></li>
+        <li><span class="atext">LaPreprint Typst Template</span> <a href="https://github.com/LaPreprint/typst" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/LaPreprint/typst</span></a></li>
+        <li><span class="atext">Bubble Document Layout</span> <a href="https://github.com/hzkonor/bubble-template" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/hzkonor/bubble-template</span></a></li>
+        <li><span class="atext">Bare Bones CV</span> <a href="https://github.com/caffeinatedgaze/bare-bones-cv" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/caffeinatedgaze/bare-bones-cv</span></a></li>
+        <li><span class="atext">Imprecv System</span> <a href="https://github.com/jskherman/imprecv" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/jskherman/imprecv</span></a></li>
+        <li><span class="atext">Chicv Engine</span> <a href="https://github.com/skyzh/chicv" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/skyzh/chicv</span></a></li>
+        <li><span class="atext">NNJR Formatting Framework</span> <a href="https://github.com/tzx/NNJR" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/tzx/NNJR</span></a></li>
+        <li><span class="atext">Alta Typst Profiles</span> <a href="https://github.com/GeorgeHoneywood/alta-typst" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/GeorgeHoneywood/alta-typst</span></a></li>
+        <li><span class="atext">Attractive Typst Resume</span> <a href="https://github.com/Harkunwar/attractive-typst-resume" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/Harkunwar/attractive-typst-resume</span></a></li>
+        <li><span class="atext">Billryan Typst Variant</span> <a href="https://github.com/gvariable/billryan-typst" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/gvariable/billryan-typst</span></a></li>
+        <li><span class="atext">Brilliant CV Architecture</span> <a href="https://github.com/yunanwg/brilliant-CV" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/yunanwg/brilliant-CV</span></a></li>
+        <li><span class="atext">Modern Resume Layout</span> <a href="https://github.com/peterpf/modern-typst-resume" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/peterpf/modern-typst-resume</span></a></li>
+        <li><span class="atext">CV Miku Blueprint</span> <a href="https://github.com/ice-kylin/typst-cv-miku" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/ice-kylin/typst-cv-miku</span></a></li>
+        <li><span class="atext">Typst Poster Engine</span> <a href="https://github.com/pncnmnp/typst-poster" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/pncnmnp/typst-poster</span></a></li>
+        <li><span class="atext">IEEE Transactions System</span> <a href="https://github.com/p4perf4ce/typst-ieee-trans-template" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/p4perf4ce/typst-ieee-trans-template</span></a></li>
       </ul>
     </div>
   </section>
@@ -193,17 +217,35 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
       <p class="sl">Operating Systems</p>
       <h2 class="stitle">NixOS</h2>
       <ul class="alist">
-        <li><span class="atext">NixOS Manual</span> <a href="https://nixos.org/manual/nixos/stable" target="_blank" class="alink">https://nixos.org/manual/nixos/stable</a></li>
-        <li><span class="atext">Nix Manual</span> <a href="https://nixos.org/manual/nix/stable" target="_blank" class="alink">https://nixos.org/manual/nix/stable</a></li>
-        <li><span class="atext">Nixpkgs Reference</span> <a href="https://nixos.org/manual/nixpkgs/stable" target="_blank" class="alink">https://nixos.org/manual/nixpkgs/stable</a></li>
-        <li><span class="atext">NixOS Wiki</span> <a href="https://nixos.wiki" target="_blank" class="alink">https://nixos.wiki</a></li>
-        <li><span class="atext">A Tour of NixOS</span> <a href="https://nixos.org/guides/how-nix-works" target="_blank" class="alink">https://nixos.org/guides/how-nix-works</a></li>
-        <li><span class="atext">Nix Flakes Reference</span> <a href="https://nixos.wiki/wiki/Flakes" target="_blank" class="alink">https://nixos.wiki/wiki/Flakes</a></li>
-        <li><span class="atext">Home Manager Manual</span> <a href="https://nix-community.github.io/home-manager" target="_blank" class="alink">https://nix-community.github.io/home-manager</a></li>
-        <li><span class="atext">Practical NixOS Guide</span> <a href="https://ryantm.github.io/nixos-and-flakes" target="_blank" class="alink">https://ryantm.github.io/nixos-and-flakes</a></li>
-        <li><span class="atext">Determinate Systems Documentation</span> <a href="https://determinate.systems/posts" target="_blank" class="alink">https://determinate.systems/posts</a></li>
-        <li><span class="atext">Nixpkgs GitHub</span> <a href="https://github.com/NixOS/nixpkgs" target="_blank" class="alink">https://github.com/NixOS/nixpkgs</a></li>
-        <li><span class="atext">Full Time Nix</span> <a href="https://fulltimenix.com" target="_blank" class="alink">https://fulltimenix.com</a></li>
+        <li><span class="atext">NixOS Manual</span> <a href="https://nixos.org/manual/nixos/stable" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.org/manual/nixos/stable</span></a></li>
+        <li><span class="atext">Nix Manual</span> <a href="https://nixos.org/manual/nix/stable" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.org/manual/nix/stable</span></a></li>
+        <li><span class="atext">Manix</span> <a href="https://github.com/lecoqjacob/manix" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/lecoqjacob/manix</span></a></li>
+        <li><span class="atext">Search Nix-pkgs</span> <a href="https://search.nixos.org/packages" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://search.nixos.org/packages</span></a></li>
+        <li><span class="atext">Nix Community</span> <a href="https://nix-community.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nix-community.org</span></a></li>
+        <li><span class="atext">NixOS Discourse</span> <a href="https://discourse.nixos.org" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://discourse.nixos.org</span></a></li>
+        <li><span class="atext">NixOS & Flakes Book</span> <a href="https://nixos-and-flakes.thiscute.world" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos-and-flakes.thiscute.world</span></a></li>
+        <li><span class="atext">Nixpkgs Reference</span> <a href="https://nixos.org/manual/nixpkgs/stable" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.org/manual/nixpkgs/stable</span></a></li>
+        <li><span class="atext">NixOS Wiki</span> <a href="https://nixos.wiki" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.wiki</span></a></li>
+        <li><span class="atext">A Tour of NixOS</span> <a href="https://nixos.org/guides/how-nix-works" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.org/guides/how-nix-works</span></a></li>
+        <li><span class="atext">Nix Flakes Reference</span> <a href="https://nixos.wiki/wiki/Flakes" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nixos.wiki/wiki/Flakes</span></a></li>
+        <li><span class="atext">Home Manager Manual</span> <a href="https://nix-community.github.io/home-manager" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nix-community.github.io/home-manager</span></a></li>
+        <li><span class="atext">Practical NixOS Guide</span> <a href="https://ryantm.github.io/nixos-and-flakes" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://ryantm.github.io/nixos-and-flakes</span></a></li>
+        <li><span class="atext">Determinate Systems Documentation</span> <a href="https://determinate.systems/posts" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://determinate.systems/posts</span></a></li>
+      
+      
+        <li><span class="atext">Nixpkgs GitHub</span> <a href="https://github.com/NixOS/nixpkgs" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/NixOS/nixpkgs</span></a></li>
+       
+       
+       
+              <li><span class="atext">Nix Dev</span> <a href="https://nix.dev" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://nix.dev</span></a></li>
+        
+       
+       
+       
+       
+       
+       
+        <li><span class="atext">Full Time Nix</span> <a href="https://fulltimenix.com" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://fulltimenix.com</span></a></li>
       </ul>
     </div>
   </section>
@@ -214,14 +256,91 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
       <p class="sl">Useful stuff</p>
       <h2 class="stitle">Utils</h2>
       <ul class="alist">
-        <li><span class="atext">Programming -w3school</span> <a href="https://www.w3schools.com/programming/index.php" target="_blank" class="alink">https://www.w3schools.com/programming/index.php</a></li>
-        <li><span class="atext">Git -w3school</span> <a href="https://www.w3schools.com/git/default.asp" target="_blank" class="alink">https://www.w3schools.com/git/default.asp</a></li>
-        <li><span class="atext">Explore Terminal Tools -Terminal Trove</span> <a href="https://terminaltrove.com/explore" target="_blank" class="alink">https://terminaltrove.com/explore</a></li>
-        <li><span class="atext">another-cool-01</span> <a href="https://github.com/toolleeo/awesome-cli-apps-in-a-csv" target="_blank" class="alink">https://github.com/toolleeo/awesome-cli-apps-in-a-csv</a></li>
-        <li><span class="atext">another-cool-02</span> <a href="https://github.com/mjswensen/themer" target="_blank" class="alink">https://github.com/mjswensen/themer</a></li>
+       
+        <li><span class="atext">Programming -w3school</span> <a href="https://www.w3schools.com/programming/index.php" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.w3schools.com/programming/index.php</span></a></li>
+ 
+ 
+         <li><span class="atext">Git</span> <a href="https://git-scm.com" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://git-scm.com</span></a></li>
+ 
+ 
+ 
+        
+      <li><span class="atext">Git -w3school</span> <a href="https://www.w3schools.com/git/default.asp" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.w3schools.com/git/default.asp</span></a></li>
+        <li><span class="atext">Explore Terminal Tools -Terminal Trove</span> <a href="https://terminaltrove.com/explore" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://terminaltrove.com/explore</span></a></li>
+        <li><span class="atext">another-cool-01</span> <a href="https://github.com/toolleeo/awesome-cli-apps-in-a-csv" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/toolleeo/awesome-cli-apps-in-a-csv</span></a></li>
+        
+        
+        
+        <li><span class="atext">Bash-01</span> <a href="https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html</span></a></li>
+        
+        
+        <li><span class="atext">Bash-02</span> <a href="https://tldp.org/LDP/abs/html" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://tldp.org/LDP/abs/html</span></a></li>
+        
+        
+        <li><span class="atext">Bash-03</span> <a href="https://en.wikibooks.org/wiki/Bash_Shell_Scripting" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://en.wikibooks.org/wiki/Bash_Shell_Scripting</span></a></li>
+        
+        
+        <li><span class="atext">Bash-04</span> <a href="https://github.com/Idnan/bash-guide" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/Idnan/bash-guide</span></a></li>
+        
+        
+        
+        <li><span class="atext">Bash-05</span> <a href="https://raimonster.com/scripting-field-guide" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://raimonster.com/scripting-field-guide</span></a></li>
+        
+        
+        
+        <li><span class="atext">Bash-06</span> <a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html</span></a></li>
+        
+        
+        
+        <li><span class="atext">Bash-07</span> <a href="https://www.learnenough.com/command-line-tutorial/basics" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.learnenough.com/command-line-tutorial/basics</span></a></li>
+        
+        
+        
+       
+        
+        
+        
+        
+        <li><span class="atext">another-cool-02</span> <a href="https://github.com/mjswensen/themer" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://github.com/mjswensen/themer</span></a></li>
       </ul>
     </div>
   </section>
+  <hr class="dv">
+
+  <section>
+    <div class="w">
+      <p class="sl">Worth subreddits to look around</p>
+      <h2 class="stitle">Subreddits</h2>
+      <ul class="alist">
+        <li><span class="atext">MastersDegree</span> <a href="https://www.reddit.com/r/MastersDegree" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/MastersDegree</span></a></li>
+        <li><span class="atext">PhD</span> <a href="https://www.reddit.com/r/PhD" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/PhD</span></a></li>
+        <li><span class="atext">Scholarships</span> <a href="https://www.reddit.com/r/scholarships" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/scholarships</span></a></li>
+        <li><span class="atext">StudyAbroad</span> <a href="https://www.reddit.com/r/studyAbroad" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/studyAbroad</span></a></li>
+        <li><span class="atext">University</span> <a href="https://www.reddit.com/r/University" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/University</span></a></li>
+        <li><span class="atext">explainlikeimfive</span> <a href="https://www.reddit.com/r/explainlikeimfive" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/explainlikeimfive</span></a></li>
+        <li><span class="atext">gradadmissions</span> <a href="https://www.reddit.com/r/gradadmissions" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/gradadmissions</span></a></li>
+        <li><span class="atext">GradSchool</span> <a href="https://www.reddit.com/r/GradSchool" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/GradSchool</span></a></li>
+        <li><span class="atext">GRE</span> <a href="https://www.reddit.com/r/GRE" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/GRE</span></a></li>
+        <li><span class="atext">IELTS</span> <a href="https://www.reddit.com/r/IELTS" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/IELTS</span></a></li>
+        <li><span class="atext">IWantToLearn</span> <a href="https://www.reddit.com/r/IWantToLearn" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/IWantToLearn</span></a></li>
+        <li><span class="atext">lifehack</span> <a href="https://www.reddit.com/r/lifehack" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/lifehack</span></a></li>
+        <li><span class="atext">academia</span> <a href="https://www.reddit.com/r/academia" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/academia</span></a></li>
+        <li><span class="atext">AskAcademia</span> <a href="https://www.reddit.com/r/AskAcademia" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskAcademia</span></a></li>
+        <li><span class="atext">AskEurope</span> <a href="https://www.reddit.com/r/AskEurope" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskEurope</span></a></li>
+        <li><span class="atext">AskAnAmerican</span> <a href="https://www.reddit.com/r/AskAnAmerican" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskAnAmerican</span></a></li>
+        <li><span class="atext">AskStatistics</span> <a href="https://www.reddit.com/r/AskStatistics" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskStatistics</span></a></li>
+        <li><span class="atext">changemyview</span> <a href="https://www.reddit.com/r/changemyview" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/changemyview</span></a></li>
+        <li><span class="atext">AskTheWorld</span> <a href="https://www.reddit.com/r/AskTheWorld" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskTheWorld</span></a></li>
+        <li><span class="atext">LifeProTips</span> <a href="https://www.reddit.com/r/LifeProTips" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/LifeProTips</span></a></li>
+        <li><span class="atext">AskDocs</span> <a href="https://www.reddit.com/r/AskDocs" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskDocs</span></a></li>
+        <li><span class="atext">AskAustralian</span> <a href="https://www.reddit.com/r/AskAnAustralian" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/AskAnAustralian</span></a></li>
+        <li><span class="atext">InternetIsBeautiful</span> <a href="https://www.reddit.com/r/InternetIsBeautiful" target="_blank" class="alink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">https://www.reddit.com/r/InternetIsBeautiful</span></a></li>
+      </ul>
+    </div>
+  </section>
+  
+  
+  
 
 </main>
 
