@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academia — A curated reference archive of external systems and repositories.">
+<title>Academia | Shaon</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('fonts/STIX2Text-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('fonts/STIX2Text-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url('fonts/STIX2Text-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --bg: #FFFFFF;
+  --surf: #FFFFFF;
+  --bd: #D5CFC8;
+  --tx: #000000;
+  --tx-muted: #6B5458;
+  --ac: #008080;
+  --fd: 'STIX Two Text', serif;
+  --fb: 'STIX Two Text', serif;
+  --fm: 'STIX Two Text', serif;
+  --r: 6px;
+  --sh-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --sh-glow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
+body{font-family:var(--fb);font-weight:600;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(0,128,128,0.18);color:var(--tx)}
+a{color:inherit;text-decoration:none}
+
+#prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(255, 255, 255, 1);backdrop-filter:blur(20px) saturate(1.2)}
+#nav.sc{box-shadow:0 1px 0 var(--bd)}
+.ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
+.nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx)}
+.nlinks{display:flex;flex-wrap:nowrap;justify-content:center;gap:.1rem;list-style:none}
+.nlinks a{font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--tx);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.nlinks a:hover{color:var(--ac);background:transparent}
+.nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
+
+.w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
+section{padding:2.5rem 0;position:relative;z-index:1}
+#about-wrapper > section:first-of-type{padding-top:0}
+
+#about-page{padding-top:7.5rem;min-height:75vh}
+#about-wrapper{padding-top:7.5rem;min-height:75vh}
+
+hr.dv{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--bd) 40%,var(--bd) 60%,transparent);margin:0;opacity:.5}
+
+.sl{font-family:var(--fm);font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-top:0;margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
+.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--ac);opacity:.5}
+.stitle{font-family:var(--fd);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.8rem;color:var(--tx)}
+.shd{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin:2.5rem 0 1rem}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:1.8rem}
+.pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
+.pc:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--sh-card)}
+
+.pstat{display:inline-block;font-family:var(--fm);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .5rem;border-radius:var(--r);border:1px solid var(--ac);color:var(--ac);margin-bottom:.8rem;width:fit-content}
+.pct{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin-bottom:.5rem}
+.pcd{font-family:var(--fb);font-size:0.95rem;font-weight:600;color:var(--tx);line-height:1.6;margin-bottom:1.2rem}
+.ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.ptag{font-family:var(--fm);font-size:0.75rem;font-weight:600;color:var(--tx-muted);border:1px solid var(--bd);padding:.15rem .45rem;border-radius:var(--r)}
+.plink{font-family:var(--fm);font-size:0.9rem;font-weight:700;color:var(--ac);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto;transition:gap .2s}
+.pc:hover .plink{gap:.5rem}
+
+.alist{list-style:none;display:flex;flex-direction:column;gap:1.2rem;padding-left:0}
+.alist li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0.6rem;position:relative}
+.atext{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--tx)}
+.alink{font-family:var(--fm);font-size:0.95rem;font-weight:600;color:var(--ac);transition:color 0.2s,opacity 0.2s;word-break:break-all;opacity:.9}
+.alink:hover{color:var(--ac);opacity:1;text-decoration:underline}
+.alist li::before{content:'→';position:absolute;left:-20px;color:var(--ac);opacity:0;transition:opacity 0.2s,transform 0.2s;transform:translateX(-10px);font-family:var(--fd)}
+.alist li:hover::before{opacity:1;transform:translateX(0)}
+
+footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
+.fc{font-family:var(--fm);font-size:0.8rem;font-weight:600;color:var(--tx-muted)}
+
+#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
+#st.vi{opacity:1;transform:none}
+#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,128,128,0.28)}
+
+@media(max-width:900px){
+  html,body{font-size:17px;width:100%;overflow-x:hidden}
+}
+@media(max-width:560px){
+  .w{padding:0 1.2rem}
+  .nlogo{font-size:1.2rem}
+  .nlinks a{font-size:0.7rem;padding:.24rem .35rem}
+  .pgrid{grid-template-columns:1fr}
+  .alist li::before{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<div id="prog"></div>
+
+<div id="nav">
+  <div class="ni">
+    <a class="nlogo" href="index.html">Shaon Ahmed Ronok</a>
+ 
+ 
+ <ul class="nlinks">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="about.html" class="act">About</a></li>
+  <li><a href="resources.html">Resources</a></li>
+  <li><a href="connect.html">Connect</a></li>
+</ul>  
+   
+    
+    
+    
+  </div>
+</div>
+
+
+
+<main id="about-wrapper">
+
+  <section>
+    <div class="w">
+      <p class="sl">Who I Am</p>
+      <h2 class="stitle">Traits</h2>
+      
+
+<p class="trait-text">
+My eyes: <a href="https://grokipedia.com/page/Myopia" style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">myopic</a>
+−3.75/−3.00, <a href="https://grokipedia.com/page/Astigmatism" style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">astigmatic</a> 25%. Without glasses, everything beyond arm's reach deteriorates my hands, clothing, monitor all lack sharpness. With optical correction, the world snaps into 4K clarity: text resolves, details crystallize, distance becomes navigable. This defines my workspace: everything I work on sits within arm's length, optimized for my natural focal range. Light mode reduces eye strain during sustained close-distance work.
+</p>
+
+<br>
+
+<p class="trait-text">
+My hardware reflects deliberate minimalism: Intel Core i5-6500 (6th Gen), 8GB DDR4 RAM, 128GB NVMe primary SSD, 256GB SATA secondary SSD, Gigasonic 500W PSU, Aptech gaming case, 17" monitor. Peripherals: Alfa USB WiFi antenna, CSR8510 Bluetooth dongle. System stack: Niri compositor, PipeWire audio, NetworkManager, fish shell. My <a href="https://nixos.org" style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">NixOS</a> configuration spans 16 declarative .nix files governing every aspect from hardware to aesthetics.
+</p>
+
+<br>
+
+<p class="trait-text">
+I no longer listen to music, watch shows, or play games by myself. They became obsolete to me. I consume only niche documentaries, never fiction, never science fiction, never imaginary constructs. I reject anything not grounded in empirical fact. My media consumption is intentional and sparse by design.
+</p>
+
+<br>
+
+<p class="trait-text">
+I avoid all wallpapers containing nature, natural beauty, or animals. I use solely materialist imagery buildings, objects, geometric patterns, abstract structures. My entire visual ecosystem follows this principle: abstract, structured, minimal. This applies uniformly across every device: laptop, phone, monitor, terminal backgrounds. No exceptions.
+</p>
+
+<br>
+
+<p class="trait-text">
+I am <a href="https://grokipedia.com/page/Altruism" style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">altruistic</a> by default I prioritize collective benefit over personal comfort. I am musically inclined but deliberate about consumption; I don't consume passively. I am anhedonic, I experience satisfaction differently than most, finding fulfillment in systems that work, clarity in design, efficiency in execution. I think systematically. I build for clarity. I optimize for what actually works, not what feels comfortable. My entire existence reflects this: from my color palettes to my hardware choices to my communication preferences. Nothing is arbitrary.
+</p>
+
+
+    </div>
+  </section>
+
+</main>
+        
+  
+  
+  
+  
+  
+
+<footer>
+  <div class="w">
+    <p class="fc">© 2026 Shaon Ahmed Ronok</p>
+  </div>
+</footer>
+
+<button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+const nav = document.getElementById('nav');
+const _st = document.getElementById('st');
+const _prog = document.getElementById('prog');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if(!ticking){
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      const sh = document.body.scrollHeight - window.innerHeight;
+      nav.classList.toggle('sc', sy > 40);
+      _st.classList.toggle('vi', sy > 100);
+      _prog.style.width = (sy / (sh || 1) * 100) + '%';
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, {passive: true});
+</script>
+</body>
+</html>
