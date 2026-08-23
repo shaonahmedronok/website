@@ -29,8 +29,8 @@
   font-display: swap;
 }
 :root {
-  --bg: #F8F5F0;
-  --surf: #F8F5F0;
+  --bg: #FFFFFF;
+  --surf: #FFFFFF;
   --bd: #D5CFC8;
   --tx: #000000;
   --tx-muted: #6B5458;
@@ -38,9 +38,8 @@
   --fd: 'STIX Two Text', serif;
   --fb: 'STIX Two Text', serif;
   --fm: 'STIX Two Text', serif;
-  --sh-card: 0 4px 20px rgba(0, 128, 128, 0.10);
-  --sh-glow: 0 8px 24px rgba(0, 128, 128, 0.18);
-  --r: 6px;
+----sh-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+--sh-glow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
@@ -50,7 +49,7 @@ body{font-family:var(--fb);font-weight:600;background:var(--bg);color:var(--tx);
 a{color:inherit;text-decoration:none}
 
 #prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(248,245,240,.97);backdrop-filter:blur(20px) saturate(1.2)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(255, 255, 255, 1);backdrop-filter:blur(20px) saturate(1.2)}
 #nav.sc{box-shadow:0 1px 0 var(--bd)}
 .ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
 .nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx)}
@@ -108,6 +107,7 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
     <ul class="nlinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="act">Projects</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="connect.html">Connect</a></li>
     </ul>
@@ -129,32 +129,37 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
           <span class="ptag">LaTeX</span>
           <span class="ptag">Academic</span>
         </div>
-        <a href="https://github.com/shaonahmedronok/compendium" target="_blank" class="plink">View on GitHub →</a>
-      </div>
+<a href="https://github.com/shaonahmedronok/compendium" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a> </div>
 
       <div class="pc">
         <span class="pstat">Active</span>
         <p class="pct">nixos-config</p>
-        <p class="pcd">My solely Academia based NixOS setup.</p>
+        <p class="pcd">My NixOS setup.</p>
         <div class="ptags">
           <span class="ptag">Nix</span>
           <span class="ptag">NixOS</span>
           <span class="ptag">MIT License</span>
         </div>
-        <a href="https://github.com/shaonahmedronok/nixos-config" target="_blank" class="plink">View on GitHub →</a>
-      </div>
+        
+        <a href="https://github.com/shaonahmedronok/nixos-config" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a>
+        
+        </div>
 
       <div class="pc">
         <span class="pstat">Shipped</span>
         <p class="pct">website</p>
-        <p class="pcd">Hand-coded personal site. Raw HTML, CSS, vanilla JS — no frameworks, no build tools, no abstractions.</p>
+        <p class="pcd">My personal site.</p>
         <div class="ptags">
           <span class="ptag">HTML</span>
           <span class="ptag">CSS</span>
           <span class="ptag">Neocities</span>
         </div>
-        <a href="https://github.com/shaonahmedronok/website" target="_blank" class="plink">View on GitHub →</a>
-      </div>
+       
+       
+       <a href="https://github.com/shaonahmedronok/website" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a>
+       
+       
+       </div>
 
     </div>
   </div>
