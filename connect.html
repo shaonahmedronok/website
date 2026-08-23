@@ -29,8 +29,8 @@
   font-display: swap;
 }
 :root {
-  --bg: #F8F5F0;
-  --surf: #F8F5F0;
+  --bg: #FFFFFF;
+  --surf: #FFFFFF;
   --tx: #000000;
   --tx-muted: #6B5458;
   --bd: #D5CFC8;
@@ -38,9 +38,8 @@
   --fd: 'STIX Two Text', serif;
   --fb: 'STIX Two Text', serif;
   --fm: 'STIX Two Text', serif;
-  --sh-card: 0 4px 20px rgba(0, 128, 128, 0.10);
-  --sh-glow: 0 8px 24px rgba(0, 128, 128, 0.18);
-  --r: 6px;
+--sh-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+--sh-glow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
@@ -51,7 +50,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 
 #prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(248,245,240,.97);backdrop-filter:blur(20px) saturate(1.2)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(255, 255, 255, 1);backdrop-filter:blur(20px) saturate(1.2)}
 #nav.sc{box-shadow:0 1px 0 var(--bd)}
 .ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
 .nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx)}
@@ -102,6 +101,7 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
     <ul class="nlinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="connect.html" class="act">Connect</a></li>
     </ul>
@@ -113,26 +113,30 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
     <p class="sl">Get in touch</p>
     <h2 class="stitle">Digital Footprints</h2>
     <div class="clinks">
-      <a href="https://github.com/shaonahmedronok" class="cl" target="_blank">
-        <img src="icons/GitHub_Invertocat_Black.png" alt="GitHub">
-        <div><p class="clp">GitHub</p><p class="clh">shaonahmedronok</p></div>
-      </a>
-      <a href="https://discord.com/users/1526192711911211128" class="cl" target="_blank">
-        <img src="icons/Discord-Symbol-Blurple.png" alt="Discord">
-        <div><p class="clp">Discord</p><p class="clh">pupilusr</p></div>
-      </a>
-      <a href="https://linkedin.com/shaonahmedronok" class="cl" target="_blank">
-        <img src="icons/LI-In-Bug.png" alt="LinkedIn">
-        <div><p class="clp">LinkedIn</p><p class="clh">shaonahmedronok</p></div>
-      </a>
-      <a href="https://facebook.com/shaonahmedronok" class="cl" target="_blank">
-        <img src="icons/Facebook_Logo_Primary.png" alt="Facebook">
-        <div><p class="clp">Facebook</p><p class="clh">shaonahmedronok</p></div>
-      </a>
-      <a href="https://www.youtube.com/@shaonahmedronok" class="cl" target="_blank">
-        <img src="icons/yt_icon_red_digital.png" alt="YouTube">
-        <div><p class="clp">YouTube</p><p class="clh">shaonahmedronok</p></div>
-      </a>
+     <a href="https://github.com/shaonahmedronok" class="cl" target="_blank">
+  <img src="icons/GitHub_Invertocat_Black.png" alt="GitHub">
+  <div><p class="clp">GitHub</p><p class="clh"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">shaonahmedronok</span></p></div>
+</a>
+
+     <a href="https://discord.com/users/1526192711911211128" class="cl" target="_blank">
+  <img src="icons/Discord-Symbol-Blurple.png" alt="Discord">
+  <div><p class="clp">Discord</p><p class="clh"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">pupilusr</span></p></div>
+</a>
+
+<a href="https://linkedin.com/shaonahmedronok" class="cl" target="_blank">
+  <img src="icons/LI-In-Bug.png" alt="LinkedIn">
+  <div><p class="clp">LinkedIn</p><p class="clh"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">shaonahmedronok</span></p></div>
+</a>
+
+<a href="https://facebook.com/shaonahmedronok" class="cl" target="_blank">
+  <img src="icons/Facebook_Logo_Primary.png" alt="Facebook">
+  <div><p class="clp">Facebook</p><p class="clh"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">shaonahmedronok</span></p></div>
+</a>
+
+<a href="https://www.youtube.com/@shaonahmedronok" class="cl" target="_blank">
+  <img src="icons/yt_icon_red_digital.png" alt="YouTube">
+  <div><p class="clp">YouTube</p><p class="clh"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">shaonahmedronok</span></p></div>
+</a>
     </div>
   </div>
 </section>
