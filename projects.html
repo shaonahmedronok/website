@@ -5,194 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Projects — Shaon Ahmed Ronok">
 <title>Projects | Shaon</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>
-@font-face {
-  font-family: 'STIX Two Text';
-  src: url('fonts/STIX2Text-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'STIX Two Text';
-  src: url('fonts/STIX2Text-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'STIX Two Text';
-  src: url('fonts/STIX2Text-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-:root {
-  --bg: #FFFFFF;
-  --surf: #FFFFFF;
-  --bd: #D5CFC8;
-  --tx: #000000;
-  --tx-muted: #6B5458;
-  --ac: #008080;
-  --fd: 'STIX Two Text', serif;
-  --fb: 'STIX Two Text', serif;
-  --fm: 'STIX Two Text', serif;
-----sh-card: 0 4px 20px rgba(0, 0, 0, 0.08);
---sh-glow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:18.5px;overflow-x:hidden;width:100%}
-body{font-family:var(--fb);font-weight:600;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;width:100%;-webkit-font-smoothing:antialiased}
-
-::selection{background:rgba(0,128,128,0.18);color:var(--tx)}
-a{color:inherit;text-decoration:none}
-
-#prog{position:fixed;top:0;left:0;z-index:300;height:2px;background:var(--ac);width:0;transition:width .1s linear}
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s;width:100%;background:rgba(255, 255, 255, 1);backdrop-filter:blur(20px) saturate(1.2)}
-#nav.sc{box-shadow:0 1px 0 var(--bd)}
-.ni{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:1400px;margin:0 auto;padding:.6rem 2.3rem .5rem;gap:.3rem;width:100%}
-.nlogo{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--tx)}
-.nlinks{display:flex;flex-wrap:nowrap;justify-content:center;gap:.1rem;list-style:none}
-.nlinks a{font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--tx);padding:.28rem .42rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
-.nlinks a:hover{color:var(--ac);background:transparent}
-.nlinks a.act{color:var(--bg);background:var(--ac);font-weight:700;box-shadow:var(--sh-glow)}
-
-.w{width:100%;max-width:1400px;margin:0 auto;padding:0 2.3rem;position:relative;z-index:1}
-section{padding:2.5rem 0;position:relative;z-index:1}
-
-#projects-page{padding-top:7.5rem;min-height:75vh}
-
-.sl{font-family:var(--fm);font-size:0.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--ac);margin-bottom:.6rem;opacity:.9;display:flex;align-items:center;gap:.55rem}
-.sl::after{content:'';flex:0 0 22px;height:1px;background:var(--ac);opacity:.5}
-.stitle{font-family:var(--fd);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.8rem;color:var(--tx)}
-
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:1.8rem}
-.pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
-.pc:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--sh-card)}
-
-.pstat{display:inline-block;font-family:var(--fm);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .5rem;border-radius:var(--r);border:1px solid var(--ac);color:var(--ac);margin-bottom:.8rem;width:fit-content}
-.pct{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--tx);margin-bottom:.5rem}
-.pcd{font-family:var(--fb);font-size:0.95rem;font-weight:600;color:var(--tx);line-height:1.6;margin-bottom:1.2rem}
-.ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
-.ptag{font-family:var(--fm);font-size:0.75rem;font-weight:600;color:var(--tx-muted);border:1px solid var(--bd);padding:.15rem .45rem;border-radius:var(--r)}
-.plink{font-family:var(--fm);font-size:0.9rem;font-weight:700;color:var(--ac);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto;transition:gap .2s}
-.pc:hover .plink{gap:.5rem}
-
-footer{background:var(--bg);border-top:1px solid var(--bd);padding:1.9rem 0}
-.fc{font-family:var(--fm);font-size:0.8rem;font-weight:600;color:var(--tx-muted)}
-
-#st{position:fixed;bottom:2rem;right:2rem;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-glow);opacity:0;transform:translateY(10px);transition:all .35s cubic-bezier(.22,1,.36,1)}
-#st.vi{opacity:1;transform:none}
-#st:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,128,128,0.28)}
-
-@media(max-width:900px){
-  html,body{font-size:17px;width:100%;overflow-x:hidden}
-}
-@media(max-width:560px){
-  .w{padding:0 1.2rem}
-  .nlogo{font-size:1.2rem}
-  .nlinks a{font-size:0.7rem;padding:.24rem .35rem}
-  .pgrid{grid-template-columns:1fr}
-}
-</style>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="projects">
+<div id="nav-mount"></div>
+<main><section><div class="w">
+  <p class="sl">What I've built</p>
+  <h1 class="stitle">Projects</h1>
+  <div class="pgrid" id="page-mount"></div>
+</div></section></main>
+<div id="footer-mount"></div>
 
-<div id="prog"></div>
-
-<div id="nav">
-  <div class="ni">
-    <a class="nlogo" href="index.html">Shaon Ahmed Ronok</a>
-    <ul class="nlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html" class="act">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="connect.html">Connect</a></li>
-    </ul>
-  </div>
-</div>
-
-<section id="projects-page">
-  <div class="w">
-    <p class="sl">What I've built</p>
-    <h2 class="stitle">Projects</h2>
-    <div class="pgrid">
-
-      <div class="pc">
-        <span class="pstat">Active</span>
-        <p class="pct">compendium</p>
-        <p class="pcd">My LaTeX note on Education systems across various countries.</p>
-        <div class="ptags">
-          <span class="ptag">TeX</span>
-          <span class="ptag">LaTeX</span>
-          <span class="ptag">Academic</span>
-        </div>
-<a href="https://github.com/shaonahmedronok/compendium" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a> </div>
-
-      <div class="pc">
-        <span class="pstat">Active</span>
-        <p class="pct">nixos-config</p>
-        <p class="pcd">My NixOS setup.</p>
-        <div class="ptags">
-          <span class="ptag">Nix</span>
-          <span class="ptag">NixOS</span>
-          <span class="ptag">MIT License</span>
-        </div>
-        
-        <a href="https://github.com/shaonahmedronok/nixos-config" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a>
-        
-        </div>
-
-      <div class="pc">
-        <span class="pstat">Shipped</span>
-        <p class="pct">website</p>
-        <p class="pcd">My personal site.</p>
-        <div class="ptags">
-          <span class="ptag">HTML</span>
-          <span class="ptag">CSS</span>
-          <span class="ptag">Neocities</span>
-        </div>
-       
-       
-       <a href="https://github.com/shaonahmedronok/website" target="_blank" class="plink"><span style="color: #c93e66; text-decoration: none; border-bottom: 2px solid #c93e66; padding-bottom: 2px;">View on GitHub →</span></a>
-       
-       
-       </div>
-
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="w">
-    <p class="fc">© 2026 Shaon Ahmed Ronok</p>
-  </div>
-</footer>
-
-<button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<script>
-const nav = document.getElementById('nav');
-const _st = document.getElementById('st');
-const _prog = document.getElementById('prog');
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if(!ticking){
-    requestAnimationFrame(() => {
-      const sy = window.scrollY;
-      const sh = document.body.scrollHeight - window.innerHeight;
-      nav.classList.toggle('sc', sy > 40);
-      _st.classList.toggle('vi', sy > 100);
-      _prog.style.width = (sy / (sh || 1) * 100) + '%';
-      ticking = false;
-    });
-    ticking = true;
-  }
-}, {passive: true});
+<script type="application/json" id="page-data">
+[
+  {"stat":"Active","name":"compendium","desc":"My LaTeX note on Education systems across various countries.","tags":["TeX","LaTeX","Academic"],"url":"https://github.com/shaonahmedronok/compendium"},
+  {"stat":"Active","name":"shaonix","desc":"shaonix - Shaon's NixOS setup.","tags":["Nix","NixOS","MIT License"],"url":"https://github.com/shaonahmedronok/shaonix"},
+  {"stat":"Shipped","name":"website","desc":"My personal site.","tags":["HTML","CSS","Neocities"],"url":"https://github.com/shaonahmedronok/website"}
+]
 </script>
+<script src="script.js" defer></script>
 </body>
 </html>
