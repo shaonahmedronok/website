@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shaon: writer, independent researcher, systems thinker.">
+<title>Shaon Ahmed Ronok | Writer and independent researcher</title>
+<meta name="description" content="Shaon Ahmed Ronok: writer, independent researcher, systems thinker. Information systems, technology ethics, philosophy of science.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://shaon.neocities.org">
 <meta property="og:title" content="Shaon">
 <meta property="og:description" content="Writer and independent researcher. Information systems, technology ethics, philosophy of science.">
 <meta property="og:type" content="website">
@@ -12,45 +15,588 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shaon">
 <meta name="twitter:image" content="https://shaon.neocities.org/images/1772381919541.png">
-<title>Shaon</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css">
+<style>
+@font-face{font-family:'STIX Two Text';src:url('fonts/STIX2Text-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'STIX Two Text';src:url('fonts/STIX2Text-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'STIX Two Text';src:url('fonts/STIX2Text-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --bg:#F5F8F7;
+  --surface:#FFFFFF;
+  --tint:#EAF2F0;
+  --line:#D8E2DF;
+  --ink:#1C2625;
+  --muted:#55635F;
+  --accent:#0B6B6B;
+  --accent-soft:#DCEBE8;
+  --link:#B5365C;
+  --radius:12px;
+  --font:'STIX Two Text',Georgia,'Times New Roman',serif;
+  --hh:6.5rem;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:clamp(16px,.4vw + 14.5px,19px);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--font);font-weight:400;font-size:1rem;line-height:1.7;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit}
+[hidden]{display:none !important}
+::selection{background:rgba(11,107,107,.18)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--accent);color:#fff;padding:.5rem 1rem;border-radius:8px;z-index:300;text-decoration:none}
+.skip:focus{top:1rem}
+
+.wrap{width:100%;max-width:70rem;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+
+/* text links */
+.tl{color:var(--link);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+.tl:hover{text-decoration-thickness:2.5px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;flex-direction:column;align-items:center;gap:.15rem;padding-top:.6rem;padding-bottom:.45rem}
+.brand{font-weight:700;font-size:1.35rem;line-height:1.3;text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.15rem;list-style:none}
+.nav a{display:block;padding:.35rem .75rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted)}
+.nav a:hover{background:var(--tint);color:var(--ink)}
+.nav a[aria-current="true"]{background:var(--accent-soft);color:var(--accent);font-weight:700}
+
+/* sections */
+.sec{padding:clamp(2.6rem,6vw,4.5rem) 0;scroll-margin-top:var(--hh);border-top:1px solid var(--line)}
+.sec-grid{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:1.2rem clamp(1.5rem,4vw,3.5rem)}
+.sec h2{font-weight:700;font-size:clamp(1.7rem,3.2vw,2.2rem);line-height:1.15}
+.sec-lead{color:var(--muted);margin-top:.5rem;font-size:.98rem;line-height:1.55}
+
+/* hero */
+#home{border-top:0;padding-top:clamp(2rem,6vw,4.5rem)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
+.hero h1{font-weight:700;font-size:clamp(2.2rem,5.6vw,3.7rem);line-height:1.08;letter-spacing:-.01em}
+.hero .lead{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.5;margin-top:1rem;max-width:30rem}
+.hero .fields{color:var(--muted);margin-top:.5rem;max-width:32rem}
+.tools-label{margin-top:2rem;font-size:.95rem;color:var(--muted);font-weight:600}
+.tools{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none;margin-top:.7rem}
+.tools li{display:flex;flex-direction:column;align-items:center;gap:.3rem;min-width:3.2rem}
+.tools img{width:2.6rem;height:2.6rem;object-fit:contain}
+.tools span{font-size:.8rem;color:var(--muted)}
+.glance{margin-top:1.8rem;display:inline-grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem;padding:.8rem 1.1rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);max-width:100%}
+.glance dt{font-weight:700;color:var(--accent)}
+.glance dd{font-weight:400}
+
+.figure{position:relative;width:clamp(15rem,28vw,22rem);aspect-ratio:1;justify-self:center}
+.figure svg{position:absolute;inset:0;width:100%;height:100%}
+.figure svg rect{fill:none;stroke:var(--accent);stroke-width:1.2;opacity:.4;vector-effect:non-scaling-stroke}
+.figure img{position:absolute;top:50%;left:50%;width:52%;height:auto;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;object-fit:cover;border:3px solid var(--accent);background:var(--surface)}
+
+/* projects */
+.proj-list{list-style:none}
+.proj{padding:1.3rem 0;border-top:1px solid var(--line)}
+.proj:first-child{border-top:0;padding-top:0}
+.proj h3{font-weight:700;font-size:1.3rem;line-height:1.3}
+.proj p{margin-top:.25rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:.8rem 0}
+.tags li{font-size:.8rem;line-height:1.2;color:var(--muted);background:var(--tint);border-radius:999px;padding:.3rem .7rem}
+.proj-more{margin-top:.6rem;padding-top:1.3rem;border-top:1px solid var(--line)}
+
+/* about */
+.about-body{display:flex;flex-direction:column;gap:2rem;max-width:44rem}
+.about-body h3{font-weight:700;font-size:1.2rem;line-height:1.3;margin-bottom:.4rem}
+.about-body p+p{margin-top:.8rem}
+.specs{display:grid;grid-template-columns:minmax(0,9.5rem) minmax(0,1fr);gap:.1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.2rem;margin-top:.9rem}
+.specs dt{font-weight:700;color:var(--accent);padding:.35rem 0}
+.specs dd{padding:.35rem 0}
+.specs dt,.specs dd{border-top:1px solid var(--line)}
+.specs dt:first-of-type,.specs dt:first-of-type+dd{border-top:0}
+
+/* resources */
+.filter{display:block;margin-bottom:1rem}
+.filter span{display:block;font-weight:600;margin-bottom:.35rem}
+.filter input{width:100%;max-width:30rem;font:inherit;font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:.7rem .9rem;min-height:2.9rem}
+.filter input:focus-visible{border-color:var(--accent)}
+.status{color:var(--muted);font-size:.9rem;min-height:1.4rem;margin-bottom:.6rem}
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:.7rem;overflow:hidden}
+.grp summary{display:flex;align-items:center;gap:.8rem;padding:.95rem 1.1rem;cursor:pointer;list-style:none;min-height:3.2rem}
+.grp summary::-webkit-details-marker{display:none}
+.grp summary:hover{background:var(--tint)}
+.grp .gt{font-weight:700;font-size:1.1rem;flex:1;min-width:0}
+.grp .cnt{font-size:.85rem;color:var(--muted);background:var(--tint);border-radius:999px;padding:.1rem .6rem}
+.grp summary::after{content:"";width:.55rem;height:.55rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:-.2rem .3rem 0 .2rem;transition:transform .15s ease;flex:none}
+.grp[open] summary::after{transform:rotate(-135deg);margin-top:.25rem}
+.grp[open] summary{border-bottom:1px solid var(--line)}
+.gb{padding:.5rem .6rem .8rem}
+.blk+.blk{margin-top:.6rem}
+.sub{font-weight:700;font-size:1rem;color:var(--accent);padding:.6rem .5rem .2rem}
+.links{list-style:none}
+.links a{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.1rem .9rem;padding:.6rem .5rem;border-radius:8px;text-decoration:none;min-height:2.75rem}
+.links a:hover{background:var(--tint)}
+.links .rt{font-weight:600}
+.links a:hover .rt{color:var(--link);text-decoration:underline;text-underline-offset:.2em}
+.links .rd{color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}
+
+/* footer */
+.site-footer{border-top:1px solid var(--line);padding:1.6rem 0 2.2rem;color:var(--muted);font-size:.9rem}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem}
+
+/* tablet and phone */
+@media (max-width:860px){
+  .sec-grid{grid-template-columns:minmax(0,1fr)}
+  .sec-lead{max-width:34rem}
+}
+@media (max-width:700px){
+  .hero{grid-template-columns:minmax(0,1fr);text-align:center}
+  .figure{order:-1;width:min(15rem,70vw)}
+  .hero .lead,.hero .fields{margin-left:auto;margin-right:auto}
+  .tools{justify-content:center}
+  .glance{text-align:left}
+  .specs{grid-template-columns:minmax(0,1fr);padding:.6rem 1rem}
+  .specs dt{padding-bottom:0;border-top:1px solid var(--line)}
+  .specs dd{border-top:0;padding-top:.1rem}
+  .specs dt:first-of-type{border-top:0}
+}
+@media (min-width:701px){
+  .hd{flex-direction:row;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem}
+  :root{--hh:4.5rem}
+}
+@media (max-width:360px){
+  .brand{font-size:1.2rem}
+  .nav a{padding:.35rem .55rem;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .grp summary::after{transition:none}
+}
+@media print{
+  .site-header,.filter,.status,.skip{display:none}
+  .grp>.gb{display:block}
+}
+</style>
 </head>
-<body id="top">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav id="nav">
-  <div class="ni">
-    <a class="nlogo" href="index.html">Shaon Ahmed Ronok</a>
-    <ul class="nlinks">
-      <li><a href="index.html" class="act">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resources.html">Resources</a></li>
-    
-    </ul>
+<header class="site-header">
+  <div class="wrap hd">
+    <a class="brand" href="#home">Shaon Ahmed Ronok</a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="#home" aria-current="true">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main>
-<section id="hero"><div class="w hg">
-  <div>
-    <h1 class="eyebrow">Languages &amp; Tools</h1>
-    <div class="techstack">
-      <img src="icons/Rlogo.png" alt="R">
-      <img src="https://cdn.simpleicons.org/latex/008080" alt="LaTeX">
-      <img src="https://cdn.simpleicons.org/typst/239DA8" alt="Typst">
-      <img src="icons/Nix_Snowflake_Logo.svg.webp" alt="NixOS">
+<main id="main">
+
+  <!-- HOME -->
+  <section class="sec" id="home" aria-labelledby="home-title">
+    <div class="wrap hero">
+      <div>
+        <h1 id="home-title">Shaon Ahmed Ronok</h1>
+        <p class="lead">Writer, independent researcher, systems thinker.</p>
+        <p class="fields">Information systems, technology ethics, philosophy of science.</p>
+
+        <p class="tools-label" id="tools-label">Languages and tools</p>
+        <ul class="tools" aria-labelledby="tools-label">
+          <li><img src="icons/Rlogo.png" alt="" width="42" height="42"><span>R</span></li>
+          <li><img src="https://cdn.simpleicons.org/latex/008080" alt="" width="42" height="42"><span>LaTeX</span></li>
+          <li><img src="https://cdn.simpleicons.org/typst/239DA8" alt="" width="42" height="42"><span>Typst</span></li>
+          <li><img src="icons/Nix_Snowflake_Logo.svg.webp" alt="" width="42" height="42"><span>NixOS</span></li>
+        </ul>
+
+        <dl class="glance">
+          <dt>Undergraduate</dt>
+          <dd>Social Science (BSS)</dd>
+        </dl>
+      </div>
+
+      <div class="figure">
+        <svg viewBox="-200 -200 400 400" aria-hidden="true" focusable="false">
+        <rect x="-140.00" y="-140.00" width="280.00" height="280.00" transform="rotate(0.0)"/>
+        <rect x="-125.63" y="-125.63" width="251.25" height="251.25" transform="rotate(7.0)"/>
+        <rect x="-112.73" y="-112.73" width="225.46" height="225.46" transform="rotate(14.0)"/>
+        <rect x="-101.15" y="-101.15" width="202.31" height="202.31" transform="rotate(21.0)"/>
+        <rect x="-90.77" y="-90.77" width="181.54" height="181.54" transform="rotate(28.0)"/>
+        <rect x="-81.45" y="-81.45" width="162.90" height="162.90" transform="rotate(35.0)"/>
+        <rect x="-73.09" y="-73.09" width="146.18" height="146.18" transform="rotate(42.0)"/>
+        <rect x="-65.58" y="-65.58" width="131.17" height="131.17" transform="rotate(49.0)"/>
+        <rect x="-58.85" y="-58.85" width="117.70" height="117.70" transform="rotate(56.0)"/>
+        <rect x="-52.81" y="-52.81" width="105.62" height="105.62" transform="rotate(63.0)"/>
+        <rect x="-47.39" y="-47.39" width="94.77" height="94.77" transform="rotate(70.0)"/>
+        </svg>
+        <img src="images/profile-3.png" alt="Portrait of Shaon Ahmed Ronok" width="228" height="228" fetchpriority="high">
+      </div>
     </div>
-  </div>
-  <div class="hpw">
-    <div class="hpbg"></div>
-    <img src="images/profile-3.png" alt="Shaon Ahmed Ronok" class="hp">
-  </div>
-</div></section>
+  </section>
 
-<section id="about"><div class="w info-table">
-  <div class="info-row"><span class="info-label">Undergrad:</span><span class="info-val">Social Science (BSS)</span></div>
-</div></section>
+  <!-- PROJECTS -->
+  <section class="sec" id="projects" aria-labelledby="projects-title">
+    <div class="wrap sec-grid">
+      <div>
+        <h2 id="projects-title">Projects</h2>
+      </div>
+      <div>
+        <ul class="proj-list">
+          <li class="proj">
+            <h3>compendium</h3>
+            <p>My LaTeX note on Education systems across various countries.</p>
+            <ul class="tags"><li>TeX</li><li>LaTeX</li><li>Academic</li></ul>
+            <a class="tl" href="https://github.com/shaonahmedronok/compendium" target="_blank" rel="noopener">View on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          </li>
+          <li class="proj">
+            <h3>shaonix</h3>
+            <p>Shaon's NixOS setup.</p>
+            <ul class="tags"><li>Nix</li><li>NixOS</li><li>MIT License</li></ul>
+            <a class="tl" href="https://github.com/shaonahmedronok/shaonix" target="_blank" rel="noopener">View on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          </li>
+          <li class="proj">
+            <h3>website</h3>
+            <p>My personal site.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Neocities</li></ul>
+            <a class="tl" href="https://github.com/shaonahmedronok/website" target="_blank" rel="noopener">View on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about" aria-labelledby="about-title">
+    <div class="wrap sec-grid">
+      <div>
+        <h2 id="about-title">About</h2>
+        <p class="sec-lead">Personal traits, workspace, and preferences.</p>
+      </div>
+      <div class="about-body">
+
+        <div>
+          <h3>Eyes and workspace</h3>
+          <p>My eyes: <a href="https://grokipedia.com/page/Myopia" class="tl" target="_blank" rel="noopener">myopic</a> at 3.75/3.00, <a href="https://grokipedia.com/page/Astigmatism" class="tl" target="_blank" rel="noopener">astigmatic</a> 25%. Without glasses, everything beyond arm's reach deteriorates; my hands, clothing, monitor all lack sharpness. With optical correction, the world snaps into 4K clarity: text resolves, details crystallize, distance becomes navigable. This defines my workspace: everything I work on sits within arm's length, optimized for my natural focal range. Light mode reduces eye strain during sustained close-distance work.</p>
+        </div>
+
+        <div>
+          <h3>Hardware and system</h3>
+          <p>My hardware reflects deliberate minimalism. My <a href="https://nixos.org" class="tl" target="_blank" rel="noopener">NixOS</a> configuration spans 16 declarative .nix files governing every aspect from hardware to aesthetics.</p>
+          <dl class="specs">
+            <dt>Processor</dt><dd>Intel Core i5-6500 (6th Gen)</dd>
+            <dt>Memory</dt><dd>8GB DDR4 RAM</dd>
+            <dt>Storage</dt><dd>128GB NVMe primary SSD, 256GB SATA secondary SSD</dd>
+            <dt>Power and case</dt><dd>Gigasonic 500W PSU, Aptech gaming case</dd>
+            <dt>Display</dt><dd>17" monitor</dd>
+            <dt>Peripherals and gear</dt><dd>Alfa USB WiFi antenna, CSR8510 Bluetooth dongle, Ajazz AK820 mechanical keyboard, wireless keyboard-mouse combo, Anker Soundcore R50i earbuds, Anker Zolo 20W charging adapter</dd>
+            <dt>System stack</dt><dd>Niri compositor, PipeWire audio, NetworkManager, fish shell</dd>
+          </dl>
+        </div>
+
+        <div>
+          <h3>Media</h3>
+          <p>I no longer listen to music, watch shows, or play games by myself. They became obsolete to me. I consume only niche documentaries, never fiction, never science fiction, never imaginary constructs. I reject anything not grounded in empirical fact. My media consumption is intentional and sparse by design.</p>
+        </div>
+
+        <div>
+          <h3>Visual environment</h3>
+          <p>I avoid all wallpapers containing nature, natural beauty, or animals. I use solely materialist imagery: buildings, objects, geometric patterns, abstract structures. My entire visual ecosystem follows this principle: abstract, structured, minimal. This applies uniformly across every device: laptop, phone, monitor, terminal backgrounds. No exceptions.</p>
+        </div>
+
+        <div>
+          <h3>Character</h3>
+          <p>I am <a href="https://grokipedia.com/page/Altruism" class="tl" target="_blank" rel="noopener">altruistic</a> by default; I prioritize collective benefit over personal comfort. I am musically inclined but deliberate about consumption; I don't consume passively. I am anhedonic; I experience satisfaction differently than most, finding fulfillment in systems that work, clarity in design, efficiency in execution. I think systematically. I build for clarity. I optimize for what actually works, not what feels comfortable. My entire existence reflects this: from my color palettes to my hardware choices to my communication preferences. Nothing is arbitrary.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="sec" id="resources" aria-labelledby="resources-title">
+    <div class="wrap sec-grid">
+      <div>
+        <h2 id="resources-title">Resources</h2>
+        <p class="sec-lead">A curated reference archive of external systems and repositories.</p>
+      </div>
+      <div>
+        <label class="filter" for="rfilter">
+          <span>Filter 107 links</span>
+          <input id="rfilter" type="search" placeholder="Try: nix, reddit, template" autocomplete="off" autocapitalize="off" spellcheck="false">
+        </label>
+        <p class="status" id="rstatus" role="status" aria-live="polite"></p>
+
+        <div id="rgroups">
+    <details class="grp">
+      <summary><span class="gt">LaTeX</span><span class="cnt">11</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://www.ctan.org/pkg/texbook" target="_blank" rel="noopener"><span class="rt">The TeXbook</span><span class="rd">ctan.org</span></a></li>
+            <li><a href="https://www.latex-project.org/help/documentation" target="_blank" rel="noopener"><span class="rt">LaTeX Project Official Docs</span><span class="rd">latex-project.org</span></a></li>
+            <li><a href="https://ctan.org" target="_blank" rel="noopener"><span class="rt">CTAN Package Documentation</span><span class="rd">ctan.org</span></a></li>
+            <li><a href="https://ctan.org/pkg/lshort-english" target="_blank" rel="noopener"><span class="rt">The Not So Short Introduction to LaTeX</span><span class="rd">ctan.org</span></a></li>
+            <li><a href="https://www.overleaf.com/learn" target="_blank" rel="noopener"><span class="rt">Overleaf Tutorials</span><span class="rd">overleaf.com</span></a></li>
+            <li><a href="https://tug.org/TUGboat" target="_blank" rel="noopener"><span class="rt">TUGboat Journal</span><span class="rd">tug.org</span></a></li>
+            <li><a href="https://www.informit.com/store/the-latex-companion-9780201362992" target="_blank" rel="noopener"><span class="rt">LaTeX Companion</span><span class="rd">informit.com</span></a></li>
+            <li><a href="https://castel.dev" target="_blank" rel="noopener"><span class="rt">castel.dev</span><span class="rd">castel.dev</span></a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73" target="_blank" rel="noopener"><span class="rt">LaTeX YT Playlist</span><span class="rd">youtube.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/LaTeX/search/?q=latex+learning+for+absolute+noob" target="_blank" rel="noopener"><span class="rt">LaTeX QnA</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.overleaf.com" target="_blank" rel="noopener"><span class="rt">LaTeX Editor</span><span class="rd">overleaf.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">R</span><span class="cnt">16</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://www.r-project.org" target="_blank" rel="noopener"><span class="rt">R Project Official Docs</span><span class="rd">r-project.org</span></a></li>
+            <li><a href="https://cran.r-project.org/web/views" target="_blank" rel="noopener"><span class="rt">CRAN Task Views</span><span class="rd">cran.r-project.org</span></a></li>
+            <li><a href="https://cran.r-project.org" target="_blank" rel="noopener"><span class="rt">Comprehensive R Archive Network</span><span class="rd">cran.r-project.org</span></a></li>
+            <li><a href="https://r4ds.had.co.nz" target="_blank" rel="noopener"><span class="rt">R for Data Science</span><span class="rd">r4ds.had.co.nz</span></a></li>
+            <li><a href="https://adv-r.hadley.nz" target="_blank" rel="noopener"><span class="rt">Advanced R</span><span class="rd">adv-r.hadley.nz</span></a></li>
+            <li><a href="https://ggplot2-book.org" target="_blank" rel="noopener"><span class="rt">ggplot2: Elegant Graphics for Data Analysis</span><span class="rd">ggplot2-book.org</span></a></li>
+            <li><a href="https://www.princeton.edu/~kosukei/qss.html" target="_blank" rel="noopener"><span class="rt">Quantitative Social Science</span><span class="rd">princeton.edu</span></a></li>
+            <li><a href="https://github.com/rmcelreath/rethinking" target="_blank" rel="noopener"><span class="rt">Statistical Rethinking</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://rstudio.com/resources/cheatsheets" target="_blank" rel="noopener"><span class="rt">RStudio Cheat Sheets</span><span class="rd">rstudio.com</span></a></li>
+            <li><a href="https://www.w3schools.com/r/default.asp" target="_blank" rel="noopener"><span class="rt">R W3Schools</span><span class="rd">w3schools.com</span></a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLu6UwBFCnlEcb3as1ZSZYjAWRkVkC3ODs" target="_blank" rel="noopener"><span class="rt">R YT Playlist</span><span class="rd">youtube.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/statistics" target="_blank" rel="noopener"><span class="rt">r/statistics</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/rstats" target="_blank" rel="noopener"><span class="rt">r/rstats</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/RStudio" target="_blank" rel="noopener"><span class="rt">r/RStudio</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://posit.cloud" target="_blank" rel="noopener"><span class="rt">Posit (R Editor)</span><span class="rd">posit.cloud</span></a></li>
+            <li><a href="https://github.com/iamericfletcher/awesome-r-learning-resources#comprehensive-r-tutorials" target="_blank" rel="noopener"><span class="rt">Awesome R Learning Resources</span><span class="rd">github.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">Typst</span><span class="cnt">16</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://typst.app/docs" target="_blank" rel="noopener"><span class="rt">Typst Official Documentation</span><span class="rd">typst.app</span></a></li>
+            <li><a href="https://github.com/typst/typst" target="_blank" rel="noopener"><span class="rt">Typst GitHub Repository</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://typst.app/universe" target="_blank" rel="noopener"><span class="rt">Typst Community Gallery</span><span class="rd">typst.app</span></a></li>
+            <li><a href="https://typst.app/docs/examples" target="_blank" rel="noopener"><span class="rt">Typst by Example</span><span class="rd">typst.app</span></a></li>
+            <li><a href="https://typst.app/docs/guides/guide-for-latex-users" target="_blank" rel="noopener"><span class="rt">Typst for LaTeX Users</span><span class="rd">typst.app</span></a></li>
+            <li><a href="https://typst.app/app" target="_blank" rel="noopener"><span class="rt">Typst Web Editor</span><span class="rd">typst.app</span></a></li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4 class="sub">Templates</h4>
+          <ul class="links">
+            <li><a href="https://github.com/LaPreprint/typst" target="_blank" rel="noopener"><span class="rt">LaPreprint Template</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/hzkonor/bubble-template" target="_blank" rel="noopener"><span class="rt">Bubble Document Layout</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/caffeinatedgaze/bare-bones-cv" target="_blank" rel="noopener"><span class="rt">Bare Bones CV</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/jskherman/imprecv" target="_blank" rel="noopener"><span class="rt">Imprecv System</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/skyzh/chicv" target="_blank" rel="noopener"><span class="rt">Chicv Engine</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/GeorgeHoneywood/alta-typst" target="_blank" rel="noopener"><span class="rt">Alta Typst Profiles</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/yunanwg/brilliant-CV" target="_blank" rel="noopener"><span class="rt">Brilliant CV Architecture</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/peterpf/modern-typst-resume" target="_blank" rel="noopener"><span class="rt">Modern Resume Layout</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/pncnmnp/typst-poster" target="_blank" rel="noopener"><span class="rt">Typst Poster Engine</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/p4perf4ce/typst-ieee-trans-template" target="_blank" rel="noopener"><span class="rt">IEEE Transactions System</span><span class="rd">github.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">NixOS</span><span class="cnt">12</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://nixos.org/manual/nixos/stable" target="_blank" rel="noopener"><span class="rt">NixOS Manual</span><span class="rd">nixos.org</span></a></li>
+            <li><a href="https://leanpub.com/nixos-in-production" target="_blank" rel="noopener"><span class="rt">NixOS in Production (PDF)</span><span class="rd">leanpub.com</span></a></li>
+            <li><a href="https://github.com/lecoqjacob/manix" target="_blank" rel="noopener"><span class="rt">Manix (Fast Documentation Search)</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://search.nixos.org/packages" target="_blank" rel="noopener"><span class="rt">Search Nix packages</span><span class="rd">search.nixos.org</span></a></li>
+            <li><a href="https://nix-community.org" target="_blank" rel="noopener"><span class="rt">Nix Community</span><span class="rd">nix-community.org</span></a></li>
+            <li><a href="https://discourse.nixos.org" target="_blank" rel="noopener"><span class="rt">NixOS Discourse</span><span class="rd">discourse.nixos.org</span></a></li>
+            <li><a href="https://nixos-and-flakes.thiscute.world" target="_blank" rel="noopener"><span class="rt">NixOS and Flakes Book</span><span class="rd">thiscute.world</span></a></li>
+            <li><a href="https://nixos.org/guides/how-nix-works" target="_blank" rel="noopener"><span class="rt">A Tour of NixOS</span><span class="rd">nixos.org</span></a></li>
+            <li><a href="https://nix-community.github.io/home-manager" target="_blank" rel="noopener"><span class="rt">Home Manager Manual</span><span class="rd">nix-community.github.io</span></a></li>
+            <li><a href="https://determinate.systems/posts" target="_blank" rel="noopener"><span class="rt">Determinate Systems</span><span class="rd">determinate.systems</span></a></li>
+            <li><a href="https://nix.dev" target="_blank" rel="noopener"><span class="rt">Nix Dev Guide</span><span class="rd">nix.dev</span></a></li>
+            <li><a href="https://fulltimenix.com" target="_blank" rel="noopener"><span class="rt">Full Time Nix</span><span class="rd">fulltimenix.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">Medical Scribe</span><span class="cnt">8</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <h4 class="sub">Typing and Dictation Practice</h4>
+          <ul class="links">
+            <li><a href="https://www.typingtest.com" target="_blank" rel="noopener"><span class="rt">TypingTest</span><span class="rd">typingtest.com</span></a></li>
+            <li><a href="https://www.keybr.com" target="_blank" rel="noopener"><span class="rt">Keybr</span><span class="rd">keybr.com</span></a></li>
+            <li><a href="https://www.nch.com.au/scribe/practice.html" target="_blank" rel="noopener"><span class="rt">NCH Express Scribe Practice</span><span class="rd">nch.com.au</span></a></li>
+            <li><a href="https://www.mtsamples.com" target="_blank" rel="noopener"><span class="rt">MTSamples (Transcriptions)</span><span class="rd">mtsamples.com</span></a></li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4 class="sub">Medical Terminology and EHR</h4>
+          <ul class="links">
+            <li><a href="https://www.dmu.edu/medterms/" target="_blank" rel="noopener"><span class="rt">Des Moines MedTerms</span><span class="rd">dmu.edu</span></a></li>
+            <li><a href="https://www.google.com/search?q=Rice+University+online+medical+terminology+course" target="_blank" rel="noopener"><span class="rt">Rice University Med Course</span><span class="rd">google.com</span></a></li>
+            <li><a href="https://www.youtube.com/results?search_query=Crash+Course+Anatomy+and+Physiology" target="_blank" rel="noopener"><span class="rt">Crash Course Anatomy</span><span class="rd">youtube.com</span></a></li>
+            <li><a href="https://www.open-emr.org" target="_blank" rel="noopener"><span class="rt">OpenEMR Practice</span><span class="rd">open-emr.org</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">Utils and CLI</span><span class="cnt">7</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://www.w3schools.com/programming/index.php" target="_blank" rel="noopener"><span class="rt">W3Schools Programming</span><span class="rd">w3schools.com</span></a></li>
+            <li><a href="https://git-scm.com" target="_blank" rel="noopener"><span class="rt">Git SCM</span><span class="rd">git-scm.com</span></a></li>
+            <li><a href="https://terminaltrove.com/explore" target="_blank" rel="noopener"><span class="rt">Explore Terminal Tools</span><span class="rd">terminaltrove.com</span></a></li>
+            <li><a href="https://github.com/toolleeo/awesome-cli-apps-in-a-csv" target="_blank" rel="noopener"><span class="rt">Awesome CLI Apps</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://github.com/Idnan/bash-guide" target="_blank" rel="noopener"><span class="rt">Bash Guide</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://raimonster.com/scripting-field-guide" target="_blank" rel="noopener"><span class="rt">Scripting Field Guide</span><span class="rd">raimonster.com</span></a></li>
+            <li><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html" target="_blank" rel="noopener"><span class="rt">GNU Bash Manual</span><span class="rd">gnu.org</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">Subreddits</span><span class="cnt">11</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://www.reddit.com/r/MastersDegree" target="_blank" rel="noopener"><span class="rt">r/MastersDegree</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/PhD" target="_blank" rel="noopener"><span class="rt">r/PhD</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/scholarships" target="_blank" rel="noopener"><span class="rt">r/scholarships</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/studyAbroad" target="_blank" rel="noopener"><span class="rt">r/studyAbroad</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/University" target="_blank" rel="noopener"><span class="rt">r/University</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/gradadmissions" target="_blank" rel="noopener"><span class="rt">r/gradadmissions</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/academia" target="_blank" rel="noopener"><span class="rt">r/academia</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/AskAcademia" target="_blank" rel="noopener"><span class="rt">r/AskAcademia</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/AskStatistics" target="_blank" rel="noopener"><span class="rt">r/AskStatistics</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/explainlikeimfive" target="_blank" rel="noopener"><span class="rt">r/explainlikeimfive</span><span class="rd">reddit.com</span></a></li>
+            <li><a href="https://www.reddit.com/r/coolguides" target="_blank" rel="noopener"><span class="rt">r/coolguides</span><span class="rd">reddit.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details class="grp">
+      <summary><span class="gt">Ed-Sites and Universities</span><span class="cnt">26</span></summary>
+      <div class="gb">
+        <div class="blk">
+          <ul class="links">
+            <li><a href="https://mused.com/giza" target="_blank" rel="noopener"><span class="rt">Mused Giza</span><span class="rd">mused.com</span></a></li>
+            <li><a href="https://persepolis.getty.edu" target="_blank" rel="noopener"><span class="rt">Persepolis Getty</span><span class="rd">getty.edu</span></a></li>
+            <li><a href="https://youglish.com" target="_blank" rel="noopener"><span class="rt">YouGlish</span><span class="rd">youglish.com</span></a></li>
+            <li><a href="https://www.geoguessr.com/quiz/seterra" target="_blank" rel="noopener"><span class="rt">GeoGuessr / Seterra</span><span class="rd">geoguessr.com</span></a></li>
+            <li><a href="https://github.com/rossant/awesome-math#abstract-algebra" target="_blank" rel="noopener"><span class="rt">Awesome Math</span><span class="rd">github.com</span></a></li>
+            <li><a href="https://mathworld.wolfram.com" target="_blank" rel="noopener"><span class="rt">Wolfram MathWorld</span><span class="rd">wolfram.com</span></a></li>
+            <li><a href="https://learn-anything.xyz" target="_blank" rel="noopener"><span class="rt">Learn Anything</span><span class="rd">learn-anything.xyz</span></a></li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4 class="sub">United States</h4>
+          <ul class="links">
+            <li><a href="https://www.ed.gov/" target="_blank" rel="noopener"><span class="rt">U.S. Department of Education</span><span class="rd">ed.gov</span></a></li>
+            <li><a href="https://collegescorecard.ed.gov/" target="_blank" rel="noopener"><span class="rt">College Scorecard</span><span class="rd">ed.gov</span></a></li>
+            <li><a href="https://www.brookings.edu/center/brown-center-on-education-policy/" target="_blank" rel="noopener"><span class="rt">Brookings Education Policy</span><span class="rd">brookings.edu</span></a></li>
+            <li><a href="https://www.chronicle.com/" target="_blank" rel="noopener"><span class="rt">Chronicle of Higher Education</span><span class="rd">chronicle.com</span></a></li>
+            <li><a href="https://www.edutopia.org/" target="_blank" rel="noopener"><span class="rt">Edutopia</span><span class="rd">edutopia.org</span></a></li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4 class="sub">Europe (Nordic and Swiss)</h4>
+          <ul class="links">
+            <li><a href="https://www.sbfi.admin.ch/en/education" target="_blank" rel="noopener"><span class="rt">Swiss Government Education</span><span class="rd">admin.ch</span></a></li>
+            <li><a href="https://ethz.ch/" target="_blank" rel="noopener"><span class="rt">ETH Zurich</span><span class="rd">ethz.ch</span></a></li>
+            <li><a href="https://studyindenmark.dk/" target="_blank" rel="noopener"><span class="rt">Study in Denmark</span><span class="rd">studyindenmark.dk</span></a></li>
+            <li><a href="https://www.studyinfinland.fi/" target="_blank" rel="noopener"><span class="rt">Study in Finland</span><span class="rd">studyinfinland.fi</span></a></li>
+            <li><a href="https://study.iceland.is/" target="_blank" rel="noopener"><span class="rt">Study in Iceland</span><span class="rd">study.iceland.is</span></a></li>
+            <li><a href="https://studyinnorway.no/" target="_blank" rel="noopener"><span class="rt">Study in Norway</span><span class="rd">studyinnorway.no</span></a></li>
+            <li><a href="https://studyinsweden.se/" target="_blank" rel="noopener"><span class="rt">Study in Sweden</span><span class="rd">studyinsweden.se</span></a></li>
+            <li><a href="https://www.lunduniversity.lu.se/" target="_blank" rel="noopener"><span class="rt">Lund University (Sweden)</span><span class="rd">lu.se</span></a></li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4 class="sub">Asia (Japan and Singapore)</h4>
+          <ul class="links">
+            <li><a href="https://www.mext.go.jp/en/" target="_blank" rel="noopener"><span class="rt">MEXT (Japan)</span><span class="rd">mext.go.jp</span></a></li>
+            <li><a href="https://www.studyinjapan.go.jp/en/" target="_blank" rel="noopener"><span class="rt">Study in Japan</span><span class="rd">studyinjapan.go.jp</span></a></li>
+            <li><a href="https://www.u-tokyo.ac.jp/en/" target="_blank" rel="noopener"><span class="rt">University of Tokyo</span><span class="rd">u-tokyo.ac.jp</span></a></li>
+            <li><a href="https://www.moe.gov.sg/" target="_blank" rel="noopener"><span class="rt">Ministry of Education (Singapore)</span><span class="rd">moe.gov.sg</span></a></li>
+            <li><a href="https://www.nus.edu.sg/" target="_blank" rel="noopener"><span class="rt">National University of Singapore</span><span class="rd">nus.edu.sg</span></a></li>
+            <li><a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener"><span class="rt">Nanyang Technological University</span><span class="rd">ntu.edu.sg</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap ft">
+    <p>&copy; 2026 Shaon Ahmed Ronok</p>
+    <a class="tl" href="#home">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Active navigation link while scrolling */
+  var links = document.querySelectorAll('.nav a');
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  function setActive(id) {
+    links.forEach(function (a) { a.removeAttribute('aria-current'); });
+    if (map[id]) map[id].setAttribute('aria-current', 'true');
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+
+  /* Resource filter */
+  var input = document.getElementById('rfilter');
+  var status = document.getElementById('rstatus');
+  var groups = document.querySelectorAll('#rgroups .grp');
+  var filtering = false;
+  if (!input) return;
+
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var total = 0;
+    groups.forEach(function (g) {
+      var any = false;
+      g.querySelectorAll('.blk').forEach(function (b) {
+        var bAny = false;
+        b.querySelectorAll('li').forEach(function (li) {
+          var m = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+          li.hidden = !m;
+          if (m) { bAny = true; total++; }
+        });
+        b.hidden = !bAny;
+        if (bAny) any = true;
+      });
+      g.hidden = !any;
+      if (q) { g.open = any; }
+      else if (filtering) { g.open = false; }
+    });
+    filtering = !!q;
+    if (!q) { status.textContent = ''; }
+    else if (total === 0) { status.textContent = 'No links match "' + input.value.trim() + '".'; }
+    else { status.textContent = total + (total === 1 ? ' link found.' : ' links found.'); }
+  });
+})();
+</script>
 </body>
 </html>
